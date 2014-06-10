@@ -19,6 +19,10 @@
 		3886A3551947863D005E3362 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3886A33D1947863D005E3362 /* UIKit.framework */; };
 		3886A35D1947863E005E3362 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3886A35B1947863E005E3362 /* InfoPlist.strings */; };
 		3886A35F1947863E005E3362 /* You_reInJeopardyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886A35E1947863E005E3362 /* You_reInJeopardyTests.m */; };
+		3886A370194788C4005E3362 /* NRFMainBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886A36E194788C4005E3362 /* NRFMainBoardViewController.m */; };
+		3886A371194788C4005E3362 /* NRFMainBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3886A36F194788C4005E3362 /* NRFMainBoardViewController.xib */; };
+		3886A37419478E0C005E3362 /* NRFQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886A37319478E0C005E3362 /* NRFQuestion.m */; };
+		3886A37719478F41005E3362 /* NRFJeopardyGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886A37619478F41005E3362 /* NRFJeopardyGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,13 @@
 		3886A35A1947863E005E3362 /* You'reInJeopardyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "You'reInJeopardyTests-Info.plist"; sourceTree = "<group>"; };
 		3886A35C1947863E005E3362 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3886A35E1947863E005E3362 /* You_reInJeopardyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = You_reInJeopardyTests.m; sourceTree = "<group>"; };
+		3886A36D194788C4005E3362 /* NRFMainBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFMainBoardViewController.h; sourceTree = "<group>"; };
+		3886A36E194788C4005E3362 /* NRFMainBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFMainBoardViewController.m; sourceTree = "<group>"; };
+		3886A36F194788C4005E3362 /* NRFMainBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NRFMainBoardViewController.xib; sourceTree = "<group>"; };
+		3886A37219478E0C005E3362 /* NRFQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFQuestion.h; sourceTree = "<group>"; };
+		3886A37319478E0C005E3362 /* NRFQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFQuestion.m; sourceTree = "<group>"; };
+		3886A37519478F41005E3362 /* NRFJeopardyGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFJeopardyGame.h; sourceTree = "<group>"; };
+		3886A37619478F41005E3362 /* NRFJeopardyGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFJeopardyGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +120,13 @@
 			children = (
 				3886A3481947863D005E3362 /* NRFAppDelegate.h */,
 				3886A3491947863D005E3362 /* NRFAppDelegate.m */,
+				3886A36D194788C4005E3362 /* NRFMainBoardViewController.h */,
+				3886A37219478E0C005E3362 /* NRFQuestion.h */,
+				3886A37319478E0C005E3362 /* NRFQuestion.m */,
+				3886A37519478F41005E3362 /* NRFJeopardyGame.h */,
+				3886A37619478F41005E3362 /* NRFJeopardyGame.m */,
+				3886A36E194788C4005E3362 /* NRFMainBoardViewController.m */,
+				3886A36F194788C4005E3362 /* NRFMainBoardViewController.xib */,
 				3886A34B1947863D005E3362 /* Images.xcassets */,
 				3886A3401947863D005E3362 /* Supporting Files */,
 			);
@@ -220,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3886A371194788C4005E3362 /* NRFMainBoardViewController.xib in Resources */,
 				3886A3441947863D005E3362 /* InfoPlist.strings in Resources */,
 				3886A34C1947863D005E3362 /* Images.xcassets in Resources */,
 			);
@@ -240,7 +259,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3886A370194788C4005E3362 /* NRFMainBoardViewController.m in Sources */,
 				3886A3461947863D005E3362 /* main.m in Sources */,
+				3886A37719478F41005E3362 /* NRFJeopardyGame.m in Sources */,
+				3886A37419478E0C005E3362 /* NRFQuestion.m in Sources */,
 				3886A34A1947863D005E3362 /* NRFAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,7 +383,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "You'reInJeopardy/You'reInJeopardy-Prefix.pch";
 				INFOPLIST_FILE = "You'reInJeopardy/You'reInJeopardy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -374,7 +398,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "You'reInJeopardy/You'reInJeopardy-Prefix.pch";
 				INFOPLIST_FILE = "You'reInJeopardy/You'reInJeopardy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
