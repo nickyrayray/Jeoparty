@@ -7,7 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NRFJeopardyGame.h"
+#import "NRFQuestionEditViewController.h"
+#import "NRFCategoryEditViewController.h"
+#import "NRFQuestionViewController.h"
 
-@interface NRFMainBoardViewController : UIViewController
+@interface NRFMainBoardViewController : UIViewController <NRFQuestionEditViewControllerDelegate, NRFCategoryEditViewControllerDelegate, NRFQuestionViewControllerDelegate>
+
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *categoryPanels;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *questionPanels;
+
+
+@property (strong, nonatomic)NRFJeopardyGame *game;
+
+-(id)initWithGame:(NRFJeopardyGame *)game inMode:(NSString *)mode;
+
+- (IBAction)choseQuestionPanel:(UIButton *)sender;
+
+- (IBAction)choseCategoryPanel:(UIButton *)sender;
 
 @end

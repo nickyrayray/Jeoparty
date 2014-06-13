@@ -7,52 +7,136 @@
 //
 
 #import "NRFJeopardyGame.h"
-#import "NRFQuestion.h"
 
 @implementation NRFJeopardyGame
 
--(id) initWithCategories:(NSArray *)categories forDoubleJ:(BOOL)doubleJ
+-(id) init
 {
     self = [super init];
     if(self){
-        self.categories = categories;
-        self.doubleJ = doubleJ;
         
-        NSMutableDictionary *questions = [[NSMutableDictionary alloc] init];
+        self.questions = [[NSMutableArray alloc] init];
+        self.doubleQuestions = [[NSMutableArray alloc] init];
+        self.categories = [[NSMutableArray alloc] initWithCapacity:6];
+        self.doubleCategories = [[NSMutableArray alloc] initWithCapacity:6];
         
-        for(int i = 0; i < categories.count; i++){
-            
-            NSMutableArray *category = [[NSMutableArray alloc] initWithCapacity:5];
-            [questions setObject:category forKey:categories[i]];
-            
-        }
-        
-        self.questions = questions;
     }
     return self;
 }
 
-- (void) setQuestion:(NSString *)question withAnswer:(NSString *)answer atIndex:(int)index inCategory:(NSString *)category
+-(void) addQuestionWithValue:(int)value atIndex:(int)index
 {
     
-    int value = (index + 1) * 200;
-    if(self.doubleJ == YES){
-        value *= 2;
-    }
-    NRFQuestion *questionToAdd = [[NRFQuestion alloc] initQuestion:question withValue:value andAnswer:answer];
-    NSMutableArray *qArray = [self.questions objectForKey:category];
-    [qArray insertObject:questionToAdd atIndex:index];
+    NRFQuestion *questionToAdd = [[NRFQuestion alloc] initWithValue:value];
+    [self.questions insertObject:questionToAdd atIndex:index];
     
 }
 
--(void) questionChosenFromCategory:(NSString *)category AtIndex:(int)index
+-(void) addCategoryAtIndex:(int)index
 {
-    
-    NSMutableArray *questions = [self.questions objectForKey:category];
-    NRFQuestion *question = questions[index];
-    question.chosen = YES;
+    NSString *placeHolder = [[NSString alloc] init];
+    [self.categories insertObject:placeHolder atIndex:index];
     
 }
+
+-(void) updateCategory:(NSString *)category atIndex:(int)index
+{
+    self.categories[index] = category;
+}
+
+-(void) addDoubleQuestionWithValue:(int)value atIndex:(int)index
+{
+    
+    NRFQuestion *questionToAdd = [[NRFQuestion alloc] initWithValue:value];
+    [self.doubleQuestions insertObject:questionToAdd atIndex:index];
+    
+}
+
+-(void) addDoubleCategoryAtIndex:(int)index
+{
+    NSString *placeHolder = [[NSString alloc] init];
+    [self.doubleCategories insertObject:placeHolder atIndex:index];
+}
+
+-(void) updateDoubleCategory:(NSString *)category atIndex:(int)index
+{
+    self.doubleCategories[index] = category;
+}
+
+-(NRFQuestion *) getQuestionAtIndex:(int)index
+{
+    return self.questions[index];
+}
+
+-(NRFQuestion *) getDoubleQuestionAtIndex:(int)index
+{
+    return self.doubleQuestions[index];
+}
+
+-(NSString *)getCatAtIndex:(int)index
+{
+    return self.categories[index];
+}
+
+-(NSString *)getDoubleCatAtIndex:(int)index
+{
+    return self.doubleCategories[index];
+}
+
+- (BOOL)isDoneWithReg
+{
+    
+    for(NRFQuestion *question in self.questions){
+        if(![question isFinished])
+            return NO;
+    }
+    
+    for(NSString *category in self.categories){
+        if(category == nil || [category isEqualToString:@""])
+            return NO;
+    }
+    
+    return YES;
+    
+}
+
+-(BOOL)isDoneWithRegRound
+{
+    for(NRFQuestion *question in self.questions){
+        if(question.chosen == NO)
+            return NO;
+    }
+    
+    return YES;
+}
+
+-(BOOL)isDoneWithDouble
+{
+    
+    for(NRFQuestion *question in self.doubleQuestions){
+        if(![question isFinished])
+            return NO;
+    }
+    
+    for(NSString *category in self.doubleCategories){
+        if(category == nil || [category isEqualToString:@""])
+            return NO;
+    }
+    
+    return YES;
+    
+}
+
+-(BOOL)isDoneWithDoubleRound
+{
+    for(NRFQuestion *question in self.doubleQuestions){
+        if(question.chosen == NO)
+            return NO;
+    }
+    
+    return YES;
+}
+
 
 
 

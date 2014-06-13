@@ -7,6 +7,7 @@
 //
 
 #import "NRFAppDelegate.h"
+#import "NRFMainBoardViewController.h"
 
 @implementation NRFAppDelegate
 
@@ -15,6 +16,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    NRFMainBoardViewController *rootVC = [[NRFMainBoardViewController alloc]initWithGame:nil inMode:@"regJPrep"];
+    self.window.rootViewController = rootVC;
     [self.window makeKeyAndVisible];
     return YES;
 }
