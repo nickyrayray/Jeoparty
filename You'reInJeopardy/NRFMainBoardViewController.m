@@ -11,6 +11,11 @@
 @interface NRFMainBoardViewController ()
 
 @property (strong, nonatomic) NSString *mode;
+@property int questionsRemaining;
+
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *categoryPanels;
+
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *questionPanels;
 
 @end
 
@@ -88,9 +93,16 @@
         
         NSMutableArray *cats;
         UIButton *current;
-        if([self.mode isEqualToString:@"regJ"])
+        
+         if([self.mode isEqualToString:@"regJ"]){
+             
+            if(![self.game dailyDoublesAreSet]){
+                [self.game setDailyDoubles];
+            }
+             
             cats = self.game.categories;
-        else
+             
+         } else
             cats = self.game.doubleCategories;
         
         for(int i = 0; i < self.categoryPanels.count; i++){
@@ -112,17 +124,19 @@
 -(void) questionEditViewController:(NRFQuestionEditViewController *)questionEditVC didFinishWithQuestion:(NRFQuestion *)question
 {
     
+    UIButton *questionPanel;
+    
+    if([self.mode isEqualToString:@"regJPrep"])
+        questionPanel = [self.questionPanels objectAtIndex:[self.game.questions indexOfObject:question]];
+    else
+        questionPanel = [self.questionPanels objectAtIndex:[self.game.doubleQuestions indexOfObject:question]];
+    
     if([question isFinished]){
-        
-        UIButton *questionPanel;
-        
-        if([self.mode isEqualToString:@"regJPrep"])
-            questionPanel = [self.questionPanels objectAtIndex:[self.game.questions indexOfObject:question]];
-        else
-            questionPanel = [self.questionPanels objectAtIndex:[self.game.doubleQuestions indexOfObject:question]];
         questionPanel.titleLabel.font = [UIFont systemFontOfSize:17];
         [questionPanel setTitle:question.question forState:UIControlStateNormal];
-        
+    } else {
+        questionPanel.titleLabel.font = [UIFont boldSystemFontOfSize:50];
+        [questionPanel setTitle:[NSString stringWithFormat:@"$%d", question.value] forState:UIControlStateNormal];
     }
     
     [questionEditVC dismissViewControllerAnimated:YES completion:^{
@@ -176,13 +190,16 @@
     if([self.mode isEqualToString:@"regJPrep"] && [self.game isDoneWithReg]){
         NRFMainBoardViewController *doubleJMBVC = [[NRFMainBoardViewController alloc] initWithGame:self.game inMode:@"doubleJPrep"];
         [self presentViewController:doubleJMBVC animated:YES completion:nil];
-    } else if([self.mode isEqualToString:@"doubleJPrep"] && [self.game isDoneWithDouble]){
+    }
+    
+    /*else if([self.mode isEqualToString:@"doubleJPrep"] && [self.game isDoneWithDouble]){
         NRFMainBoardViewController *regJRoundMBVC = [[NRFMainBoardViewController alloc] initWithGame:self.game inMode:@"regJ"];
         [self presentViewController:regJRoundMBVC animated:YES completion:nil];
     } else if ([self.mode isEqualToString:@"regJ"] && [self.game isDoneWithRegRound]){
         NRFMainBoardViewController *doubleJroundMBVC = [[NRFMainBoardViewController alloc] initWithGame:self.game inMode:@"doubleJ"];
         [self presentViewController:doubleJroundMBVC animated:YES completion:nil];
     }
+     */
         
     
 }

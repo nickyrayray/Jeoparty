@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSMutableArray *doubleCategories;
 @property (strong, nonatomic) NSMutableArray *questions;
 @property (strong, nonatomic) NSMutableArray *doubleQuestions;
+@property (strong, nonatomic) NSString *gameTitle;
 
 -(id)init;
 -(void)addQuestionWithValue:(int)value atIndex:(int)index;
@@ -23,6 +24,9 @@
 -(void)addDoubleQuestionWithValue:(int)value atIndex:(int)index;
 -(void)addDoubleCategoryAtIndex:(int)index;
 -(void)updateDoubleCategory:(NSString *)category atIndex:(int)index;
+-(void)setDailyDoubles;
+-(BOOL)dailyDoublesAreSet;
+-(BOOL)questionIsDailyDouble:(int)questionIndex forMode:(NSString *)mode;
 -(BOOL)isDoneWithReg;
 -(BOOL)isDoneWithRegRound;
 -(BOOL)isDoneWithDouble;

@@ -8,41 +8,43 @@
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="categoryPanels" destination="gGs-kw-J67" id="TN6-a5-sWR"/>
-                <outletCollection property="categoryPanels" destination="fva-u5-R5u" id="HHQ-eR-D8G"/>
-                <outletCollection property="categoryPanels" destination="7Ri-we-2AP" id="w07-rP-jlD"/>
-                <outletCollection property="categoryPanels" destination="HS4-W8-MzH" id="S0E-DH-uS4"/>
-                <outletCollection property="categoryPanels" destination="qzg-w0-0O6" id="csP-zb-7mU"/>
-                <outletCollection property="categoryPanels" destination="kiu-E2-nqY" id="XkA-h3-UFc"/>
                 <outletCollection property="questionPanels" destination="TLz-fY-IIa" id="caE-T8-cAh"/>
-                <outletCollection property="questionPanels" destination="FD7-YQ-LMp" id="iDg-qU-Zps"/>
-                <outletCollection property="questionPanels" destination="Ojn-g4-zql" id="218-Xm-H31"/>
-                <outletCollection property="questionPanels" destination="iIS-qu-fuS" id="UMp-KD-bRD"/>
-                <outletCollection property="questionPanels" destination="ntG-dI-J0I" id="mYm-fH-nnD"/>
-                <outletCollection property="questionPanels" destination="Wca-VA-2gg" id="t9f-7n-xzv"/>
-                <outletCollection property="questionPanels" destination="dyM-gp-e6n" id="vq3-hX-xcz"/>
-                <outletCollection property="questionPanels" destination="70c-0a-PCR" id="h4B-rQ-Yfv"/>
-                <outletCollection property="questionPanels" destination="pse-CJ-SBn" id="Rc3-l2-j0C"/>
-                <outletCollection property="questionPanels" destination="DTa-UP-aYh" id="EG8-dM-YQJ"/>
-                <outletCollection property="questionPanels" destination="cpJ-dH-O7y" id="ndT-cT-o02"/>
-                <outletCollection property="questionPanels" destination="piZ-xt-08A" id="WWI-cA-7ph"/>
-                <outletCollection property="questionPanels" destination="ou9-8a-1of" id="HR7-m9-j7a"/>
-                <outletCollection property="questionPanels" destination="61q-Pk-VBf" id="GfU-zP-H6Z"/>
-                <outletCollection property="questionPanels" destination="7Jn-K0-uZq" id="HL5-0k-VIv"/>
-                <outletCollection property="questionPanels" destination="hGY-Kb-Dnu" id="aQF-kt-90K"/>
-                <outletCollection property="questionPanels" destination="w8g-ay-ePK" id="UWV-9v-8jB"/>
-                <outletCollection property="questionPanels" destination="T0M-vx-ZEj" id="Q7n-Ne-ds9"/>
-                <outletCollection property="questionPanels" destination="VxQ-AE-nNL" id="tAA-iV-pOJ"/>
-                <outletCollection property="questionPanels" destination="cou-76-wzW" id="XwZ-o0-qug"/>
-                <outletCollection property="questionPanels" destination="Cxk-MI-a89" id="elT-tF-Oiv"/>
-                <outletCollection property="questionPanels" destination="yq2-vX-nUI" id="da8-wK-m71"/>
-                <outletCollection property="questionPanels" destination="YDy-7t-yqy" id="iRL-ry-qCG"/>
-                <outletCollection property="questionPanels" destination="m6h-pv-7zL" id="i8D-Ht-znM"/>
-                <outletCollection property="questionPanels" destination="ieg-Lw-fYr" id="3Pv-AM-xPz"/>
-                <outletCollection property="questionPanels" destination="hMn-kq-4zE" id="D27-Ac-TaW"/>
-                <outletCollection property="questionPanels" destination="lbW-LV-R1E" id="rNc-Td-784"/>
-                <outletCollection property="questionPanels" destination="I7Y-SK-ufR" id="6pD-XV-Az6"/>
-                <outletCollection property="questionPanels" destination="lCK-Hc-mVb" id="KsI-4J-AsK"/>
-                <outletCollection property="questionPanels" destination="tz4-oA-H9Z" id="lqD-G1-lsK"/>
+                <outletCollection property="categoryPanels" destination="kRZ-yN-O3R" id="A9o-aU-XwB"/>
+                <outletCollection property="questionPanels" destination="6Yh-fF-xXe" id="9yJ-gy-AnT"/>
+                <outletCollection property="categoryPanels" destination="zHL-YT-Aha" id="Zdb-ZI-5EO"/>
+                <outletCollection property="categoryPanels" destination="ji6-kf-d5C" id="WuM-1u-3Vl"/>
+                <outletCollection property="categoryPanels" destination="RHg-ea-JnQ" id="oDf-iZ-gmp"/>
+                <outletCollection property="categoryPanels" destination="Bss-wT-beZ" id="LPv-u2-Qnu"/>
+                <outletCollection property="categoryPanels" destination="SGA-yq-u5X" id="xMt-G5-scE"/>
+                <outletCollection property="questionPanels" destination="z9S-F3-ohl" id="4X7-gi-0q6"/>
+                <outletCollection property="questionPanels" destination="HOn-xb-uZj" id="yDQ-s6-EIz"/>
+                <outletCollection property="questionPanels" destination="nex-Vz-3Sg" id="h43-LK-XCB"/>
+                <outletCollection property="questionPanels" destination="lAx-2z-oZC" id="bfp-Aj-NYu"/>
+                <outletCollection property="questionPanels" destination="bUI-gc-iE8" id="668-pq-BNv"/>
+                <outletCollection property="questionPanels" destination="RNu-zF-MSz" id="hlO-W1-zDY"/>
+                <outletCollection property="questionPanels" destination="Zsc-ab-S8w" id="jmU-bM-03i"/>
+                <outletCollection property="questionPanels" destination="ld1-ei-5i1" id="M48-oZ-NVH"/>
+                <outletCollection property="questionPanels" destination="YCR-2D-ui6" id="Ggg-Uh-j4g"/>
+                <outletCollection property="questionPanels" destination="7rd-Q8-dJc" id="zJb-B8-YaK"/>
+                <outletCollection property="questionPanels" destination="wfq-3s-glR" id="BuA-97-8L7"/>
+                <outletCollection property="questionPanels" destination="VZ1-jc-B7i" id="Jz3-gG-b05"/>
+                <outletCollection property="questionPanels" destination="cvy-4X-ycl" id="MkN-mr-scM"/>
+                <outletCollection property="questionPanels" destination="oly-1N-d0G" id="rUL-E6-rgi"/>
+                <outletCollection property="questionPanels" destination="FFj-ph-fNF" id="zrH-d1-fAy"/>
+                <outletCollection property="questionPanels" destination="iFv-nd-DWk" id="1So-AF-6rq"/>
+                <outletCollection property="questionPanels" destination="Kiu-oI-N2N" id="59g-wY-Ssv"/>
+                <outletCollection property="questionPanels" destination="7cf-1w-eAn" id="Zja-Mm-i07"/>
+                <outletCollection property="questionPanels" destination="o4g-6L-U2S" id="tGr-M8-F5K"/>
+                <outletCollection property="questionPanels" destination="kPy-SI-JtL" id="duF-dk-e0l"/>
+                <outletCollection property="questionPanels" destination="JJW-Zd-2Ow" id="jdO-xF-ySB"/>
+                <outletCollection property="questionPanels" destination="NDS-3Q-Oap" id="46x-gT-mE7"/>
+                <outletCollection property="questionPanels" destination="nRQ-G2-rBb" id="vEU-Tc-9RA"/>
+                <outletCollection property="questionPanels" destination="ylp-Gn-kcb" id="u9T-8d-3IA"/>
+                <outletCollection property="questionPanels" destination="01K-E7-YL0" id="zqf-kH-db4"/>
+                <outletCollection property="questionPanels" destination="KwD-eB-Ggc" id="Zgt-ms-Ol9"/>
+                <outletCollection property="questionPanels" destination="1Y0-Zq-w11" id="F49-a8-Ggx"/>
+                <outletCollection property="questionPanels" destination="qyB-mW-6kf" id="izv-gc-CZ8"/>
+                <outletCollection property="questionPanels" destination="QUG-Ok-vTu" id="HeV-L8-MOK"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -50,428 +52,434 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fva-u5-R5u">
-                    <rect key="frame" x="183" y="21" width="164" height="114"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Select Category" backgroundImage="Square">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseCategoryPanel:" destination="-1" eventType="touchUpInside" id="F4B-Ku-NPx"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7Ri-we-2AP">
-                    <rect key="frame" x="347" y="21" width="164" height="114"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Select Category" backgroundImage="Square">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseCategoryPanel:" destination="-1" eventType="touchUpInside" id="bZu-RY-lcU"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="TLz-fY-IIa">
-                    <rect key="frame" x="20" y="134" width="164" height="124"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$200" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="Iqp-Mk-sOa"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="FD7-YQ-LMp">
-                    <rect key="frame" x="20" y="256" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$400" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="KG0-Bq-RN3"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ojn-g4-zql">
-                    <rect key="frame" x="20" y="379" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$600" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="JSs-Bg-or2"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="iIS-qu-fuS">
-                    <rect key="frame" x="20" y="502" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$800" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="8ch-k0-TaQ"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Wca-VA-2gg">
-                    <rect key="frame" x="183" y="134" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$200" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="QpT-Ho-hIq"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="dyM-gp-e6n">
-                    <rect key="frame" x="183" y="256" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$400" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="Jb5-kg-ewp"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="70c-0a-PCR">
-                    <rect key="frame" x="183" y="379" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$600" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="OHt-W4-dEP"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="pse-CJ-SBn">
-                    <rect key="frame" x="183" y="502" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$800" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="WxZ-9c-LOq"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cpJ-dH-O7y">
-                    <rect key="frame" x="347" y="134" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$200" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="mPt-Vz-1P9"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="piZ-xt-08A">
-                    <rect key="frame" x="347" y="256" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$400" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="T8c-vN-oT0"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ou9-8a-1of">
-                    <rect key="frame" x="347" y="379" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$600" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="V2k-ta-qBb"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="61q-Pk-VBf">
-                    <rect key="frame" x="347" y="502" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$800" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="TQ4-Lj-g3k"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gGs-kw-J67">
-                    <rect key="frame" x="20" y="21" width="164" height="114"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Select Category" backgroundImage="Square">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseCategoryPanel:" destination="-1" eventType="touchUpInside" id="rH1-We-Vyk"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="HS4-W8-MzH">
-                    <rect key="frame" x="512" y="21" width="164" height="114"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Select Category" backgroundImage="Square">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseCategoryPanel:" destination="-1" eventType="touchUpInside" id="IWN-fI-LGi"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qzg-w0-0O6">
-                    <rect key="frame" x="676" y="21" width="164" height="114"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Select Category" backgroundImage="Square">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseCategoryPanel:" destination="-1" eventType="touchUpInside" id="DeB-a2-gvS"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kiu-E2-nqY">
-                    <rect key="frame" x="840" y="21" width="164" height="114"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Select Category" backgroundImage="Square">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseCategoryPanel:" destination="-1" eventType="touchUpInside" id="pOX-La-U1x"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ntG-dI-J0I">
-                    <rect key="frame" x="20" y="625" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$1000" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="KEm-aV-Luu"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="DTa-UP-aYh">
-                    <rect key="frame" x="183" y="625" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$1000" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="oap-MS-ysl"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7Jn-K0-uZq">
-                    <rect key="frame" x="347" y="625" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$1000" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="hjA-Er-xKR"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hGY-Kb-Dnu">
-                    <rect key="frame" x="512" y="134" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$200" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="WTy-7j-YD3"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="w8g-ay-ePK">
-                    <rect key="frame" x="512" y="256" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$400" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="IWU-o5-u6T"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="T0M-vx-ZEj">
-                    <rect key="frame" x="512" y="379" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$600" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="wPL-ne-9ig"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="VxQ-AE-nNL">
-                    <rect key="frame" x="512" y="502" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$800" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="NyJ-Sf-u7N"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cou-76-wzW">
-                    <rect key="frame" x="512" y="625" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$1000" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="BhS-eI-3H8"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Cxk-MI-a89">
-                    <rect key="frame" x="676" y="134" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$200" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="h0A-be-ixI"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yq2-vX-nUI">
-                    <rect key="frame" x="676" y="256" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$400" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="PkS-oi-Jqn"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="YDy-7t-yqy">
-                    <rect key="frame" x="676" y="379" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$600" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="sPu-H0-sFW"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="m6h-pv-7zL">
-                    <rect key="frame" x="676" y="502" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$800" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="XSA-gU-DE8"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ieg-Lw-fYr">
-                    <rect key="frame" x="676" y="625" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$1000" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="X6m-Zd-UeI"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hMn-kq-4zE">
-                    <rect key="frame" x="840" y="134" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$200" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="Epf-74-uQd"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lbW-LV-R1E">
-                    <rect key="frame" x="840" y="256" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$400" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="J4B-qM-tDe"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="I7Y-SK-ufR">
-                    <rect key="frame" x="840" y="379" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$600" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="T41-Je-IYe"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lCK-Hc-mVb">
-                    <rect key="frame" x="840" y="502" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$800" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="UjS-bx-DTi"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="tz4-oA-H9Z">
-                    <rect key="frame" x="840" y="625" width="164" height="123"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <state key="normal" title="$1000" backgroundImage="Square">
-                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="VjQ-dS-rOJ"/>
-                    </connections>
-                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ij-R4-nKj">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kRZ-yN-O3R">
+                            <rect key="frame" x="20" y="20" width="164" height="114"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Select Category" backgroundImage="Square">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseCategoryPanel:" destination="-1" eventType="touchUpInside" id="TcS-n9-KyI"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zHL-YT-Aha">
+                            <rect key="frame" x="184" y="20" width="164" height="114"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Select Category" backgroundImage="Square">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseCategoryPanel:" destination="-1" eventType="touchUpInside" id="XeE-Ft-t5d"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ji6-kf-d5C">
+                            <rect key="frame" x="348" y="20" width="164" height="114"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Select Category" backgroundImage="Square">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseCategoryPanel:" destination="-1" eventType="touchUpInside" id="d6J-bt-DU7"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RHg-ea-JnQ">
+                            <rect key="frame" x="512" y="20" width="164" height="114"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Select Category" backgroundImage="Square">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseCategoryPanel:" destination="-1" eventType="touchUpInside" id="eHc-Bs-Ql0"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Bss-wT-beZ">
+                            <rect key="frame" x="676" y="20" width="164" height="114"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Select Category" backgroundImage="Square">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseCategoryPanel:" destination="-1" eventType="touchUpInside" id="G5f-do-iqK"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="SGA-yq-u5X">
+                            <rect key="frame" x="840" y="20" width="164" height="114"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Select Category" backgroundImage="Square">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseCategoryPanel:" destination="-1" eventType="touchUpInside" id="sNu-5G-1yL"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6Yh-fF-xXe">
+                            <rect key="frame" x="20" y="134" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$200" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="pvf-WM-vdc"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bUI-gc-iE8">
+                            <rect key="frame" x="184" y="134" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$200" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="ejD-0X-AyY"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7rd-Q8-dJc">
+                            <rect key="frame" x="348" y="134" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$200" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="h2u-Lf-eeY"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="FFj-ph-fNF">
+                            <rect key="frame" x="512" y="134" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$200" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="eYn-7K-t6c"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kPy-SI-JtL">
+                            <rect key="frame" x="676" y="134" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$200" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="KTg-pt-9mr"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="01K-E7-YL0">
+                            <rect key="frame" x="840" y="134" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$200" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="oJQ-Kq-KLb"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="z9S-F3-ohl">
+                            <rect key="frame" x="20" y="258" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$400" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="YKi-KQ-265"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RNu-zF-MSz">
+                            <rect key="frame" x="184" y="258" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$400" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="iju-Kt-wXN"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wfq-3s-glR">
+                            <rect key="frame" x="348" y="258" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$400" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="kOb-zS-nhc"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="iFv-nd-DWk">
+                            <rect key="frame" x="512" y="258" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$400" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="1cR-VL-73l"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="JJW-Zd-2Ow">
+                            <rect key="frame" x="676" y="258" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$400" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="ns8-X2-UEf"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="KwD-eB-Ggc">
+                            <rect key="frame" x="840" y="258" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$400" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="Yn4-7f-5z8"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="HOn-xb-uZj">
+                            <rect key="frame" x="20" y="382" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$600" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="TJX-Hb-W3G"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nex-Vz-3Sg">
+                            <rect key="frame" x="20" y="506" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$800" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="AO3-jj-a1E"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lAx-2z-oZC">
+                            <rect key="frame" x="20" y="630" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$1000" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="4qE-wI-h11"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Zsc-ab-S8w">
+                            <rect key="frame" x="184" y="382" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$600" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="grU-7k-Ogz"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="VZ1-jc-B7i">
+                            <rect key="frame" x="348" y="382" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$600" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="uXp-1m-9Sz"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Kiu-oI-N2N">
+                            <rect key="frame" x="512" y="382" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$600" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="Jl5-hN-Fla"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="NDS-3Q-Oap">
+                            <rect key="frame" x="676" y="382" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$600" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="sbo-3H-CHa"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="1Y0-Zq-w11">
+                            <rect key="frame" x="840" y="382" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$600" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="mt6-wx-bUz"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ld1-ei-5i1">
+                            <rect key="frame" x="184" y="506" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$800" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="T0m-4j-uDQ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cvy-4X-ycl">
+                            <rect key="frame" x="348" y="506" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$800" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="fJP-iN-iRa"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7cf-1w-eAn">
+                            <rect key="frame" x="512" y="506" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$800" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="ejE-2X-Jbi"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nRQ-G2-rBb">
+                            <rect key="frame" x="676" y="506" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$800" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="c1k-rl-cJX"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qyB-mW-6kf">
+                            <rect key="frame" x="840" y="506" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$800" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="Pmd-T8-Jcp"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="YCR-2D-ui6">
+                            <rect key="frame" x="184" y="630" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$1000" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="M6p-11-t3e"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="oly-1N-d0G">
+                            <rect key="frame" x="348" y="630" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$1000" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="yHH-yn-EB9"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="o4g-6L-U2S">
+                            <rect key="frame" x="512" y="630" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$1000" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="qH9-ic-Kk9"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ylp-Gn-kcb">
+                            <rect key="frame" x="676" y="630" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$1000" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="Ilc-Rk-6CB"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="QUG-Ok-vTu">
+                            <rect key="frame" x="840" y="630" width="164" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <state key="normal" title="$1000" backgroundImage="Square">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="6ba-4K-3SX"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </scrollView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -482,6 +490,38 @@
             <state key="normal" image="Square">
                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
             </state>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" id="gGs-kw-J67">
+            <rect key="frame" x="0.0" y="0.0" width="164" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" title="Select Category" backgroundImage="Square">
+                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
+            <connections>
+                <action selector="choseCategoryPanel:" destination="-1" eventType="touchUpInside" id="rH1-We-Vyk"/>
+            </connections>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" id="TLz-fY-IIa">
+            <rect key="frame" x="0.0" y="0.0" width="164" height="124"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+            <state key="normal" title="$200" backgroundImage="Square">
+                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
+            <connections>
+                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="Iqp-Mk-sOa"/>
+            </connections>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" id="QnP-1a-pjc">
+            <rect key="frame" x="0.0" y="0.0" width="164" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" title="Select Category" backgroundImage="Square">
+                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
+            <connections>
+                <action selector="choseCategoryPanel:" destination="-1" eventType="touchUpInside" id="PeU-1l-9MG"/>
+            </connections>
         </button>
     </objects>
     <resources>

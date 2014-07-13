@@ -8,6 +8,14 @@
 
 #import "NRFJeopardyGame.h"
 
+@interface NRFJeopardyGame ()
+
+@property int regDailyDouble;
+@property int doubleDailyDouble1;
+@property int doubleDailyDouble2;
+
+@end
+
 @implementation NRFJeopardyGame
 
 -(id) init
@@ -19,6 +27,9 @@
         self.doubleQuestions = [[NSMutableArray alloc] init];
         self.categories = [[NSMutableArray alloc] initWithCapacity:6];
         self.doubleCategories = [[NSMutableArray alloc] initWithCapacity:6];
+        self.regDailyDouble = -1;
+        self.doubleDailyDouble1 = -1;
+        self.doubleDailyDouble2 = -1;
         
     }
     return self;
@@ -81,6 +92,41 @@
 -(NSString *)getDoubleCatAtIndex:(int)index
 {
     return self.doubleCategories[index];
+}
+
+-(void)setDailyDoubles{
+    
+    self.regDailyDouble = arc4random() % [self.questions count];
+    self.doubleDailyDouble1 = arc4random() % [self.doubleQuestions count];
+    do {
+        
+        self.doubleDailyDouble2 = arc4random() % [self.doubleQuestions count];
+        
+    } while(self.doubleDailyDouble2 != self.doubleDailyDouble1);
+    
+}
+
+-(BOOL) dailyDoublesAreSet{
+    if(self.regDailyDouble != -1 && self.doubleDailyDouble1 != -1 && self.doubleDailyDouble2 != -1)
+        return YES;
+    else
+        return NO;
+}
+
+-(BOOL)questionIsDailyDouble:(int)questionIndex forMode:(NSString *)mode
+{
+    
+    if([mode isEqualToString:@"regJ"]){
+        if(questionIndex == self.regDailyDouble)
+            return YES;
+        else
+            return NO;
+    } else {
+        if(questionIndex == self.doubleDailyDouble1 || questionIndex == self.doubleDailyDouble2)
+            return YES;
+        else
+            return NO;
+    }
 }
 
 - (BOOL)isDoneWithReg

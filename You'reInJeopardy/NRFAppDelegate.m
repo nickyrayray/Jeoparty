@@ -8,6 +8,8 @@
 
 #import "NRFAppDelegate.h"
 #import "NRFMainBoardViewController.h"
+#import "NRFCategoryEditViewController.h"
+#import "NRFMainMenuViewController.h"
 
 @implementation NRFAppDelegate
 
@@ -17,7 +19,8 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     NRFMainBoardViewController *rootVC = [[NRFMainBoardViewController alloc]initWithGame:nil inMode:@"regJPrep"];
-    self.window.rootViewController = rootVC;
+    NRFMainMenuViewController *rootMVC = [[NRFMainMenuViewController alloc] init];
+    self.window.rootViewController = rootMVC;
     [self.window makeKeyAndVisible];
     return YES;
 }

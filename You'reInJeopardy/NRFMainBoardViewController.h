@@ -14,10 +14,6 @@
 
 @interface NRFMainBoardViewController : UIViewController <NRFQuestionEditViewControllerDelegate, NRFCategoryEditViewControllerDelegate, NRFQuestionViewControllerDelegate>
 
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *categoryPanels;
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *questionPanels;
-
-
 @property (strong, nonatomic)NRFJeopardyGame *game;
 
 -(id)initWithGame:(NRFJeopardyGame *)game inMode:(NSString *)mode;
