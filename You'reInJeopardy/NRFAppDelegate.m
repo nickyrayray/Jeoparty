@@ -18,9 +18,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    NRFMainBoardViewController *rootVC = [[NRFMainBoardViewController alloc]initWithGame:nil inMode:@"regJPrep"];
     NRFMainMenuViewController *rootMVC = [[NRFMainMenuViewController alloc] init];
-    self.window.rootViewController = rootMVC;
+    UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:rootMVC];
+    self.window.rootViewController = naviVC;
     [self.window makeKeyAndVisible];
     return YES;
 }

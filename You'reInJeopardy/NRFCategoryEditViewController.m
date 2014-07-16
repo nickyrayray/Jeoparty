@@ -30,12 +30,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed:)];
     if(![self.category isEqualToString:@""] && self.category != nil){
         self.categoryTextView.text = self.category;
     }
+    self.navigationItem.rightBarButtonItem = doneButton;
+    self.navigationItem.title = @"Edit Category";
 }
 
-- (IBAction)doneButtonPressed:(UIButton *)sender {
+- (void)doneButtonPressed:(id)sender {
     
     self.category = self.categoryTextView.text;
     [self.delegate catEditViewController:self didFinishWithCat:self.category forIndex:self.index];

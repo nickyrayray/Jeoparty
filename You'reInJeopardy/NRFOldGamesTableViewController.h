@@ -10,4 +10,6 @@
 
 @interface NRFOldGamesTableViewController : UITableViewController
 
+-(id)initInMode:(NSString *)mode;
+
 @end

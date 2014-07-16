@@ -8,6 +8,7 @@
 
 #import "NRFMainMenuViewController.h"
 #import "NRFMainBoardViewController.h"
+#import "NRFOldGamesTableViewController.h"
 
 @interface NRFMainMenuViewController ()
 
@@ -19,7 +20,6 @@
 {
     self = [super initWithNibName:@"NRFMainMenuViewController" bundle:nil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -27,17 +27,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = @"Main Menu";
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (IBAction)createGame:(id)sender {
     
     NRFMainBoardViewController *createGameBoard = [[NRFMainBoardViewController alloc] initWithGame:nil inMode:@"regJPrep"];
-    [self presentViewController:createGameBoard animated:YES completion:nil];
+    [self.navigationController pushViewController:createGameBoard animated:YES];
 }
 - (IBAction)playGame:(id)sender {
+    NRFOldGamesTableViewController *oldGames = [[NRFOldGamesTableViewController alloc] initInMode:@"playMode"];
+    [self.navigationController pushViewController:oldGames animated:YES];
 }
 - (IBAction)editGame:(id)sender {
+    NRFOldGamesTableViewController *oldGames = [[NRFOldGamesTableViewController alloc] initInMode:@"editMode"];
+    [self.navigationController pushViewController:oldGames animated:YES];
 }
 - (IBAction)options:(id)sender {
 }

@@ -37,6 +37,8 @@
         self.questionAnswerTextLabel.text = self.question.answer;
     }
     
+    self.navigationItem.title = @"Enter Question";
+    
 }
 
 - (IBAction)doneButtonPressed:(id)sender {

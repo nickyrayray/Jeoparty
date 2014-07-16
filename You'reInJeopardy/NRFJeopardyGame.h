@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSMutableArray *questions;
 @property (strong, nonatomic) NSMutableArray *doubleQuestions;
 @property (strong, nonatomic) NSString *gameTitle;
+@property (strong, nonatomic) NSString *gameDescription;
 
 -(id)init;
 -(void)addQuestionWithValue:(int)value atIndex:(int)index;

@@ -102,7 +102,7 @@
         
         self.doubleDailyDouble2 = arc4random() % [self.doubleQuestions count];
         
-    } while(self.doubleDailyDouble2 != self.doubleDailyDouble1);
+    } while(self.doubleDailyDouble2 == self.doubleDailyDouble1);
     
 }
 

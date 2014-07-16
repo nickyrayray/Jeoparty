@@ -31,6 +31,8 @@
 {
     [super viewDidLoad];
     [self.questionDisplay setTitle:self.question.question forState:UIControlStateNormal];
+    self.navigationItem.title = @"Selected Question";
+    [self.navigationController setNavigationBarHidden:YES];
     
 }
 

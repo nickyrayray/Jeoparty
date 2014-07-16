@@ -42,7 +42,6 @@
     
     UIButton *current;
     
-    
     if([self.mode isEqualToString:@"doubleJPrep"]){
         
         for(int i = 0; i < self.questionPanels.count; i++){
@@ -107,9 +106,12 @@
         
         for(int i = 0; i < self.categoryPanels.count; i++){
             current = self.categoryPanels[i];
-            [current setUserInteractionEnabled:NO];
+            current.showsTouchWhenHighlighted = NO;
             [current setTitle:cats[i] forState:UIControlStateNormal];
         }
+    } else {
+        self.navigationItem.title = @"Main Board: Edit Mode";
+        [self.navigationController setNavigationBarHidden:NO];
     }
     
 }
@@ -139,9 +141,8 @@
         [questionPanel setTitle:[NSString stringWithFormat:@"$%d", question.value] forState:UIControlStateNormal];
     }
     
-    [questionEditVC dismissViewControllerAnimated:YES completion:^{
-        [self updateUI];
-    }];
+    [self updateUI];
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 
@@ -158,9 +159,8 @@
     
     [catPanel setTitle:category forState:UIControlStateNormal];
     
-    [catEditVC dismissViewControllerAnimated:YES completion:^{
-        [self updateUI];
-    }];
+    [self updateUI];
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 
@@ -221,14 +221,14 @@
         NRFQuestionEditViewController *questionEditVC = [[NRFQuestionEditViewController alloc] initWithQuestion:question];
         questionEditVC.delegate = self;
         
-        [self presentViewController:questionEditVC animated:YES completion:nil];
+        [self.navigationController pushViewController:questionEditVC animated:YES];
         
     } else {
         
         NRFQuestionViewController *questionVC = [[NRFQuestionViewController alloc] initWithQuestion:question];
         questionVC.delegate = self;
         
-        [self presentViewController:questionVC animated:NO completion:nil];
+        [self.navigationController pushViewController:questionVC animated:NO];
         
     }
     
@@ -249,10 +249,27 @@
         NRFCategoryEditViewController *catEditVC = [[NRFCategoryEditViewController alloc] initWithCat:categoryToEdit atIndex:index];
         catEditVC.delegate = self;
         
-        [self presentViewController:catEditVC animated:YES completion:nil];
+        [self.navigationController pushViewController:catEditVC animated:YES];
         
+    } else {
+        if([self.navigationController isNavigationBarHidden])
+            [self.navigationController setNavigationBarHidden:NO animated:YES];
+        else
+            [self.navigationController setNavigationBarHidden:YES animated:YES];
     }
     
+}
+
+-(BOOL)doesGameExist
+{
+    if([self.game.questions count] != 0)
+        return YES;
+    else
+        return NO;
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    if([self.navigationController.viewControllers indexOfObject:self] == NSNotFound)
+        [self.navigationController setNavigationBarHidden:YES];
 }
 
 
