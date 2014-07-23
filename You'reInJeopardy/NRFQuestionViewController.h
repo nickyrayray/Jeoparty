@@ -14,6 +14,7 @@
 @protocol NRFQuestionViewControllerDelegate <NSObject>
 
 -(void)questionViewController:(NRFQuestionViewController *)questionVC didFinishWithQuestion:(NRFQuestion *)question;
+-(void)questionViewControllerDidFinishTransition;
 
 @end
 
@@ -21,6 +22,7 @@
 
 @property (nonatomic) id<NRFQuestionViewControllerDelegate> delegate;
 
--(id)initWithQuestion:(NRFQuestion *)question;
+-(id)initWithQuestion:(NRFQuestion *)question isDailyDouble:(BOOL)isDailyDouble;
+-(id)initWithTransition:(NSString *)transitionMessage;
 
 @end

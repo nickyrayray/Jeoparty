@@ -32,6 +32,8 @@
 		3886A388194B9EBB005E3362 /* NRFQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886A386194B9EBB005E3362 /* NRFQuestionViewController.m */; };
 		3886A389194B9EBB005E3362 /* NRFQuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3886A387194B9EBB005E3362 /* NRFQuestionViewController.xib */; };
 		3886A38F195B761E005E3362 /* NRFOldGamesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886A38E195B761E005E3362 /* NRFOldGamesTableViewController.m */; };
+		38D2C4E5197F26CA00144155 /* NRFScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D2C4E3197F26CA00144155 /* NRFScoreViewController.m */; };
+		38D2C4E6197F26CA00144155 /* NRFScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D2C4E4197F26CA00144155 /* NRFScoreViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,9 @@
 		3886A387194B9EBB005E3362 /* NRFQuestionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NRFQuestionViewController.xib; sourceTree = "<group>"; };
 		3886A38D195B761E005E3362 /* NRFOldGamesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFOldGamesTableViewController.h; sourceTree = "<group>"; };
 		3886A38E195B761E005E3362 /* NRFOldGamesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFOldGamesTableViewController.m; sourceTree = "<group>"; };
+		38D2C4E2197F26CA00144155 /* NRFScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFScoreViewController.h; sourceTree = "<group>"; };
+		38D2C4E3197F26CA00144155 /* NRFScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFScoreViewController.m; sourceTree = "<group>"; };
+		38D2C4E4197F26CA00144155 /* NRFScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NRFScoreViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +124,9 @@
 				3886A36D194788C4005E3362 /* NRFMainBoardViewController.h */,
 				3886A36E194788C4005E3362 /* NRFMainBoardViewController.m */,
 				3886A36F194788C4005E3362 /* NRFMainBoardViewController.xib */,
+				38D2C4E2197F26CA00144155 /* NRFScoreViewController.h */,
+				38D2C4E3197F26CA00144155 /* NRFScoreViewController.m */,
+				38D2C4E4197F26CA00144155 /* NRFScoreViewController.xib */,
 				3886A380194A63F0005E3362 /* NRFCategoryEditViewController.h */,
 				3886A381194A63F0005E3362 /* NRFCategoryEditViewController.m */,
 				3886A382194A63F0005E3362 /* NRFCategoryEditViewController.xib */,
@@ -295,6 +303,7 @@
 				3886A3441947863D005E3362 /* InfoPlist.strings in Resources */,
 				3886A384194A63F0005E3362 /* NRFCategoryEditViewController.xib in Resources */,
 				3886A389194B9EBB005E3362 /* NRFQuestionViewController.xib in Resources */,
+				38D2C4E6197F26CA00144155 /* NRFScoreViewController.xib in Resources */,
 				3846AE54196CDABC002B97AB /* NRFMainMenuViewController.xib in Resources */,
 				3886A34C1947863D005E3362 /* Images.xcassets in Resources */,
 				3886A37C19495C80005E3362 /* NRFQuestionEditViewController.xib in Resources */,
@@ -324,6 +333,7 @@
 				3886A37B19495C80005E3362 /* NRFQuestionEditViewController.m in Sources */,
 				3886A37419478E0C005E3362 /* NRFQuestion.m in Sources */,
 				3886A34A1947863D005E3362 /* NRFAppDelegate.m in Sources */,
+				38D2C4E5197F26CA00144155 /* NRFScoreViewController.m in Sources */,
 				3886A383194A63F0005E3362 /* NRFCategoryEditViewController.m in Sources */,
 				3886A38F195B761E005E3362 /* NRFOldGamesTableViewController.m in Sources */,
 			);

@@ -12,10 +12,14 @@
 
 @property (strong, nonatomic) NSString *mode;
 @property int questionsRemaining;
+@property BOOL transitioningToDouble;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *categoryPanels;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *questionPanels;
+
+
+
 
 @end
 
@@ -31,6 +35,7 @@
             self.game = game;
         
         self.mode = mode;
+        self.transitioningToDouble = NO;
     }
     return self;
 }
@@ -178,9 +183,16 @@
     [buttonToDisable setUserInteractionEnabled:NO];
     [buttonToDisable setTitle:@"" forState:UIControlStateNormal];
     
-    [questionVC dismissViewControllerAnimated:NO completion:^{
-        [self updateUI];
-    }];
+    [self.navigationController popViewControllerAnimated:NO];
+    [self updateUI];
+    
+}
+
+-(void)questionViewControllerDidFinishTransition{
+    
+    self.transitioningToDouble = YES;
+    [self.navigationController popViewControllerAnimated:NO];
+    [self.navigationController popViewControllerAnimated:NO];
     
 }
 
@@ -194,13 +206,12 @@
     
     /*else if([self.mode isEqualToString:@"doubleJPrep"] && [self.game isDoneWithDouble]){
         NRFMainBoardViewController *regJRoundMBVC = [[NRFMainBoardViewController alloc] initWithGame:self.game inMode:@"regJ"];
-        [self presentViewController:regJRoundMBVC animated:YES completion:nil];
-    } else if ([self.mode isEqualToString:@"regJ"] && [self.game isDoneWithRegRound]){
-        NRFMainBoardViewController *doubleJroundMBVC = [[NRFMainBoardViewController alloc] initWithGame:self.game inMode:@"doubleJ"];
-        [self presentViewController:doubleJroundMBVC animated:YES completion:nil];
-    }
-     */
-        
+        [self presentViewController:regJRoundMBVC animated:YES completion:nil];*/
+      else if ([self.mode isEqualToString:@"regJ"] && [self.game isDoneWithRegRound]){
+          NRFQuestionViewController *questionVC = [[NRFQuestionViewController alloc] initWithTransition:@"Ready For Double Jeopardy?"];
+          questionVC.delegate = self;
+          [self.navigationController pushViewController:questionVC animated:NO];
+      }
     
 }
 
@@ -208,6 +219,7 @@
 - (IBAction)choseQuestionPanel:(UIButton *)sender {
         
     NRFQuestion *question;
+    
     int index = [self.questionPanels indexOfObject:sender];
         
     if([self.mode isEqualToString:@"regJPrep"] || [self.mode isEqualToString:@"regJ"])
@@ -216,7 +228,7 @@
         question  = [self.game getDoubleQuestionAtIndex:index];
     
     
-    if([self.mode isEqualToString:@"regJPrep"] || [self.mode isEqualToString:@"doubleJPrep"]){
+    if(![self wePlayin]){
         
         NRFQuestionEditViewController *questionEditVC = [[NRFQuestionEditViewController alloc] initWithQuestion:question];
         questionEditVC.delegate = self;
@@ -225,7 +237,18 @@
         
     } else {
         
-        NRFQuestionViewController *questionVC = [[NRFQuestionViewController alloc] initWithQuestion:question];
+        NRFQuestionViewController *questionVC;
+        if([self.mode isEqualToString:@"regJ"]){
+            if([self.game questionIsDailyDouble:index forMode:@"regJ"])
+                questionVC = [[NRFQuestionViewController alloc] initWithQuestion:question isDailyDouble:YES];
+            else
+                questionVC = [[NRFQuestionViewController alloc] initWithQuestion:question isDailyDouble:NO];
+        } else {
+            if([self.game questionIsDailyDouble:index forMode:@"doubleJ"])
+                questionVC = [[NRFQuestionViewController alloc] initWithQuestion:question isDailyDouble:YES];
+            else
+                questionVC = [[NRFQuestionViewController alloc] initWithQuestion:question isDailyDouble:NO];
+        }
         questionVC.delegate = self;
         
         [self.navigationController pushViewController:questionVC animated:NO];
@@ -270,8 +293,16 @@
 -(void)viewWillDisappear:(BOOL)animated{
     if([self.navigationController.viewControllers indexOfObject:self] == NSNotFound)
         [self.navigationController setNavigationBarHidden:YES];
+    else
+        [super viewWillDisappear:animated];
 }
 
+-(void)viewDidDisappear:(BOOL)animated{
+    if(self.transitioningToDouble){
+        NRFMainBoardViewController *doubleJ = [[NRFMainBoardViewController alloc] initWithGame:self.game inMode:@"doubleJ"];
+        [self.navigationController pushViewController:doubleJ animated:NO];
+    }
+}
 
 
 

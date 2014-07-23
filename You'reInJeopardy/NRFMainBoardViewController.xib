@@ -7,43 +7,42 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NRFMainBoardViewController">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="questionPanels" destination="TLz-fY-IIa" id="caE-T8-cAh"/>
                 <outletCollection property="categoryPanels" destination="kRZ-yN-O3R" id="A9o-aU-XwB"/>
-                <outletCollection property="questionPanels" destination="6Yh-fF-xXe" id="9yJ-gy-AnT"/>
                 <outletCollection property="categoryPanels" destination="zHL-YT-Aha" id="Zdb-ZI-5EO"/>
                 <outletCollection property="categoryPanels" destination="ji6-kf-d5C" id="WuM-1u-3Vl"/>
                 <outletCollection property="categoryPanels" destination="RHg-ea-JnQ" id="oDf-iZ-gmp"/>
                 <outletCollection property="categoryPanels" destination="Bss-wT-beZ" id="LPv-u2-Qnu"/>
                 <outletCollection property="categoryPanels" destination="SGA-yq-u5X" id="xMt-G5-scE"/>
-                <outletCollection property="questionPanels" destination="z9S-F3-ohl" id="4X7-gi-0q6"/>
-                <outletCollection property="questionPanels" destination="HOn-xb-uZj" id="yDQ-s6-EIz"/>
-                <outletCollection property="questionPanels" destination="nex-Vz-3Sg" id="h43-LK-XCB"/>
-                <outletCollection property="questionPanels" destination="lAx-2z-oZC" id="bfp-Aj-NYu"/>
-                <outletCollection property="questionPanels" destination="bUI-gc-iE8" id="668-pq-BNv"/>
-                <outletCollection property="questionPanels" destination="RNu-zF-MSz" id="hlO-W1-zDY"/>
-                <outletCollection property="questionPanels" destination="Zsc-ab-S8w" id="jmU-bM-03i"/>
-                <outletCollection property="questionPanels" destination="ld1-ei-5i1" id="M48-oZ-NVH"/>
-                <outletCollection property="questionPanels" destination="YCR-2D-ui6" id="Ggg-Uh-j4g"/>
-                <outletCollection property="questionPanels" destination="7rd-Q8-dJc" id="zJb-B8-YaK"/>
-                <outletCollection property="questionPanels" destination="wfq-3s-glR" id="BuA-97-8L7"/>
-                <outletCollection property="questionPanels" destination="VZ1-jc-B7i" id="Jz3-gG-b05"/>
-                <outletCollection property="questionPanels" destination="cvy-4X-ycl" id="MkN-mr-scM"/>
-                <outletCollection property="questionPanels" destination="oly-1N-d0G" id="rUL-E6-rgi"/>
-                <outletCollection property="questionPanels" destination="FFj-ph-fNF" id="zrH-d1-fAy"/>
-                <outletCollection property="questionPanels" destination="iFv-nd-DWk" id="1So-AF-6rq"/>
-                <outletCollection property="questionPanels" destination="Kiu-oI-N2N" id="59g-wY-Ssv"/>
-                <outletCollection property="questionPanels" destination="7cf-1w-eAn" id="Zja-Mm-i07"/>
-                <outletCollection property="questionPanels" destination="o4g-6L-U2S" id="tGr-M8-F5K"/>
-                <outletCollection property="questionPanels" destination="kPy-SI-JtL" id="duF-dk-e0l"/>
-                <outletCollection property="questionPanels" destination="JJW-Zd-2Ow" id="jdO-xF-ySB"/>
-                <outletCollection property="questionPanels" destination="NDS-3Q-Oap" id="46x-gT-mE7"/>
-                <outletCollection property="questionPanels" destination="nRQ-G2-rBb" id="vEU-Tc-9RA"/>
-                <outletCollection property="questionPanels" destination="ylp-Gn-kcb" id="u9T-8d-3IA"/>
-                <outletCollection property="questionPanels" destination="01K-E7-YL0" id="zqf-kH-db4"/>
-                <outletCollection property="questionPanels" destination="KwD-eB-Ggc" id="Zgt-ms-Ol9"/>
-                <outletCollection property="questionPanels" destination="1Y0-Zq-w11" id="F49-a8-Ggx"/>
-                <outletCollection property="questionPanels" destination="qyB-mW-6kf" id="izv-gc-CZ8"/>
-                <outletCollection property="questionPanels" destination="QUG-Ok-vTu" id="HeV-L8-MOK"/>
+                <outletCollection property="questionPanels" destination="6Yh-fF-xXe" id="pKC-BZ-iLj"/>
+                <outletCollection property="questionPanels" destination="z9S-F3-ohl" id="wJB-ad-PIw"/>
+                <outletCollection property="questionPanels" destination="HOn-xb-uZj" id="5RX-W1-quj"/>
+                <outletCollection property="questionPanels" destination="nex-Vz-3Sg" id="Bxj-1e-8F3"/>
+                <outletCollection property="questionPanels" destination="lAx-2z-oZC" id="yh1-4P-QHy"/>
+                <outletCollection property="questionPanels" destination="bUI-gc-iE8" id="5Km-1k-J2z"/>
+                <outletCollection property="questionPanels" destination="RNu-zF-MSz" id="nVh-MH-94K"/>
+                <outletCollection property="questionPanels" destination="Zsc-ab-S8w" id="bhe-iF-adG"/>
+                <outletCollection property="questionPanels" destination="ld1-ei-5i1" id="gao-A2-VLo"/>
+                <outletCollection property="questionPanels" destination="YCR-2D-ui6" id="ITv-OI-kxM"/>
+                <outletCollection property="questionPanels" destination="7rd-Q8-dJc" id="8jU-a5-tkf"/>
+                <outletCollection property="questionPanels" destination="wfq-3s-glR" id="Sh6-Y4-ysL"/>
+                <outletCollection property="questionPanels" destination="VZ1-jc-B7i" id="xBP-Kc-TTF"/>
+                <outletCollection property="questionPanels" destination="cvy-4X-ycl" id="PTf-6Y-US7"/>
+                <outletCollection property="questionPanels" destination="oly-1N-d0G" id="g1t-i2-6Wg"/>
+                <outletCollection property="questionPanels" destination="FFj-ph-fNF" id="NXI-zW-tNK"/>
+                <outletCollection property="questionPanels" destination="iFv-nd-DWk" id="hKD-Aj-SEA"/>
+                <outletCollection property="questionPanels" destination="Kiu-oI-N2N" id="La0-bG-20q"/>
+                <outletCollection property="questionPanels" destination="7cf-1w-eAn" id="8E2-07-XYz"/>
+                <outletCollection property="questionPanels" destination="o4g-6L-U2S" id="YyS-gk-TPE"/>
+                <outletCollection property="questionPanels" destination="kPy-SI-JtL" id="25P-bt-6kK"/>
+                <outletCollection property="questionPanels" destination="JJW-Zd-2Ow" id="Wsh-lu-dQ4"/>
+                <outletCollection property="questionPanels" destination="NDS-3Q-Oap" id="mYm-Gl-Ole"/>
+                <outletCollection property="questionPanels" destination="nRQ-G2-rBb" id="y84-sq-i1X"/>
+                <outletCollection property="questionPanels" destination="ylp-Gn-kcb" id="bvA-8u-W5R"/>
+                <outletCollection property="questionPanels" destination="01K-E7-YL0" id="yGT-fA-mup"/>
+                <outletCollection property="questionPanels" destination="KwD-eB-Ggc" id="llq-Of-gNB"/>
+                <outletCollection property="questionPanels" destination="1Y0-Zq-w11" id="VTR-Am-ST9"/>
+                <outletCollection property="questionPanels" destination="qyB-mW-6kf" id="bFk-hq-MhM"/>
+                <outletCollection property="questionPanels" destination="QUG-Ok-vTu" id="ubZ-zZ-mB6"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -483,35 +482,6 @@
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
-        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3F0-sD-cjD">
-            <rect key="frame" x="0.0" y="0.0" width="192" height="167"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <state key="normal" image="Square">
-                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-            </state>
-        </button>
-        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" id="TLz-fY-IIa">
-            <rect key="frame" x="0.0" y="0.0" width="164" height="124"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-            <state key="normal" title="$200" backgroundImage="Square">
-                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-            </state>
-            <connections>
-                <action selector="choseQuestionPanel:" destination="-1" eventType="touchUpInside" id="Iqp-Mk-sOa"/>
-            </connections>
-        </button>
-        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" id="QnP-1a-pjc">
-            <rect key="frame" x="0.0" y="0.0" width="164" height="114"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <state key="normal" title="Select Category" backgroundImage="Square">
-                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-            </state>
-            <connections>
-                <action selector="choseCategoryPanel:" destination="-1" eventType="touchUpInside" id="PeU-1l-9MG"/>
-            </connections>
-        </button>
     </objects>
     <resources>
         <image name="Square" width="341" height="341"/>

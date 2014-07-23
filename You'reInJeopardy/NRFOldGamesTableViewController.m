@@ -109,6 +109,7 @@
     NRFJeopardyGame *gameSelected = self.games[indexPath.row];
     if([self isInEditMode]){
         NRFMainBoardViewController *editBoard = [[NRFMainBoardViewController alloc] initWithGame:gameSelected inMode:@"regJPrep"];
+        [self.navigationController pushViewController:editBoard animated:YES];
     } else {
         NRFMainBoardViewController *playBoard = [[NRFMainBoardViewController alloc] initWithGame:gameSelected inMode:@"regJ"];
         [self.navigationController pushViewController:playBoard animated:YES];
