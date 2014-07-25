@@ -196,6 +196,18 @@
     return YES;
 }
 
++(NRFJeopardyGame *)makeCopyOfGame:(NRFJeopardyGame *)gameToCopy
+{
+    NRFJeopardyGame *playableGame = [[NRFJeopardyGame alloc] init];
+    playableGame.categories = [[NSMutableArray alloc] initWithArray:gameToCopy.categories copyItems:YES];
+    playableGame.doubleCategories = [[NSMutableArray alloc] initWithArray:gameToCopy.doubleCategories copyItems:YES];
+    playableGame.questions = [[NSMutableArray alloc] initWithArray:gameToCopy.questions copyItems:YES];
+    playableGame.doubleQuestions = [[NSMutableArray alloc] initWithArray:gameToCopy.doubleQuestions copyItems:YES];
+    playableGame.gameDescription = [NSString stringWithString:gameToCopy.gameDescription];
+    playableGame.gameTitle = [NSString stringWithString:gameToCopy.gameTitle];
+    return playableGame;
+}
+
 
 
 

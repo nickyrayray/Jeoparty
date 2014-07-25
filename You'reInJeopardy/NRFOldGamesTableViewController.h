@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NRFScoreViewController.h"
 
-@interface NRFOldGamesTableViewController : UITableViewController
+@interface NRFOldGamesTableViewController : UITableViewController<NRFScoreViewControllerDelegate>
 
 -(id)initInMode:(NSString *)mode;
 

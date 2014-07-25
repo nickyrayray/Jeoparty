@@ -20,6 +20,9 @@
 @property int contestantOneScore;
 @property int contestantTwoScore;
 @property int contestantThreeScore;
+@property NSString *contestantOneName;
+@property NSString *contestantTwoName;
+@property NSString *contestantThreeName;
 
 -(id)init;
 -(void)addQuestionWithValue:(int)value atIndex:(int)index;
@@ -41,5 +44,6 @@
 -(NRFQuestion *)getQuestionAtIndex:(int)index;
 -(NSString *)getCatAtIndex:(int)index;
 -(NSString *)getDoubleCatAtIndex:(int)index;
++(NRFJeopardyGame *)makeCopyOfGame:(NRFJeopardyGame *)gameToCopy;
 
 @end

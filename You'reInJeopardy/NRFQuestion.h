@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NRFQuestion : NSObject
+@interface NRFQuestion : NSObject<NSCopying>
 
 @property (strong, nonatomic) NSString *question;
 @property (strong, nonatomic) NSString *answer;

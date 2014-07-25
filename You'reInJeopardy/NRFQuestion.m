@@ -48,4 +48,17 @@
         return YES;
 }
 
+-(id)copyWithZone:(NSZone *)zone{
+    
+    int value = self.value;
+    BOOL chosen = self.chosen;
+    NSString *question = [NSString stringWithString:self.question];
+    NSString *answer = [NSString stringWithString:self.answer];
+    NRFQuestion *newQuestion = [[NRFQuestion allocWithZone:zone] initQuestion:question withValue:value andAnswer:answer];
+    if(newQuestion)
+        newQuestion.chosen = chosen;
+    return newQuestion;
+    
+}
+
 @end

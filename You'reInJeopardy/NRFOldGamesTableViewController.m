@@ -111,10 +111,22 @@
         NRFMainBoardViewController *editBoard = [[NRFMainBoardViewController alloc] initWithGame:gameSelected inMode:@"regJPrep"];
         [self.navigationController pushViewController:editBoard animated:YES];
     } else {
-        NRFMainBoardViewController *playBoard = [[NRFMainBoardViewController alloc] initWithGame:gameSelected inMode:@"regJ"];
-        [self.navigationController pushViewController:playBoard animated:YES];
+        NRFJeopardyGame *playableGame = [NRFJeopardyGame makeCopyOfGame:gameSelected];
+        NRFScoreViewController *scoreVC = [[NRFScoreViewController alloc] initWithGame:playableGame inInitializeMode:YES];
+        scoreVC.delegate = self;
+        [self.navigationController pushViewController:scoreVC animated:YES];
     }
     
+}
+
+-(void)scoreVCDidFinishWithGame:(NRFJeopardyGame *)game{
+    [self.navigationController popViewControllerAnimated:NO];
+    NRFMainBoardViewController *playBoard = [[NRFMainBoardViewController alloc] initWithGame:game inMode:@"regJ"];
+    [self.navigationController pushViewController:playBoard animated:YES];
+}
+
+-(void)scoreVCDidFinish{
+    return;
 }
 
 -(BOOL)isInEditMode{

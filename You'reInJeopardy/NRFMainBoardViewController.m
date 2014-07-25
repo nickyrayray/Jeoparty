@@ -240,14 +240,14 @@
         NRFQuestionViewController *questionVC;
         if([self.mode isEqualToString:@"regJ"]){
             if([self.game questionIsDailyDouble:index forMode:@"regJ"])
-                questionVC = [[NRFQuestionViewController alloc] initWithQuestion:question isDailyDouble:YES];
+                questionVC = [[NRFQuestionViewController alloc] initWithQuestion:question andGame:self.game isDailyDouble:YES];
             else
-                questionVC = [[NRFQuestionViewController alloc] initWithQuestion:question isDailyDouble:NO];
+                questionVC = [[NRFQuestionViewController alloc] initWithQuestion:question andGame:self.game isDailyDouble:NO];
         } else {
             if([self.game questionIsDailyDouble:index forMode:@"doubleJ"])
-                questionVC = [[NRFQuestionViewController alloc] initWithQuestion:question isDailyDouble:YES];
+                questionVC = [[NRFQuestionViewController alloc] initWithQuestion:question andGame:self.game isDailyDouble:YES];
             else
-                questionVC = [[NRFQuestionViewController alloc] initWithQuestion:question isDailyDouble:NO];
+                questionVC = [[NRFQuestionViewController alloc] initWithQuestion:question andGame:self.game isDailyDouble:NO];
         }
         questionVC.delegate = self;
         

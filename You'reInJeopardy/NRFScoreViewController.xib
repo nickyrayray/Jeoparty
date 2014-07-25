@@ -21,6 +21,7 @@
                 <outlet property="contestantTwoName" destination="2OY-xU-lnV" id="cpR-ck-mgM"/>
                 <outlet property="contestantTwoPlus" destination="UTy-do-Tym" id="c4F-QJ-O9c"/>
                 <outlet property="contestantTwoScore" destination="JBW-H9-yUi" id="l4Y-dz-0di"/>
+                <outlet property="navAppearDisappearButton" destination="xXR-nU-pSW" id="tfS-Tl-INq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -166,14 +167,14 @@
                                 <action selector="contestantThreeMinusButtonPressed:" destination="-1" eventType="touchUpInside" id="2ta-b8-i1x"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXR-nU-pSW">
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXR-nU-pSW">
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="74"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button">
+                            <state key="normal">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wLA-ja-8wP">
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wLA-ja-8wP">
                             <rect key="frame" x="80" y="670" width="181" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -182,6 +183,9 @@
                                 <segment title="$10"/>
                                 <segment title="$100"/>
                             </segments>
+                            <connections>
+                                <action selector="contestantOneIncrementValueSelected:" destination="-1" eventType="valueChanged" id="xeE-hg-cjV"/>
+                            </connections>
                         </segmentedControl>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jHl-iF-tFY">
                             <rect key="frame" x="422" y="663" width="181" height="29"/>
@@ -192,6 +196,9 @@
                                 <segment title="$10"/>
                                 <segment title="$100"/>
                             </segments>
+                            <connections>
+                                <action selector="contestantTwoIncrementValueSelected:" destination="-1" eventType="valueChanged" id="cPq-Px-uN6"/>
+                            </connections>
                         </segmentedControl>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gP8-pj-WkD">
                             <rect key="frame" x="763" y="663" width="181" height="29"/>
@@ -202,6 +209,9 @@
                                 <segment title="$10"/>
                                 <segment title="$100"/>
                             </segments>
+                            <connections>
+                                <action selector="contestantThreeIncrementValueSelected:" destination="-1" eventType="valueChanged" id="ZY7-Np-2Tg"/>
+                            </connections>
                         </segmentedControl>
                     </subviews>
                 </scrollView>

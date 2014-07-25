@@ -7,10 +7,12 @@
 //
 
 #import "NRFQuestionViewController.h"
+#import "NRFScoreViewController.h"
 
 @interface NRFQuestionViewController ()
 
 @property (strong, nonatomic) NRFQuestion *question;
+@property (strong, nonatomic) NRFJeopardyGame *game;
 @property (weak, nonatomic) IBOutlet UIButton *questionDisplay;
 @property (weak, nonatomic) UIButton *dailyDouble;
 @property BOOL isDailyDouble;
@@ -22,7 +24,7 @@
 
 @implementation NRFQuestionViewController
 
-- (id)initWithQuestion:(NRFQuestion *)question isDailyDouble:(BOOL)isDailyDouble
+- (id)initWithQuestion:(NRFQuestion *)question andGame:(NRFJeopardyGame *)game isDailyDouble:(BOOL)isDailyDouble
 {
     if(isDailyDouble){
         self = [super init];
@@ -32,6 +34,7 @@
     if (self) {
         self.question = question;
         self.isDailyDouble = isDailyDouble;
+        self.game = game;
     }
     return self;
 }
@@ -79,16 +82,24 @@
 
 - (IBAction)questionAnswered:(id)sender {
     
+    NRFScoreViewController *scoreVC = [[NRFScoreViewController alloc] initWithGame:self.game andQuestion:self.question];
+    scoreVC.delegate = self;
+    [self.navigationController pushViewController:scoreVC animated:NO];
+    
+}
+
+-(void)scoreVCDidFinish{
     if(self.isTransition)
         [self.delegate questionViewControllerDidFinishTransition];
     else
         [self.delegate questionViewController:self didFinishWithQuestion:self.question];
-    
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
     if(self.dailyDouble){
-        NRFQuestionViewController *questionVC = [[NRFQuestionViewController alloc] initWithQuestion:self.question isDailyDouble:NO];
+        NRFQuestionViewController *questionVC = [[NRFQuestionViewController alloc] initWithQuestion:self.question
+                                                                                            andGame:self.game
+                                                                                      isDailyDouble:NO];
         questionVC.delegate = self.delegate;
         [self.navigationController pushViewController:questionVC animated:NO];
     } else {

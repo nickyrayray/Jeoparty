@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NRFQuestion.h"
+#import "NRFScoreViewController.h"
 
 @class NRFQuestionViewController;
 
@@ -18,11 +19,11 @@
 
 @end
 
-@interface NRFQuestionViewController : UIViewController
+@interface NRFQuestionViewController : UIViewController<NRFScoreViewControllerDelegate>
 
 @property (nonatomic) id<NRFQuestionViewControllerDelegate> delegate;
 
--(id)initWithQuestion:(NRFQuestion *)question isDailyDouble:(BOOL)isDailyDouble;
+-(id)initWithQuestion:(NRFQuestion *)question andGame:(NRFJeopardyGame *)game isDailyDouble:(BOOL)isDailyDouble;
 -(id)initWithTransition:(NSString *)transitionMessage;
 
 @end

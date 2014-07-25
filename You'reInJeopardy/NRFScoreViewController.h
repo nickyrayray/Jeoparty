@@ -11,11 +11,16 @@
 
 @protocol NRFScoreViewControllerDelegate <NSObject>
 
+-(void)scoreVCDidFinish;
+-(void)scoreVCDidFinishWithGame:(NRFJeopardyGame *)game;
+
 @end
 
 @interface NRFScoreViewController : UIViewController
 
+@property (strong, nonatomic) id<NRFScoreViewControllerDelegate> delegate;
+
 -(id)initWithGame:(NRFJeopardyGame *)game andQuestion:(NRFQuestion *)question;
--(id)initWithGame:(NRFJeopardyGame *)game;
+-(id)initWithGame:(NRFJeopardyGame *)game inInitializeMode:(BOOL)isInInitializeMode;
 
 @end
