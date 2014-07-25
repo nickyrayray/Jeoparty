@@ -122,8 +122,10 @@
     self.game.contestantOneName = self.contestantOneName.text;
     self.game.contestantTwoName = self.contestantTwoName.text;
     self.game.contestantThreeName = self.contestantThreeName.text;
-    
-    [self.delegate scoreVCDidFinish];
+    if(self.isInInitializeMode)
+        [self.delegate scoreVCDidFinishWithGame:self.game];
+    else
+        [self.delegate scoreVCDidFinish];
 }
 
 -(NSString *)stringifyAndAddDollarSignToNumber:(int)number
@@ -198,6 +200,12 @@
         self.contestantThreeValueToAddOrSubtract = 10;
     else
         self.contestantThreeValueToAddOrSubtract = 100;
+}
+- (IBAction)topPressed:(id)sender {
+    if([self.navigationController isNavigationBarHidden])
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    else
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 
