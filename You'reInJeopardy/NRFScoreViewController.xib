@@ -6,14 +6,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NRFScoreViewController">
             <connections>
+                <outlet property="contestantOneIncrementValueSegment" destination="jHl-iF-tFY" id="FSX-VI-1Lc"/>
+                <outlet property="contestantOneMinus" destination="uoq-lu-ECh" id="rWd-fZ-wr4"/>
                 <outlet property="contestantOneName" destination="si7-w8-P4r" id="2bd-6D-nxg"/>
+                <outlet property="contestantOnePlus" destination="561-Hf-og5" id="z7c-PV-ufP"/>
                 <outlet property="contestantOneScore" destination="Z93-Ol-asG" id="Zwr-I9-mKY"/>
-                <outlet property="contestantOneScoreMinus" destination="uoq-lu-ECh" id="344-3Q-yix"/>
-                <outlet property="contestantOneScorePlus" destination="561-Hf-og5" id="GHx-WE-U4Q"/>
+                <outlet property="contestantThreeIncrementValueSegment" destination="gP8-pj-WkD" id="dCJ-OI-At3"/>
                 <outlet property="contestantThreeMinus" destination="vEt-fw-p0q" id="Dhl-a8-atK"/>
                 <outlet property="contestantThreeName" destination="0h9-ce-y67" id="aKt-N8-I6v"/>
                 <outlet property="contestantThreePlus" destination="c2K-j4-fjk" id="iUU-sl-b9r"/>
                 <outlet property="contestantThreeScore" destination="9ls-fG-f3G" id="2X8-Oe-4X0"/>
+                <outlet property="contestantTwoIncrementValueSegment" destination="jHl-iF-tFY" id="Xxq-Z9-CU4"/>
                 <outlet property="contestantTwoMinus" destination="LON-Ok-SeN" id="45u-BS-taS"/>
                 <outlet property="contestantTwoName" destination="2OY-xU-lnV" id="cpR-ck-mgM"/>
                 <outlet property="contestantTwoPlus" destination="UTy-do-Tym" id="c4F-QJ-O9c"/>
@@ -86,7 +89,7 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="561-Hf-og5">
-                            <rect key="frame" x="120" y="478" width="100" height="100"/>
+                            <rect key="frame" x="20" y="518" width="100" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.043625356413281399" green="0.71656334918478259" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="65"/>
@@ -94,9 +97,12 @@
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="contestantOnePlusButtonPressed:" destination="-1" eventType="touchUpInside" id="dXH-ch-f9V"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTy-do-Tym">
-                            <rect key="frame" x="465" y="478" width="100" height="100"/>
+                            <rect key="frame" x="362" y="518" width="100" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.043625356410000003" green="0.71656334919999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="65"/>
@@ -104,9 +110,12 @@
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="contestantTwoPlusButtonPressed:" destination="-1" eventType="touchUpInside" id="k3d-fv-PnR"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2K-j4-fjk">
-                            <rect key="frame" x="804" y="478" width="100" height="100"/>
+                            <rect key="frame" x="703" y="518" width="100" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.043625356410000003" green="0.71656334919999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="65"/>
@@ -114,9 +123,12 @@
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="contestantThreePlusButtonPressed:" destination="-1" eventType="touchUpInside" id="ldJ-1d-ZEK"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoq-lu-ECh">
-                            <rect key="frame" x="120" y="618" width="100" height="100"/>
+                            <rect key="frame" x="221" y="518" width="100" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.86873726222826086" green="0.03579487304020363" blue="0.14007123581245701" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="85"/>
@@ -124,9 +136,12 @@
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="contestantOneMinusButtonPressed:" destination="-1" eventType="touchUpInside" id="OLg-dT-KpQ"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LON-Ok-SeN">
-                            <rect key="frame" x="465" y="618" width="100" height="100"/>
+                            <rect key="frame" x="563" y="518" width="100" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.86873726220000003" green="0.035794873040000001" blue="0.1400712358" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="85"/>
@@ -134,9 +149,12 @@
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="contestantTwoMinusButtonPressed:" destination="-1" eventType="touchUpInside" id="pYf-oQ-PNw"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEt-fw-p0q">
-                            <rect key="frame" x="803" y="618" width="100" height="100"/>
+                            <rect key="frame" x="904" y="518" width="100" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.86873726220000003" green="0.035794873040000001" blue="0.1400712358" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="85"/>
@@ -144,6 +162,9 @@
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="contestantThreeMinusButtonPressed:" destination="-1" eventType="touchUpInside" id="2ta-b8-i1x"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXR-nU-pSW">
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="74"/>
@@ -152,17 +173,42 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wLA-ja-8wP">
+                            <rect key="frame" x="80" y="670" width="181" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <segments>
+                                <segment title="$1"/>
+                                <segment title="$10"/>
+                                <segment title="$100"/>
+                            </segments>
+                        </segmentedControl>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jHl-iF-tFY">
+                            <rect key="frame" x="422" y="663" width="181" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <segments>
+                                <segment title="$1"/>
+                                <segment title="$10"/>
+                                <segment title="$100"/>
+                            </segments>
+                        </segmentedControl>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gP8-pj-WkD">
+                            <rect key="frame" x="763" y="663" width="181" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <segments>
+                                <segment title="$1"/>
+                                <segment title="$10"/>
+                                <segment title="$100"/>
+                            </segments>
+                        </segmentedControl>
                     </subviews>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="0.10975981629999999" green="0.092322363759999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-        </view>
-        <view contentMode="scaleToFill" id="MU5-v8-ESj">
-            <rect key="frame" x="0.0" y="0.0" width="814" height="721"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
         </view>
     </objects>
 </document>

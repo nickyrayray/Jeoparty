@@ -17,6 +17,9 @@
 @property (strong, nonatomic) NSMutableArray *doubleQuestions;
 @property (strong, nonatomic) NSString *gameTitle;
 @property (strong, nonatomic) NSString *gameDescription;
+@property int contestantOneScore;
+@property int contestantTwoScore;
+@property int contestantThreeScore;
 
 -(id)init;
 -(void)addQuestionWithValue:(int)value atIndex:(int)index;
@@ -28,6 +31,8 @@
 -(void)setDailyDoubles;
 -(BOOL)dailyDoublesAreSet;
 -(BOOL)questionIsDailyDouble:(int)questionIndex forMode:(NSString *)mode;
+-(void)addToContestantScore:(int)contestantScore thisAmount:(int)amount;
+-(void)subtractFromContestantScore:(int)contestantScore thisAmount:(int)amount;
 -(BOOL)isDoneWithReg;
 -(BOOL)isDoneWithRegRound;
 -(BOOL)isDoneWithDouble;

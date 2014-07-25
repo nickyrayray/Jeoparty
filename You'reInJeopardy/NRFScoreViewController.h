@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NRFJeopardyGame.h"
 
 @protocol NRFScoreViewControllerDelegate <NSObject>
 
 @end
 
 @interface NRFScoreViewController : UIViewController
+
+-(id)initWithGame:(NRFJeopardyGame *)game andQuestion:(NRFQuestion *)question;
+-(id)initWithGame:(NRFJeopardyGame *)game;
 
 @end

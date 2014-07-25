@@ -30,6 +30,9 @@
         self.regDailyDouble = -1;
         self.doubleDailyDouble1 = -1;
         self.doubleDailyDouble2 = -1;
+        self.contestantOneScore = 0;
+        self.contestantTwoScore = 0;
+        self.contestantThreeScore = 0;
         
     }
     return self;
@@ -127,6 +130,16 @@
         else
             return NO;
     }
+}
+
+-(void)addToContestantScore:(int)contestantScore thisAmount:(int)amount
+{
+    contestantScore += amount;
+}
+
+-(void)subtractFromContestantScore:(int)contestantScore thisAmount:(int)amount
+{
+    contestantScore -= amount;
 }
 
 - (BOOL)isDoneWithReg
