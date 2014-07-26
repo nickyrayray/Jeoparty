@@ -38,6 +38,25 @@
     return self;
 }
 
+-(id)initWithCoder:(NSCoder *)decoder{
+    self = [super init];
+    if(self){
+        self.value = [[decoder decodeObjectForKey:@"value"] intValue];
+        self.chosen = [[decoder decodeObjectForKey:@"chosen"] boolValue];
+        self.answer = [decoder decodeObjectForKey:@"answer"];
+        self.question = [decoder decodeObjectForKey:@"question"];
+    }
+    return self;
+}
+
+-(void)encodeWithCoder:(NSCoder *)coder
+{
+    [coder encodeObject:self.question forKey:@"question"];
+    [coder encodeObject:self.answer forKey:@"answer"];
+    [coder encodeObject:[NSNumber numberWithInt:self.value] forKey:@"value"];
+    [coder encodeObject:[NSNumber numberWithBool:self.chosen] forKey:@"chosen"];
+}
+
 - (BOOL)isFinished
 {
     if([self.question isEqualToString:@""] || [self.answer isEqualToString:@""] || self.value == 0)

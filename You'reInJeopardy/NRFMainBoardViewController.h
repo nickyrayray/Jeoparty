@@ -12,7 +12,7 @@
 #import "NRFCategoryEditViewController.h"
 #import "NRFQuestionViewController.h"
 
-@interface NRFMainBoardViewController : UIViewController <NRFQuestionEditViewControllerDelegate, NRFCategoryEditViewControllerDelegate, NRFQuestionViewControllerDelegate>
+@interface NRFMainBoardViewController : UIViewController <NRFQuestionEditViewControllerDelegate, NRFCategoryEditViewControllerDelegate, NRFQuestionViewControllerDelegate, NRFScoreViewControllerDelegate>
 
 @property (strong, nonatomic)NRFJeopardyGame *game;
 

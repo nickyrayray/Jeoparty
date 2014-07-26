@@ -38,6 +38,53 @@
     return self;
 }
 
+-(id)initWithCoder:(NSCoder *)decoder
+{
+    self = [super init];
+    
+    if(self){
+        
+        self.questions = [[NSMutableArray alloc] initWithArray:[decoder decodeObjectForKey:@"questions"] copyItems:YES];
+        self.doubleQuestions = [[NSMutableArray alloc] initWithArray:[decoder decodeObjectForKey:@"doubleQuestions"] copyItems:YES];
+        self.categories = [[NSMutableArray alloc] initWithArray:[decoder decodeObjectForKey:@"categories"] copyItems:YES];
+        self.doubleCategories = [[NSMutableArray alloc] initWithArray:[decoder decodeObjectForKey:@"doubleCategories"] copyItems:YES];
+        self.regDailyDouble = [[decoder decodeObjectForKey:@"regDailyDouble"] intValue];
+        self.doubleDailyDouble1 = [[decoder decodeObjectForKey:@"doubleDailyDouble1"] intValue];
+        self.doubleDailyDouble2 = [[decoder decodeObjectForKey:@"doubleDailyDouble2"] intValue];
+        self.contestantOneScore = [[decoder decodeObjectForKey:@"contestantOneScore"] intValue];
+        self.contestantTwoScore = [[decoder decodeObjectForKey:@"contestantTwoScore"] intValue];
+        self.contestantThreeScore = [[decoder decodeObjectForKey:@"contestantThreeScore"] intValue];
+        self.contestantOneName = [decoder decodeObjectForKey:@"contestantOneName"];
+        self.contestantTwoName = [decoder decodeObjectForKey:@"contestantTwoName"];
+        self.contestantThreeName = [decoder decodeObjectForKey:@"contestantThreeName"];
+        self.gameTitle = [decoder decodeObjectForKey:@"gameTitle"];
+        self.gameDescription = [decoder decodeObjectForKey:@"gameDescription"];
+        
+    }
+    
+    return self;
+    
+}
+
+-(void)encodeWithCoder:(NSCoder *)coder
+{
+    [coder encodeObject:self.questions forKey:@"questions"];
+    [coder encodeObject:self.doubleQuestions forKey:@"doubleQuestions"];
+    [coder encodeObject:self.categories forKey:@"categories"];
+    [coder encodeObject:self.doubleCategories forKey:@"doubleCategories"];
+    [coder encodeObject:[NSNumber numberWithInt:self.regDailyDouble] forKey:@"regDailyDouble"];
+    [coder encodeObject:[NSNumber numberWithInt:self.doubleDailyDouble1] forKey:@"doubleDailyDouble1"];
+    [coder encodeObject:[NSNumber numberWithInt:self.doubleDailyDouble2] forKey:@"doubleDailyDouble2"];
+    [coder encodeObject:[NSNumber numberWithInt:self.contestantOneScore] forKey:@"contestantOneScore"];
+    [coder encodeObject:[NSNumber numberWithInt:self.contestantTwoScore] forKey:@"contestantTwoScore"];
+    [coder encodeObject:[NSNumber numberWithInt:self.contestantThreeScore] forKey:@"contestantThreeScore"];
+    [coder encodeObject:self.contestantOneName forKey:@"contestantOneName"];
+    [coder encodeObject:self.contestantTwoName forKey:@"contestantTwoName"];
+    [coder encodeObject:self.contestantThreeName forKey:@"contestantThreeName"];
+    [coder encodeObject:self.gameTitle forKey:@"gameTitle"];
+    [coder encodeObject:self.gameDescription forKey:@"gameDescription"];
+}
+
 -(void) addQuestionWithValue:(int)value atIndex:(int)index
 {
     

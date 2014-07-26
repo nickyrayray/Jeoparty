@@ -83,6 +83,8 @@
 {
     [super viewDidLoad];
     
+    [self.navigationController setNavigationBarHidden:NO];
+    
     if(!self.isInEditMode){
         [self.contestantOneIncrementValueSegment setHidden:YES];
         [self.contestantTwoIncrementValueSegment setHidden:YES];
@@ -122,6 +124,7 @@
     self.game.contestantOneName = self.contestantOneName.text;
     self.game.contestantTwoName = self.contestantTwoName.text;
     self.game.contestantThreeName = self.contestantThreeName.text;
+    [self.navigationController setNavigationBarHidden:YES];
     if(self.isInInitializeMode)
         [self.delegate scoreVCDidFinishWithGame:self.game];
     else

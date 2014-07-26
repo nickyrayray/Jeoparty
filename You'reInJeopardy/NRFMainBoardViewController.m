@@ -114,6 +114,17 @@
             current.showsTouchWhenHighlighted = NO;
             [current setTitle:cats[i] forState:UIControlStateNormal];
         }
+        
+        UIBarButtonItem *editScores = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
+                                                                                    target:self
+                                                                                    action:@selector(editButtonPressed:)];
+        editScores.title = @"Edit Scores";
+        self.navigationItem.rightBarButtonItem = editScores;
+        
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+                                                                                    target:self
+                                                                                    action:@selector(saveButtonPressed:)];
+        self.navigationItem.leftBarButtonItem = saveButton;
     } else {
         self.navigationItem.title = @"Main Board: Edit Mode";
         [self.navigationController setNavigationBarHidden:NO];
@@ -121,11 +132,22 @@
     
 }
 
+-(void)editButtonPressed:(id)sender
+{
+    NRFScoreViewController *scoreVC = [[NRFScoreViewController alloc] initWithGame:self.game inInitializeMode:NO];
+    scoreVC.delegate = self;
+    [self.navigationController pushViewController:scoreVC animated:YES];
+}
+
 -(BOOL)wePlayin{
     if([self.mode isEqualToString:@"regJ"] || [self.mode isEqualToString:@"doubleJ"])
         return YES;
     else
         return NO;
+}
+
+-(void)scoreVCDidFinish{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void) questionEditViewController:(NRFQuestionEditViewController *)questionEditVC didFinishWithQuestion:(NRFQuestion *)question

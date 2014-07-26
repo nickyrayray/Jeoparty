@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "NRFQuestion.h"
 
-@interface NRFJeopardyGame : NSObject
+@interface NRFJeopardyGame : NSObject<NSCoding>
 
 @property (strong, nonatomic) NSMutableArray *categories;
 @property (strong, nonatomic) NSMutableArray *doubleCategories;

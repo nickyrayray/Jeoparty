@@ -12,6 +12,8 @@
 
 @interface NRFMainMenuViewController ()
 
+@property (strong, nonatomic) NSMutableArray *games;
+
 @end
 
 @implementation NRFMainMenuViewController
@@ -20,6 +22,7 @@
 {
     self = [super initWithNibName:@"NRFMainMenuViewController" bundle:nil];
     if (self) {
+        
     }
     return self;
 }
