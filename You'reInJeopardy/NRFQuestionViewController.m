@@ -12,7 +12,7 @@
 @interface NRFQuestionViewController ()
 
 @property (strong, nonatomic) NRFQuestion *question;
-@property (strong, nonatomic) NRFJeopardyGame *game;
+@property (strong, nonatomic) NRFJeopardyGamePlayable *game;
 @property (weak, nonatomic) IBOutlet UIButton *questionDisplay;
 @property (weak, nonatomic) UIButton *dailyDouble;
 @property BOOL isDailyDouble;
@@ -61,6 +61,7 @@
         UIImage *buttonImage = [UIImage imageNamed:@"DailyDouble.png"];
         [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [button addTarget:self action:@selector(dailyDoublePressed:) forControlEvents:UIControlEventTouchUpInside];
+        [button setAdjustsImageWhenHighlighted:NO];
         [self.view addSubview:button];
         self.dailyDouble = button;
     } else if(self.isTransition){

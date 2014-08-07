@@ -17,25 +17,11 @@
 @property (strong, nonatomic) NSMutableArray *doubleQuestions;
 @property (strong, nonatomic) NSString *gameTitle;
 @property (strong, nonatomic) NSString *gameDescription;
-@property int contestantOneScore;
-@property int contestantTwoScore;
-@property int contestantThreeScore;
-@property NSString *contestantOneName;
-@property NSString *contestantTwoName;
-@property NSString *contestantThreeName;
+@property int maxQuestionCount;
+@property int maxCategoryCount;
+
 
 -(id)init;
--(void)addQuestionWithValue:(int)value atIndex:(int)index;
--(void)addCategoryAtIndex:(int)index;
--(void)updateCategory:(NSString *)category atIndex:(int)index;
--(void)addDoubleQuestionWithValue:(int)value atIndex:(int)index;
--(void)addDoubleCategoryAtIndex:(int)index;
--(void)updateDoubleCategory:(NSString *)category atIndex:(int)index;
--(void)setDailyDoubles;
--(BOOL)dailyDoublesAreSet;
--(BOOL)questionIsDailyDouble:(int)questionIndex forMode:(NSString *)mode;
--(void)addToContestantScore:(int)contestantScore thisAmount:(int)amount;
--(void)subtractFromContestantScore:(int)contestantScore thisAmount:(int)amount;
 -(BOOL)isDoneWithReg;
 -(BOOL)isDoneWithRegRound;
 -(BOOL)isDoneWithDouble;
@@ -44,6 +30,9 @@
 -(NRFQuestion *)getQuestionAtIndex:(int)index;
 -(NSString *)getCatAtIndex:(int)index;
 -(NSString *)getDoubleCatAtIndex:(int)index;
-+(NRFJeopardyGame *)makeCopyOfGame:(NRFJeopardyGame *)gameToCopy;
+-(void)createQuestionArrayWithSize:(int)size;
+-(void)createDoubleQuestionArrayWithSize:(int)size;
+-(void)createCategoryArrayWithSize:(int)size;
+-(void)createDoubleCategoryArrayWithSize:(int)size;
 
 @end

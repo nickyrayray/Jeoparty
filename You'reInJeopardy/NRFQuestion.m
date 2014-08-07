@@ -10,6 +10,16 @@
 
 @implementation NRFQuestion
 
+-(id)init
+{
+    self = [super init];
+    if(self){
+        self.chosen = NO;
+        self.value = 0;
+    }
+    return self;
+}
+
 - (id)initQuestion:(NSString *)question withValue:(int)value andAnswer:(NSString *)answer;
 {
     self = [super init];

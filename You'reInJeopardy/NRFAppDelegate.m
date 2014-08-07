@@ -19,10 +19,36 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     NRFMainMenuViewController *rootMVC = [[NRFMainMenuViewController alloc] init];
+    self.mainMenu = rootMVC;
+    [self loadData];
     UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:rootMVC];
     self.window.rootViewController = naviVC;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+-(void)saveData
+{
+    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *myDataPath = [documentsPath stringByAppendingString:@"JeopartyData"];
+    NSURL *documentsURL = [NSURL fileURLWithPath:myDataPath];
+    NSData *appData = [NSKeyedArchiver archivedDataWithRootObject:self.mainMenu];
+    [appData writeToURL:documentsURL atomically:YES];
+}
+
+-(void)loadData
+{
+    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *myDataPath = [documentsPath stringByAppendingString:@"JeopartyData"];
+    NSURL *documentsURL = [NSURL fileURLWithPath:myDataPath];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if([fileManager fileExistsAtPath:myDataPath]){
+        NSData *appData = [[NSData alloc] initWithContentsOfURL:documentsURL];
+        NRFMainMenuViewController *mainMenu = [NSKeyedUnarchiver unarchiveObjectWithData:appData];
+        self.mainMenu = mainMenu;
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -7,16 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NRFJeopardyGame.h"
+#import "NRFJeopardyGamePlayable.h"
+#import "NRFJeopardyGameEditable.h"
 #import "NRFQuestionEditViewController.h"
 #import "NRFCategoryEditViewController.h"
 #import "NRFQuestionViewController.h"
+#import "NRFMainMenuViewController.h"
 
 @interface NRFMainBoardViewController : UIViewController <NRFQuestionEditViewControllerDelegate, NRFCategoryEditViewControllerDelegate, NRFQuestionViewControllerDelegate, NRFScoreViewControllerDelegate>
 
 @property (strong, nonatomic)NRFJeopardyGame *game;
+@property (strong, nonatomic)NRFMainBoardViewController *delegate;
 
--(id)initWithGame:(NRFJeopardyGame *)game inMode:(NSString *)mode;
+-(id)initWithPlayableGame:(NRFJeopardyGamePlayable *)game inMode:(NSString *)mode;
+-(id)initWithEditableGame:(NRFJeopardyGameEditable *)game inMode:(NSString *)mode;
+-(id)initWithPlayableGameFromEditableGame:(NRFJeopardyGameEditable *)game inMode:(NSString *)mode;
 
 - (IBAction)choseQuestionPanel:(UIButton *)sender;
 

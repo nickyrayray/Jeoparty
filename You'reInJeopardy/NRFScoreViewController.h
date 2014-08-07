@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NRFJeopardyGame.h"
+#import "NRFJeopardyGamePlayable.h"
 
 @protocol NRFScoreViewControllerDelegate <NSObject>
 
@@ -20,7 +20,7 @@
 
 @property (strong, nonatomic) id<NRFScoreViewControllerDelegate> delegate;
 
--(id)initWithGame:(NRFJeopardyGame *)game andQuestion:(NRFQuestion *)question;
--(id)initWithGame:(NRFJeopardyGame *)game inInitializeMode:(BOOL)isInInitializeMode;
+-(id)initWithGame:(NRFJeopardyGamePlayable *)game andQuestion:(NRFQuestion *)question;
+-(id)initWithGame:(NRFJeopardyGamePlayable *)game inInitializeMode:(BOOL)isInInitializeMode;
 
 @end

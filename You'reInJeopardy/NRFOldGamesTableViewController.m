@@ -7,8 +7,6 @@
 //
 
 #import "NRFOldGamesTableViewController.h"
-#import "NRFJeopardyGame.h"
-#import "NRFMainBoardViewController.h"
 
 @interface NRFOldGamesTableViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -19,35 +17,37 @@
 
 @implementation NRFOldGamesTableViewController
 
-- (id)initInMode:(NSString *)mode
+- (id)initWithGames:(NSMutableArray *)games inMode:(NSString *)mode
 {
     self = [super initWithStyle:UITableViewStylePlain];
     
     if (self) {
-        self.games = [NSMutableArray array];
-        NRFJeopardyGame *test = [[NRFJeopardyGame alloc] init];
-        test.gameTitle = @"Test Title";
-        test.gameDescription = @"This is a test. Not a real game. It is only a test";
-        NSMutableArray *mutableQuestions = [[NSMutableArray alloc] init];
-        NSMutableArray *mutableCategories = [[NSMutableArray alloc] init];
-        for(int i = 0; i < 30; i++){
-            NSString *question = [NSString stringWithFormat:@"%d", i];
-            NSString *answer = [NSString stringWithFormat:@"%d", i];
-            NRFQuestion *questionToAdd = [[NRFQuestion alloc] initQuestion:question withValue:i andAnswer:answer];
-            [mutableQuestions addObject:questionToAdd];
-        }
+        if(!self.games){
+            self.games = [NSMutableArray array];
+            NRFJeopardyGamePlayable *test = [[NRFJeopardyGamePlayable alloc] init];
+            test.gameTitle = @"Test Title";
+            test.gameDescription = @"This is a test. Not a real game. It is only a test";
+            NSMutableArray *mutableQuestions = [[NSMutableArray alloc] init];
+            NSMutableArray *mutableCategories = [[NSMutableArray alloc] init];
+            for(int i = 0; i < 30; i++){
+                NSString *question = [NSString stringWithFormat:@"%d", i];
+                NSString *answer = [NSString stringWithFormat:@"%d", i];
+                NRFQuestion *questionToAdd = [[NRFQuestion alloc] initQuestion:question withValue:i andAnswer:answer];
+                [mutableQuestions addObject:questionToAdd];
+            }
         
-        for(int i = 0; i < 6; i++){
-            NSString *category = [NSString stringWithFormat:@"%c", i+65];
-            [mutableCategories addObject:category];
-        }
+            for(int i = 0; i < 6; i++){
+                NSString *category = [NSString stringWithFormat:@"%c", i+65];
+                [mutableCategories addObject:category];
+            }
         
-        test.questions = mutableQuestions;
-        test.doubleQuestions = mutableQuestions;
-        test.categories = mutableCategories;
-        test.doubleCategories = mutableCategories;
+            test.questions = mutableQuestions;
+            test.doubleQuestions = mutableQuestions;
+            test.categories = mutableCategories;
+            test.doubleCategories = mutableCategories;
     
-        [self.games addObject:test];
+            [self.games addObject:test];
+        }
         self.mode = mode;
     }
     return self;
@@ -106,12 +106,12 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NRFJeopardyGame *gameSelected = self.games[indexPath.row];
+    NRFJeopardyGameEditable *gameSelected = self.games[indexPath.row];
     if([self isInEditMode]){
-        NRFMainBoardViewController *editBoard = [[NRFMainBoardViewController alloc] initWithGame:gameSelected inMode:@"regJPrep"];
+        NRFMainBoardViewController *editBoard = [[NRFMainBoardViewController alloc] initWithEditableGame:gameSelected inMode:@"regJPrep"];
         [self.navigationController pushViewController:editBoard animated:YES];
     } else {
-        NRFJeopardyGame *playableGame = [NRFJeopardyGame makeCopyOfGame:gameSelected];
+        NRFJeopardyGamePlayable *playableGame = [NRFJeopardyGamePlayable makeCopyOfGame:gameSelected];
         NRFScoreViewController *scoreVC = [[NRFScoreViewController alloc] initWithGame:playableGame inInitializeMode:YES];
         scoreVC.delegate = self;
         [self.navigationController pushViewController:scoreVC animated:YES];
@@ -119,9 +119,9 @@
     
 }
 
--(void)scoreVCDidFinishWithGame:(NRFJeopardyGame *)game{
+-(void)scoreVCDidFinishWithGame:(NRFJeopardyGamePlayable *)game{
     [self.navigationController popViewControllerAnimated:NO];
-    NRFMainBoardViewController *playBoard = [[NRFMainBoardViewController alloc] initWithGame:game inMode:@"regJ"];
+    NRFMainBoardViewController *playBoard = [[NRFMainBoardViewController alloc] initWithPlayableGame:game inMode:@"regJ"];
     [self.navigationController pushViewController:playBoard animated:YES];
 }
 
@@ -137,8 +137,10 @@
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
-    if([self.navigationController.viewControllers indexOfObject:self] == NSNotFound)
+    if([self.navigationController.viewControllers indexOfObject:self] == NSNotFound){
         [self.navigationController setNavigationBarHidden:YES];
+        
+    }
     
 }
 

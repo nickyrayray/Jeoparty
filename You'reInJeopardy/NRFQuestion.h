@@ -15,6 +15,7 @@
 @property (nonatomic) int value;
 @property (nonatomic) BOOL chosen;
 
+-(id)init;
 - (id)initQuestion:(NSString *)question withValue:(int)value andAnswer:(NSString *)answer;
 - (id)initWithValue:(int)value;
 - (BOOL)isFinished;

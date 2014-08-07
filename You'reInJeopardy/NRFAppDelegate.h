@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NRFMainMenuViewController.h"
 
 @interface NRFAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) NRFMainMenuViewController *mainMenu;
 
 @end

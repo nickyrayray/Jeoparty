@@ -13,7 +13,7 @@
 
 @protocol NRFQuestionEditViewControllerDelegate <NSObject>
 
--(void)questionEditViewController:(NRFQuestionEditViewController *)questionEditVC didFinishWithQuestion:(NRFQuestion *)question;
+-(void)questionEditViewControllerDidFinishWithQuestion:(NRFQuestion *)question mightNeedIncrement:(BOOL)mightNeedIncrement;
 
 @end
 

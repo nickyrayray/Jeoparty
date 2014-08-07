@@ -32,7 +32,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *contestantThreeMinus;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *contestantThreeIncrementValueSegment;
 
-@property (strong, nonatomic) NRFJeopardyGame *game;
+@property (strong, nonatomic)NRFJeopardyGamePlayable *game;
 @property int contestantOneValueToAddOrSubtract;
 @property int contestantTwoValueToAddOrSubtract;
 @property int contestantThreeValueToAddOrSubtract;
@@ -43,7 +43,7 @@
 
 @implementation NRFScoreViewController
 
-- (id)initWithGame:(NRFJeopardyGame *)game andQuestion:(NRFQuestion *)question
+- (id)initWithGame:(NRFJeopardyGamePlayable *)game andQuestion:(NRFQuestion *)question
 {
     self = [super initWithNibName:@"NRFScoreViewController" bundle:nil];
     if (self) {
@@ -59,7 +59,7 @@
     return self;
 }
 
--(id)initWithGame:(NRFJeopardyGame *)game inInitializeMode:(BOOL)isInInitializeMode
+-(id)initWithGame:(NRFJeopardyGamePlayable *)game inInitializeMode:(BOOL)isInInitializeMode
 {
     self = [super initWithNibName:@"NRFScoreViewController" bundle:nil];
     if(self) {

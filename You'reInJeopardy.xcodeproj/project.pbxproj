@@ -32,6 +32,9 @@
 		3886A388194B9EBB005E3362 /* NRFQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886A386194B9EBB005E3362 /* NRFQuestionViewController.m */; };
 		3886A389194B9EBB005E3362 /* NRFQuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3886A387194B9EBB005E3362 /* NRFQuestionViewController.xib */; };
 		3886A38F195B761E005E3362 /* NRFOldGamesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886A38E195B761E005E3362 /* NRFOldGamesTableViewController.m */; };
+		38944235198AF2A200265DCA /* NRFTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38944234198AF2A200265DCA /* NRFTabBarViewController.m */; };
+		389442381990040A00265DCA /* NRFJeopardyGamePlayable.m in Sources */ = {isa = PBXBuildFile; fileRef = 389442371990040A00265DCA /* NRFJeopardyGamePlayable.m */; };
+		3894423B1990066C00265DCA /* NRFJeopardyGameEditable.m in Sources */ = {isa = PBXBuildFile; fileRef = 3894423A1990066C00265DCA /* NRFJeopardyGameEditable.m */; };
 		38D2C4E5197F26CA00144155 /* NRFScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D2C4E3197F26CA00144155 /* NRFScoreViewController.m */; };
 		38D2C4E6197F26CA00144155 /* NRFScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D2C4E4197F26CA00144155 /* NRFScoreViewController.xib */; };
 /* End PBXBuildFile section */
@@ -84,6 +87,12 @@
 		3886A387194B9EBB005E3362 /* NRFQuestionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NRFQuestionViewController.xib; sourceTree = "<group>"; };
 		3886A38D195B761E005E3362 /* NRFOldGamesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFOldGamesTableViewController.h; sourceTree = "<group>"; };
 		3886A38E195B761E005E3362 /* NRFOldGamesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFOldGamesTableViewController.m; sourceTree = "<group>"; };
+		38944233198AF2A200265DCA /* NRFTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFTabBarViewController.h; sourceTree = "<group>"; };
+		38944234198AF2A200265DCA /* NRFTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFTabBarViewController.m; sourceTree = "<group>"; };
+		389442361990040A00265DCA /* NRFJeopardyGamePlayable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFJeopardyGamePlayable.h; sourceTree = "<group>"; };
+		389442371990040A00265DCA /* NRFJeopardyGamePlayable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFJeopardyGamePlayable.m; sourceTree = "<group>"; };
+		389442391990066C00265DCA /* NRFJeopardyGameEditable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFJeopardyGameEditable.h; sourceTree = "<group>"; };
+		3894423A1990066C00265DCA /* NRFJeopardyGameEditable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFJeopardyGameEditable.m; sourceTree = "<group>"; };
 		38D2C4E2197F26CA00144155 /* NRFScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFScoreViewController.h; sourceTree = "<group>"; };
 		38D2C4E3197F26CA00144155 /* NRFScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFScoreViewController.m; sourceTree = "<group>"; };
 		38D2C4E4197F26CA00144155 /* NRFScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NRFScoreViewController.xib; sourceTree = "<group>"; };
@@ -136,6 +145,8 @@
 				3846AE50196CDABC002B97AB /* NRFMainMenuViewController.h */,
 				3846AE51196CDABC002B97AB /* NRFMainMenuViewController.m */,
 				3846AE52196CDABC002B97AB /* NRFMainMenuViewController.xib */,
+				38944233198AF2A200265DCA /* NRFTabBarViewController.h */,
+				38944234198AF2A200265DCA /* NRFTabBarViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -147,6 +158,10 @@
 				3886A37319478E0C005E3362 /* NRFQuestion.m */,
 				3886A37519478F41005E3362 /* NRFJeopardyGame.h */,
 				3886A37619478F41005E3362 /* NRFJeopardyGame.m */,
+				389442361990040A00265DCA /* NRFJeopardyGamePlayable.h */,
+				389442371990040A00265DCA /* NRFJeopardyGamePlayable.m */,
+				389442391990066C00265DCA /* NRFJeopardyGameEditable.h */,
+				3894423A1990066C00265DCA /* NRFJeopardyGameEditable.m */,
 			);
 			name = GroupingClasses;
 			sourceTree = "<group>";
@@ -326,15 +341,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				3886A370194788C4005E3362 /* NRFMainBoardViewController.m in Sources */,
+				38944235198AF2A200265DCA /* NRFTabBarViewController.m in Sources */,
 				3846AE53196CDABC002B97AB /* NRFMainMenuViewController.m in Sources */,
 				3886A3461947863D005E3362 /* main.m in Sources */,
 				3886A37719478F41005E3362 /* NRFJeopardyGame.m in Sources */,
+				389442381990040A00265DCA /* NRFJeopardyGamePlayable.m in Sources */,
 				3886A388194B9EBB005E3362 /* NRFQuestionViewController.m in Sources */,
 				3886A37B19495C80005E3362 /* NRFQuestionEditViewController.m in Sources */,
 				3886A37419478E0C005E3362 /* NRFQuestion.m in Sources */,
 				3886A34A1947863D005E3362 /* NRFAppDelegate.m in Sources */,
 				38D2C4E5197F26CA00144155 /* NRFScoreViewController.m in Sources */,
 				3886A383194A63F0005E3362 /* NRFCategoryEditViewController.m in Sources */,
+				3894423B1990066C00265DCA /* NRFJeopardyGameEditable.m in Sources */,
 				3886A38F195B761E005E3362 /* NRFOldGamesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

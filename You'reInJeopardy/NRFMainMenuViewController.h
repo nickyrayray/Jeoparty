@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NRFMainBoardViewController.h"
+#import "NRFOldGamesTableViewController.h"
+#import "NRFTabBarViewController.h"
+#import "NRFJeopardyGameEditable.h"
+#import "NRFJeopardyGamePlayable.h"
 
-@interface NRFMainMenuViewController : UIViewController
+@interface NRFMainMenuViewController : UIViewController<NSCoding>
+
+@property (strong, nonatomic) NSMutableArray *games;
 
 -(id)init;
 

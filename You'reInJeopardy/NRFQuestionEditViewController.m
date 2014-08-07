@@ -7,11 +7,13 @@
 //
 
 #import "NRFQuestionEditViewController.h"
+#import "NRFQuestion.h"
 
 @interface NRFQuestionEditViewController ()
 @property (strong, nonatomic) NRFQuestion *question;
 @property (weak, nonatomic) IBOutlet UITextView *questionTextView;
 @property (weak, nonatomic) IBOutlet UITextField *questionAnswerTextLabel;
+@property BOOL mightNeedIncrement;
 
 @end
 
@@ -22,6 +24,10 @@
     self = [super initWithNibName:@"NRFQuestionEditViewController" bundle:nil];
     if (self) {
         self.question = question;
+        if([self.question isFinished])
+            self.mightNeedIncrement = NO;
+        else
+            self.mightNeedIncrement = YES;
     }
     return self;
 }
@@ -29,11 +35,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if(self.question.question != nil){
+    if(self.question.question){
         self.questionTextView.text = self.question.question;
     }
     
-    if(self.question.answer != nil){
+    if(self.question.answer){
         self.questionAnswerTextLabel.text = self.question.answer;
     }
     
@@ -46,7 +52,7 @@
     self.question.question = self.questionTextView.text;
     self.question.answer = self.questionAnswerTextLabel.text;
     
-    [self.delegate questionEditViewController:self didFinishWithQuestion:self.question];
+    [self.delegate questionEditViewControllerDidFinishWithQuestion:self.question mightNeedIncrement:self.mightNeedIncrement];
     
 }
 
