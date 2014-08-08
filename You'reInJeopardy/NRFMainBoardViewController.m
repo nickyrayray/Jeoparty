@@ -192,24 +192,35 @@
     }
     
     [self.navigationController popViewControllerAnimated:YES];
+    [self checkForFinishedGameAndUpdateTabViewController];
     
 }
 
--(void)catEditViewController:(NRFCategoryEditViewController *)catEditVC didFinishWithCat:(NSString *)category forIndex:(int)index{
+-(void)catEditViewController:(NRFCategoryEditViewController *)catEditVC didFinishWithCat:(NSString *)category forIndex:(int)index andMightNeedIncrement:(BOOL)mightNeedIncrement{
     
     UIButton *catPanel;
     NRFJeopardyGameEditable *castedEditVC = (NRFJeopardyGameEditable *)self.game;
     if([self.mode isEqualToString:@"regJPrep"]){
         catPanel = [self.categoryPanels objectAtIndex:index];
-        [castedEditVC addCategory:category atIndex:index];
+        if(category != nil && ![category isEqualToString:@""] && !mightNeedIncrement)
+            [castedEditVC decrementCategoriesCompleted];
+        else if(category == nil && [category isEqualToString:@""] && mightNeedIncrement)
+            [castedEditVC incrementCategoriesCompleted];
     }else{
         catPanel = [self.categoryPanels objectAtIndex:index];
-        [castedEditVC addDoubleCategory:category atIndex:index];
+        if(category != nil && ![category isEqualToString:@""] && !mightNeedIncrement)
+            [castedEditVC decrementDoubleCategoriesCompleted];
+        else if(category == nil && [category isEqualToString:@""] && mightNeedIncrement)
+            [castedEditVC incrementDoubleCategoriesCompleted];
     }
     
-    [catPanel setTitle:category forState:UIControlStateNormal];
+    if(category && ![category isEqualToString:@""])
+        [catPanel setTitle:category forState:UIControlStateNormal];
+    else
+        [catPanel setTitle:@"Select Category" forState:UIControlStateNormal];
     
     [self.navigationController popViewControllerAnimated:YES];
+    [self checkForFinishedGameAndUpdateTabViewController];
     
 }
 
@@ -246,14 +257,10 @@
     
     int index = [self.questionPanels indexOfObject:sender];
         
-    if([self.mode isEqualToString:@"regJPrep"])
-        question = [self.game getQuestionAtIndex:index];
-    else if([self.mode isEqualToString:@"doubleJPrep"])
-        question  = [self.game getDoubleQuestionAtIndex:index];
-    else if ([self.mode isEqualToString:@"regJ"])
+    if([self.mode isEqualToString:@"regJPrep"] || [self.mode isEqualToString:@"regJ"])
         question = [self.game getQuestionAtIndex:index];
     else
-        question = [self.game getDoubleQuestionAtIndex:index];
+        question  = [self.game getDoubleQuestionAtIndex:index];
     
     if(question.value == 0){
         NRFJeopardyGameEditable *castedEditGame = (NRFJeopardyGameEditable *)self.game;
@@ -302,12 +309,14 @@
     if([self.mode isEqualToString:@"regJPrep"] || [self.mode isEqualToString:@"doubleJPrep"]){
         
         NSString *categoryToEdit;
+        
         int index = [self.categoryPanels indexOfObject:sender];
         
         if([self.mode isEqualToString:@"regJPrep"])
             categoryToEdit = [self.game getCatAtIndex:index];
         else
             categoryToEdit = [self.game getDoubleCatAtIndex:index];
+        
         
         NRFCategoryEditViewController *catEditVC = [[NRFCategoryEditViewController alloc] initWithCat:categoryToEdit atIndex:index];
         catEditVC.delegate = self;
@@ -321,6 +330,12 @@
             [self.navigationController setNavigationBarHidden:YES animated:YES];
     }
     
+}
+
+-(void)checkForFinishedGameAndUpdateTabViewController
+{
+    if([(NRFJeopardyGameEditable *)self.game checkForJeopartyGameCompletelyEdited])
+        [(NRFTabBarViewController *)self.tabBarController gameIsCompletelyEdited];
 }
 
 

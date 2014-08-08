@@ -19,14 +19,24 @@
     [super viewDidLoad];
     
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonPressed:)];
+    self.navigationItem.title = @"Main Board: Edit Mode";
     self.navigationItem.rightBarButtonItem = saveButton;
     
 }
 
 -(void)saveButtonPressed:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    NRFMainBoardViewController *mainBoardVC = self.viewControllers[0];
+    NRFJeopardyGameEditable *editGameToSendToDelegate = (NRFJeopardyGameEditable *)mainBoardVC.game;
+    [self.myDelegate tabBarViewControllerDidFinishWithEditedGame:editGameToSendToDelegate];
 }
 
+-(void)gameIsCompletelyEdited
+{
+    
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"This Game Is Ready" style:UIBarButtonItemStylePlain target:self action:@selector(saveButtonPressed:)];
+    self.navigationItem.rightBarButtonItem = doneButton;
+    
+}
 
 @end

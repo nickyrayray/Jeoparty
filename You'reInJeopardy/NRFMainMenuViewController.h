@@ -13,7 +13,7 @@
 #import "NRFJeopardyGameEditable.h"
 #import "NRFJeopardyGamePlayable.h"
 
-@interface NRFMainMenuViewController : UIViewController<NSCoding>
+@interface NRFMainMenuViewController : UIViewController<NSCoding, NRFTabBarViewControllerDelegate>
 
 @property (strong, nonatomic) NSMutableArray *games;
 

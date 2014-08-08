@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *categoryTextView;
 @property (strong, nonatomic) NSString *category;
 @property (nonatomic) int index;
+@property BOOL mightNeedIncrement;
 
 @end
 
@@ -23,6 +24,10 @@
     if (self) {
         self.category = category;
         self.index = index;
+        if(category && ![category isEqualToString:@""])
+            self.mightNeedIncrement = NO;
+        else
+            self.mightNeedIncrement = YES;
     }
     return self;
 }
@@ -41,7 +46,7 @@
 - (void)doneButtonPressed:(id)sender {
     
     self.category = self.categoryTextView.text;
-    [self.delegate catEditViewController:self didFinishWithCat:self.category forIndex:self.index];
+    [self.delegate catEditViewController:self didFinishWithCat:self.category forIndex:self.index andMightNeedIncrement:self.mightNeedIncrement];
     
 }
 

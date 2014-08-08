@@ -62,6 +62,7 @@
     NSArray *tabBarObjects = [[NSArray alloc] initWithObjects:createRegJGameBoard,createDoubleJGameBoard, nil];
     NRFTabBarViewController *boardsTabViewController = [[NRFTabBarViewController alloc] init];
     boardsTabViewController.viewControllers = tabBarObjects;
+    boardsTabViewController.myDelegate = self;
     
     [self.navigationController pushViewController:boardsTabViewController animated:YES];
     
@@ -76,6 +77,12 @@
     [self.navigationController pushViewController:oldGames animated:YES];
 }
 - (IBAction)options:(id)sender {
+}
+
+-(void)tabBarViewControllerDidFinishWithEditedGame:(NRFJeopardyGameEditable *)editableGame
+{
+    [self.games addObject:editableGame];
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 

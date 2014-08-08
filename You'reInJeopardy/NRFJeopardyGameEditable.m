@@ -133,5 +133,13 @@
         return YES;
 }
 
+-(BOOL)isGameCompletelyDone
+{
+    if(self.regularJeopartyCompletelyEdited && self.doubleJeopartyCompletelyEdited)
+        return YES;
+    else
+        return NO;
+}
+
 
 @end

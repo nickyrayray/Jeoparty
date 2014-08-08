@@ -12,7 +12,7 @@
 
 @protocol NRFCategoryEditViewControllerDelegate <NSObject>
 
--(void)catEditViewController:(NRFCategoryEditViewController *)catEditVC didFinishWithCat:(NSString *)category forIndex:(int)index;
+-(void)catEditViewController:(NRFCategoryEditViewController *)catEditVC didFinishWithCat:(NSString *)category forIndex:(int)index andMightNeedIncrement:(BOOL)mightNeedIncrement;
 
 @end
 

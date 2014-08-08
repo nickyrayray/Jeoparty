@@ -14,10 +14,10 @@
 #import "NRFQuestionViewController.h"
 #import "NRFMainMenuViewController.h"
 
+
 @interface NRFMainBoardViewController : UIViewController <NRFQuestionEditViewControllerDelegate, NRFCategoryEditViewControllerDelegate, NRFQuestionViewControllerDelegate, NRFScoreViewControllerDelegate>
 
 @property (strong, nonatomic)NRFJeopardyGame *game;
-@property (strong, nonatomic)NRFMainBoardViewController *delegate;
 
 -(id)initWithPlayableGame:(NRFJeopardyGamePlayable *)game inMode:(NSString *)mode;
 -(id)initWithEditableGame:(NRFJeopardyGameEditable *)game inMode:(NSString *)mode;
