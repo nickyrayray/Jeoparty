@@ -119,7 +119,7 @@
 
 -(BOOL)checkForJeopartyGameCompletelyEdited
 {
-    if(self.regularJeopartyCompletelyEdited && self.doubleJeopartyCompletelyEdited)
+    if(self.regularJeopartyCompletelyEdited && self.doubleJeopartyCompletelyEdited && [[super finalJeopartyQuestion] finalJeopartyQuestionIsFinished])
         return YES;
     else
         return NO;
@@ -133,13 +133,6 @@
         return YES;
 }
 
--(BOOL)isGameCompletelyDone
-{
-    if(self.regularJeopartyCompletelyEdited && self.doubleJeopartyCompletelyEdited)
-        return YES;
-    else
-        return NO;
-}
 
 
 @end

@@ -11,13 +11,13 @@
 @interface NRFOldGamesTableViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *games;
-@property (strong, nonatomic) NSString *mode;
+@property int mode;
 
 @end
 
 @implementation NRFOldGamesTableViewController
 
-- (id)initWithGames:(NSMutableArray *)games inMode:(NSString *)mode
+- (id)initWithGames:(NSMutableArray *)games inMode:(int)mode
 {
     self = [super initWithStyle:UITableViewStylePlain];
     
@@ -30,9 +30,9 @@
             NSMutableArray *mutableQuestions = [[NSMutableArray alloc] init];
             NSMutableArray *mutableCategories = [[NSMutableArray alloc] init];
             for(int i = 0; i < 30; i++){
-                NSString *question = [NSString stringWithFormat:@"%d", i];
+                NSString *question = [NSString stringWithFormat:@"%c", (i%6)+65];
                 NSString *answer = [NSString stringWithFormat:@"%d", i];
-                NRFQuestion *questionToAdd = [[NRFQuestion alloc] initQuestion:question withValue:i andAnswer:answer];
+                NRFQuestion *questionToAdd = [[NRFQuestion alloc] initQuestion:question withValue:i+1 andAnswer:answer];
                 [mutableQuestions addObject:questionToAdd];
             }
         
@@ -108,7 +108,7 @@
 {
     NRFJeopardyGameEditable *gameSelected = self.games[indexPath.row];
     if([self isInEditMode]){
-        NRFMainBoardViewController *editBoard = [[NRFMainBoardViewController alloc] initWithEditableGame:gameSelected inMode:@"regJPrep"];
+        NRFMainBoardViewController *editBoard = [[NRFMainBoardViewController alloc] initWithEditableGame:gameSelected inMode:REGULAR_JEOPARDY_SETUP];
         [self.navigationController pushViewController:editBoard animated:YES];
     } else {
         NRFJeopardyGamePlayable *playableGame = [NRFJeopardyGamePlayable makeCopyOfGame:gameSelected];
@@ -121,7 +121,7 @@
 
 -(void)scoreVCDidFinishWithGame:(NRFJeopardyGamePlayable *)game{
     [self.navigationController popViewControllerAnimated:NO];
-    NRFMainBoardViewController *playBoard = [[NRFMainBoardViewController alloc] initWithPlayableGame:game inMode:@"regJ"];
+    NRFMainBoardViewController *playBoard = [[NRFMainBoardViewController alloc] initWithPlayableGame:game inMode:REGULAR_JEOPARDY_PLAY];
     [self.navigationController pushViewController:playBoard animated:YES];
 }
 
@@ -130,7 +130,7 @@
 }
 
 -(BOOL)isInEditMode{
-    if([self.mode isEqualToString:@"editMode"])
+    if(self.mode == OLD_GAMES_EDIT_MODE)
         return YES;
     else
         return NO;

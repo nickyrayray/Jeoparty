@@ -12,11 +12,12 @@
 #import "NRFJeopardyGamePlayable.h"
 #import "NRFJeopardyGame.h"
 #import "NRFMainBoardViewController.h"
+#import "Constants.h"
 
 @interface NRFOldGamesTableViewController : UITableViewController<NRFScoreViewControllerDelegate>
 
 @property (strong, nonatomic)NRFScoreViewController *delegate;
 
--(id)initWithGames:(NSMutableArray *)games inMode:(NSString *)mode;
+-(id)initWithGames:(NSMutableArray *)games inMode:(int)mode;
 
 @end

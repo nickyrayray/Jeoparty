@@ -2,18 +2,17 @@
 //  NRFMainMenuViewController.h
 //  You'reInJeopardy
 //
-//  Created by Nicholas Falba on 7/8/14.
+//  Created by Nicholas Falba on 8/8/14.
 //  Copyright (c) 2014 Nicholas Falba. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "NRFMainBoardViewController.h"
-#import "NRFOldGamesTableViewController.h"
 #import "NRFTabBarViewController.h"
-#import "NRFJeopardyGameEditable.h"
-#import "NRFJeopardyGamePlayable.h"
+#import "NRFOldGamesTableViewController.h"
+#import "Constants.h"
 
-@interface NRFMainMenuViewController : UIViewController<NSCoding, NRFTabBarViewControllerDelegate>
+
+@interface NRFMainMenuViewController : UIViewController
 
 @property (strong, nonatomic) NSMutableArray *games;
 

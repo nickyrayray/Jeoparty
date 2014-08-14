@@ -9,7 +9,7 @@
 #import "NRFMainMenuViewController.h"
 
 
-@interface NRFMainMenuViewController ()
+@interface NRFMainMenuViewController () <NRFTabBarViewControllerDelegate>
 
 @end
 
@@ -52,16 +52,7 @@
     
     [self.navigationController setNavigationBarHidden:NO];
     
-    NRFJeopardyGameEditable *gameToInitialize = [[NRFJeopardyGameEditable alloc] init];
-    NRFMainBoardViewController *createRegJGameBoard = [[NRFMainBoardViewController alloc] initWithEditableGame:gameToInitialize inMode:@"regJPrep"];
-    UITabBarItem *createRegJGameBoardTabBarItem = [[UITabBarItem alloc] initWithTitle:@"Regular Jeoparty" image:nil tag:0];
-    createRegJGameBoard.tabBarItem = createRegJGameBoardTabBarItem;
-    NRFMainBoardViewController *createDoubleJGameBoard = [[NRFMainBoardViewController alloc] initWithEditableGame:gameToInitialize inMode:@"doubleJPrep"];
-    UITabBarItem *createDoubleJGameBoardTabBarItem = [[UITabBarItem alloc] initWithTitle:@"Double Jeopardy" image:nil tag:0];
-    createDoubleJGameBoard.tabBarItem = createDoubleJGameBoardTabBarItem;
-    NSArray *tabBarObjects = [[NSArray alloc] initWithObjects:createRegJGameBoard,createDoubleJGameBoard, nil];
     NRFTabBarViewController *boardsTabViewController = [[NRFTabBarViewController alloc] init];
-    boardsTabViewController.viewControllers = tabBarObjects;
     boardsTabViewController.myDelegate = self;
     
     [self.navigationController pushViewController:boardsTabViewController animated:YES];
@@ -69,11 +60,11 @@
 }
 
 - (IBAction)playGame:(id)sender {
-    NRFOldGamesTableViewController *oldGames = [[NRFOldGamesTableViewController alloc] initWithGames:self.games inMode:@"playMode"];
+    NRFOldGamesTableViewController *oldGames = [[NRFOldGamesTableViewController alloc] initWithGames:self.games inMode:OLD_GAMES_PLAY_MODE];
     [self.navigationController pushViewController:oldGames animated:YES];
 }
 - (IBAction)editGame:(id)sender {
-    NRFOldGamesTableViewController *oldGames = [[NRFOldGamesTableViewController alloc] initWithGames:self.games inMode:@"editMode"];
+    NRFOldGamesTableViewController *oldGames = [[NRFOldGamesTableViewController alloc] initWithGames:self.games inMode:OLD_GAMES_EDIT_MODE];
     [self.navigationController pushViewController:oldGames animated:YES];
 }
 - (IBAction)options:(id)sender {

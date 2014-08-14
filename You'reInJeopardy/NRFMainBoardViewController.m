@@ -8,20 +8,15 @@
 
 #import "NRFMainBoardViewController.h"
 
-#define REGULAR_JEOPARDY_SETUP 1
-#define DOUBLE_JEOPARDY_SETUP 2
-#define REGULAR_JEOPARDY_PLAY 3
-#define DOUBLE_JEOPARDY_PLAY 4
-
 @interface NRFMainBoardViewController ()
 
-@property (strong, nonatomic) NSString *mode;
-@property int questionsRemaining;
+@property int mode;
 @property BOOL transitioningToDouble;
 
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *categoryPanels;
+@property (strong, nonatomic) NSMutableArray *questionPanels;
+@property (strong, nonatomic) NSMutableArray *categoryPanels;
 
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *questionPanels;
+@property (strong, nonatomic) UIScrollView *scrollView;
 
 
 
@@ -30,35 +25,32 @@
 
 @implementation NRFMainBoardViewController
 
--(id)initWithEditableGame:(NRFJeopardyGameEditable *)game inMode:(NSString *)mode
-{
-    self = [super initWithNibName:@"NRFMainBoardViewController" bundle:nil];
-    if(self){
-        
-        self.game = game;
 
+-(id)initWithEditableGame:(NRFJeopardyGameEditable *)game inMode:(int)mode
+{
+    self = [super init];
+    if(self){
+        self.game = game;
         self.mode = mode;
         self.transitioningToDouble = NO;
     }
     return self;
 }
 
--(id)initWithPlayableGame:(NRFJeopardyGamePlayable *)game inMode:(NSString *)mode
+-(id)initWithPlayableGame:(NRFJeopardyGamePlayable *)game inMode:(int)mode
 {
-    self = [super initWithNibName:@"NRFMainBoardViewController" bundle:nil];
+    self = [super init];
     if(self){
-        
         self.game = game;
-        
         self.mode = mode;
         self.transitioningToDouble = NO;
     }
     return self;
 }
 
--(id)initWithPlayableGameFromEditableGame:(NRFJeopardyGameEditable *)game inMode:(NSString *)mode
+-(id)initWithPlayableGameFromEditableGame:(NRFJeopardyGameEditable *)game inMode:(int)mode
 {
-    self = [super initWithNibName:@"NRFMainBoardViewController" bundle:nil];
+    self = [super init];
     if(self){
         self.game = [NRFJeopardyGamePlayable makeCopyOfGame:game];
         self.mode = mode;
@@ -68,13 +60,52 @@
 }
 
 
+-(void)loadView
+{
+    [super loadView];
+    
+    self.scrollView = [[UIScrollView alloc]initWithFrame:self.view.frame];
+    self.view = self.scrollView;
+    self.categoryPanels = [[NSMutableArray alloc]init];
+    self.questionPanels = [[NSMutableArray alloc]init];
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    CGRect frameSize = self.view.bounds;
+    float buttonWidth = (frameSize.size.width)/6;
+    float buttonHeight = (frameSize.size.height/6);
+    UIButton *buttonToCreate;
+    
+    for(int i = 0; i < TOTAL_CATEGORY_PANELS; i++){
+        for(int j = 0; j < (TOTAL_QUESTION_PANELS / TOTAL_CATEGORY_PANELS) + 1; j++){
+            buttonToCreate = [[UIButton alloc] initWithFrame:CGRectMake(j*buttonHeight, i*buttonWidth, buttonHeight, buttonWidth)];
+            [buttonToCreate setBackgroundImage:[UIImage imageNamed:@"Square.png"] forState:UIControlStateNormal];
+            buttonToCreate.adjustsImageWhenDisabled = NO;
+            buttonToCreate.adjustsImageWhenHighlighted = NO;
+            if(i == 0){
+                buttonToCreate.titleLabel.font = [UIFont systemFontOfSize:18];
+                [buttonToCreate setTitle:@"Select Category" forState:UIControlStateNormal];
+                [buttonToCreate addTarget:self action:@selector(choseCategoryPanel:) forControlEvents:UIControlEventTouchUpInside];
+                [self.categoryPanels addObject:buttonToCreate];
+                [self.view addSubview:buttonToCreate];
+            } else {
+                [buttonToCreate.titleLabel setFont:[UIFont boldSystemFontOfSize:50]];
+                [buttonToCreate setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
+                [buttonToCreate setTitle:[NSString stringWithFormat:@"$%d", i*200] forState:UIControlStateNormal];
+                [buttonToCreate addTarget:self action:@selector(choseQuestionPanel:) forControlEvents:UIControlEventTouchUpInside];
+                [self.questionPanels addObject:buttonToCreate];
+                [self.view addSubview:buttonToCreate];
+            }
+        }
+    }
+    
     UIButton *current;
     
-    if([self.mode isEqualToString:@"doubleJPrep"] || [self.mode isEqualToString:@"doubleJ"]){
+    if(self.mode == DOUBLE_JEOPARDY_SETUP || self.mode == DOUBLE_JEOPARDY_PLAY){
         
         for(int i = 0; i < self.questionPanels.count; i++){ //Loop just doubles the titles on the buttons.
             current = self.questionPanels[i];
@@ -88,8 +119,8 @@
             [self.game createDoubleQuestionArrayWithSize:self.questionPanels.count];
             [self.game createDoubleCategoryArrayWithSize:self.categoryPanels.count];
         }
-
-    } else if([self.mode isEqualToString:@"regJPrep"]){
+        
+    } else if(self.mode == REGULAR_JEOPARDY_SETUP){
         
         if(!self.game.questions){
             [self.game createQuestionArrayWithSize:self.questionPanels.count];
@@ -107,15 +138,15 @@
         
         NRFJeopardyGamePlayable *castedPlayableGame = (NRFJeopardyGamePlayable *)self.game;
         
-         if([self.mode isEqualToString:@"regJ"]){
-             
+        if(self.mode == REGULAR_JEOPARDY_PLAY){
+            
             if(![castedPlayableGame dailyDoublesAreSet]){
                 [castedPlayableGame setDailyDoubles];
             }
-             
+            
             cats = castedPlayableGame.categories;
-             
-         } else
+            
+        } else
             cats = castedPlayableGame.doubleCategories;
         
         for(int i = 0; i < self.categoryPanels.count; i++){
@@ -140,8 +171,11 @@
         [self.navigationController setNavigationBarHidden:NO];
         
     }
+
+    
     
 }
+
 
 -(void)editButtonPressed:(id)sender
 {
@@ -152,7 +186,7 @@
 }
 
 -(BOOL)wePlayin{
-    if([self.mode isEqualToString:@"regJ"] || [self.mode isEqualToString:@"doubleJ"])
+    if(self.mode == REGULAR_JEOPARDY_PLAY || self.mode == DOUBLE_JEOPARDY_PLAY)
         return YES;
     else
         return NO;
@@ -169,7 +203,7 @@
     
     NRFJeopardyGameEditable *castedEditGame = (NRFJeopardyGameEditable *)self.game;
     
-    if([self.mode isEqualToString:@"regJPrep"]){
+    if(self.mode == REGULAR_JEOPARDY_SETUP){
         questionPanel = [self.questionPanels objectAtIndex:[self.game.questions indexOfObject:question]];
         if([question isFinished] && mightNeedIncrement)
             [castedEditGame incrementQuestionsEdited];
@@ -200,17 +234,17 @@
     
     UIButton *catPanel;
     NRFJeopardyGameEditable *castedEditVC = (NRFJeopardyGameEditable *)self.game;
-    if([self.mode isEqualToString:@"regJPrep"]){
+    if(self.mode == REGULAR_JEOPARDY_SETUP){
         catPanel = [self.categoryPanels objectAtIndex:index];
-        if(category != nil && ![category isEqualToString:@""] && !mightNeedIncrement)
+        if((category == nil || [category isEqualToString:@""]) && !mightNeedIncrement)
             [castedEditVC decrementCategoriesCompleted];
-        else if(category == nil && [category isEqualToString:@""] && mightNeedIncrement)
+        else if(category && ![category isEqualToString:@""] && mightNeedIncrement)
             [castedEditVC incrementCategoriesCompleted];
     }else{
         catPanel = [self.categoryPanels objectAtIndex:index];
-        if(category != nil && ![category isEqualToString:@""] && !mightNeedIncrement)
+        if((category == nil || [category isEqualToString:@""]) && !mightNeedIncrement)
             [castedEditVC decrementDoubleCategoriesCompleted];
-        else if(category == nil && [category isEqualToString:@""] && mightNeedIncrement)
+        else if(category && ![category isEqualToString:@""] && mightNeedIncrement)
             [castedEditVC incrementDoubleCategoriesCompleted];
     }
     
@@ -229,7 +263,7 @@
     question.chosen = YES;
     int index;
     
-    if([self.mode isEqualToString:@"regJ"])
+    if(self.mode == REGULAR_JEOPARDY_PLAY)
         index = [self.game.questions indexOfObject:question];
     else
         index = [self.game.doubleQuestions indexOfObject:question];
@@ -251,13 +285,13 @@
 }
 
 
-- (IBAction)choseQuestionPanel:(UIButton *)sender {
+- (void)choseQuestionPanel:(UIButton *)sender {
         
     NRFQuestion *question;
     
     int index = [self.questionPanels indexOfObject:sender];
         
-    if([self.mode isEqualToString:@"regJPrep"] || [self.mode isEqualToString:@"regJ"])
+    if(self.mode == REGULAR_JEOPARDY_SETUP || self.mode == REGULAR_JEOPARDY_PLAY)
         question = [self.game getQuestionAtIndex:index];
     else
         question  = [self.game getDoubleQuestionAtIndex:index];
@@ -268,7 +302,7 @@
         NSString *currentAmount = current.currentTitle;
         currentAmount = [currentAmount stringByReplacingOccurrencesOfString:@"$" withString:@""];
         question = [[NRFQuestion alloc] initWithValue:[currentAmount intValue]];
-        if([self.mode isEqualToString:@"regJPrep"])
+        if(self.mode == REGULAR_JEOPARDY_SETUP)
             [castedEditGame addQuestion:question atIndex:index];
         else
             [castedEditGame addDoubleQuestion:question atIndex:index];
@@ -285,13 +319,13 @@
         
         NRFQuestionViewController *questionVC;
         NRFJeopardyGamePlayable *castedPlayableGame = (NRFJeopardyGamePlayable *)self.game;
-        if([self.mode isEqualToString:@"regJ"]){
-            if([castedPlayableGame questionIsDailyDouble:index forMode:@"regJ"])
+        if(self.mode == REGULAR_JEOPARDY_PLAY){
+            if([castedPlayableGame questionIsDailyDouble:index forMode:REGULAR_JEOPARDY_PLAY])
                 questionVC = [[NRFQuestionViewController alloc] initWithQuestion:question andGame:self.game isDailyDouble:YES];
             else
                 questionVC = [[NRFQuestionViewController alloc] initWithQuestion:question andGame:self.game isDailyDouble:NO];
         } else {
-            if([castedPlayableGame questionIsDailyDouble:index forMode:@"doubleJ"])
+            if([castedPlayableGame questionIsDailyDouble:index forMode:DOUBLE_JEOPARDY_PLAY])
                 questionVC = [[NRFQuestionViewController alloc] initWithQuestion:question andGame:self.game isDailyDouble:YES];
             else
                 questionVC = [[NRFQuestionViewController alloc] initWithQuestion:question andGame:self.game isDailyDouble:NO];
@@ -304,15 +338,15 @@
     
 }
 
-- (IBAction)choseCategoryPanel:(UIButton *)sender {
+- (void)choseCategoryPanel:(UIButton *)sender {
     
-    if([self.mode isEqualToString:@"regJPrep"] || [self.mode isEqualToString:@"doubleJPrep"]){
+    if(![self wePlayin]){
         
         NSString *categoryToEdit;
         
         int index = [self.categoryPanels indexOfObject:sender];
         
-        if([self.mode isEqualToString:@"regJPrep"])
+        if(self.mode == REGULAR_JEOPARDY_SETUP)
             categoryToEdit = [self.game getCatAtIndex:index];
         else
             categoryToEdit = [self.game getDoubleCatAtIndex:index];
@@ -337,7 +371,6 @@
     if([(NRFJeopardyGameEditable *)self.game checkForJeopartyGameCompletelyEdited])
         [(NRFTabBarViewController *)self.tabBarController gameIsCompletelyEdited];
 }
-
 
 
 

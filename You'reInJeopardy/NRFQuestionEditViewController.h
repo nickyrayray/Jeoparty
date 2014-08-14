@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NRFQuestion.h"
+#import "NRFFinalJeopartyQuestion.h"
 
 @class NRFQuestionEditViewController;
 
@@ -22,5 +23,6 @@
 @property (nonatomic) id<NRFQuestionEditViewControllerDelegate> delegate;
 
 -(id)initWithQuestion:(NRFQuestion *)question;
+-(id)initWithFinalJeopartyQuestion:(NRFFinalJeopartyQuestion *)finalJeopartyQuestion;
 
 @end

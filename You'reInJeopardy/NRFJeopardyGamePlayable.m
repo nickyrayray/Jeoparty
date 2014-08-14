@@ -35,10 +35,6 @@
         self.regDailyDouble = -1;
         self.doubleDailyDouble1 = -1;
         self.doubleDailyDouble2 = -1;
-        self.contestantOneScore = 0;
-        self.contestantTwoScore = 0;
-        self.contestantThreeScore = 0;
-
     }
     return self;
 }
@@ -52,13 +48,9 @@
         self.regDailyDouble = [[decoder decodeObjectForKey:@"regDailyDouble"] intValue];
         self.doubleDailyDouble1 = [[decoder decodeObjectForKey:@"doubleDailyDouble1"] intValue];
         self.doubleDailyDouble2 = [[decoder decodeObjectForKey:@"doubleDailyDouble2"] intValue];
-        self.contestantOneScore = [[decoder decodeObjectForKey:@"contestantOneScore"] intValue];
-        self.contestantTwoScore = [[decoder decodeObjectForKey:@"contestantTwoScore"] intValue];
-        self.contestantThreeScore = [[decoder decodeObjectForKey:@"contestantThreeScore"] intValue];
-        self.contestantOneName = [decoder decodeObjectForKey:@"contestantOneName"];
-        self.contestantTwoName = [decoder decodeObjectForKey:@"contestantTwoName"];
-        self.contestantThreeName = [decoder decodeObjectForKey:@"contestantThreeName"];
-        
+        self.contestantOne = [decoder decodeObjectForKey:@"contestantOne"];
+        self.contestantTwo = [decoder decodeObjectForKey:@"contestantTwo"];
+        self.contestantThree = [decoder decodeObjectForKey:@"contestantThree"];
     }
         
     return self;
@@ -70,12 +62,9 @@
     [coder encodeObject:[NSNumber numberWithInt:self.regDailyDouble] forKey:@"regDailyDouble"];
     [coder encodeObject:[NSNumber numberWithInt:self.doubleDailyDouble1] forKey:@"doubleDailyDouble1"];
     [coder encodeObject:[NSNumber numberWithInt:self.doubleDailyDouble2] forKey:@"doubleDailyDouble2"];
-    [coder encodeObject:[NSNumber numberWithInt:self.contestantOneScore] forKey:@"contestantOneScore"];
-    [coder encodeObject:[NSNumber numberWithInt:self.contestantTwoScore] forKey:@"contestantTwoScore"];
-    [coder encodeObject:[NSNumber numberWithInt:self.contestantThreeScore] forKey:@"contestantThreeScore"];
-    [coder encodeObject:self.contestantOneName forKey:@"contestantOneName"];
-    [coder encodeObject:self.contestantTwoName forKey:@"contestantTwoName"];
-    [coder encodeObject:self.contestantThreeName forKey:@"contestantThreeName"];
+    [coder encodeObject:self.contestantOne forKey:@"contestantOne"];
+    [coder encodeObject:self.contestantTwo forKey:@"contestantTwo"];
+    [coder encodeObject:self.contestantThree forKey:@"contestantThree"];
 }
 
 -(void)incrementQuestionsAnswered
@@ -111,10 +100,10 @@
         return NO;
 }
 
--(BOOL)questionIsDailyDouble:(int)questionIndex forMode:(NSString *)mode
+-(BOOL)questionIsDailyDouble:(int)questionIndex forMode:(int)mode
 {
     
-    if([mode isEqualToString:@"regJ"]){
+    if(mode == REGULAR_JEOPARDY_PLAY){
         if(questionIndex == self.regDailyDouble)
             return YES;
         else
@@ -125,16 +114,6 @@
         else
             return NO;
     }
-}
-
--(void)addToContestantScore:(int)contestantScore thisAmount:(int)amount
-{
-    contestantScore += amount;
-}
-
--(void)subtractFromContestantScore:(int)contestantScore thisAmount:(int)amount
-{
-    contestantScore -= amount;
 }
 
 +(NRFJeopardyGamePlayable *)makeCopyOfGame:(NRFJeopardyGameEditable *)gameToCopy

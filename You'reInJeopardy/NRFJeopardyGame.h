@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "NRFQuestion.h"
+#import "NRFFinalJeopartyQuestion.h"
+#import "Constants.h"
 
 @interface NRFJeopardyGame : NSObject<NSCoding>
 
@@ -15,6 +17,7 @@
 @property (strong, nonatomic) NSMutableArray *doubleCategories;
 @property (strong, nonatomic) NSMutableArray *questions;
 @property (strong, nonatomic) NSMutableArray *doubleQuestions;
+@property (strong, nonatomic) NRFFinalJeopartyQuestion *finalJeopartyQuestion;
 @property (strong, nonatomic) NSString *gameTitle;
 @property (strong, nonatomic) NSString *gameDescription;
 @property int maxQuestionCount;
@@ -22,10 +25,6 @@
 
 
 -(id)init;
--(BOOL)isDoneWithReg;
--(BOOL)isDoneWithRegRound;
--(BOOL)isDoneWithDouble;
--(BOOL)isDoneWithDoubleRound;
 -(NRFQuestion *)getDoubleQuestionAtIndex:(int)index;
 -(NRFQuestion *)getQuestionAtIndex:(int)index;
 -(NSString *)getCatAtIndex:(int)index;

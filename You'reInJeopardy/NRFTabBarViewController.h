@@ -13,7 +13,7 @@
 
 @protocol NRFTabBarViewControllerDelegate <NSObject>
 
--(void)tabBarViewControllerDidFinishWithEditedGame:(NRFJeopardyGameEditable *)editableGame;
+-(void)tabBarViewControllerDidFinishWithEditedGame:(NRFJeopardyGameEditable *)game;
 
 @end
 
@@ -21,6 +21,8 @@
 
 @property (strong, nonatomic) id<NRFTabBarViewControllerDelegate> myDelegate;
 
+-(id)init;
 -(void)gameIsCompletelyEdited;
+-(void)gameIsNoLongerCompletelyEdited;
 
 @end

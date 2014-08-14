@@ -33,11 +33,10 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *contestantThreeIncrementValueSegment;
 
 @property (strong, nonatomic)NRFJeopardyGamePlayable *game;
-@property int contestantOneValueToAddOrSubtract;
-@property int contestantTwoValueToAddOrSubtract;
-@property int contestantThreeValueToAddOrSubtract;
+@property int questionValue;
 @property BOOL isInEditMode;
 @property BOOL isInInitializeMode;
+@property BOOL isInFinalJeopartyMode;
 
 @end
 
@@ -49,9 +48,7 @@
     if (self) {
         
         self.game = game;
-        self.contestantOneValueToAddOrSubtract = question.value;
-        self.contestantTwoValueToAddOrSubtract = question.value;
-        self.contestantThreeValueToAddOrSubtract = question.value;
+        self.questionValue = question.value;
         self.isInEditMode = NO;
         self.isInInitializeMode = NO;
         
@@ -69,9 +66,6 @@
             self.isInInitializeMode = YES;
         else{
             self.isInEditMode = YES;
-            self.contestantOneValueToAddOrSubtract = 1;
-            self.contestantTwoValueToAddOrSubtract = 1;
-            self.contestantThreeValueToAddOrSubtract = 1;
         }
         
     }
@@ -102,12 +96,12 @@
         
     } else {
         
-        self.contestantOneScore.text = [self stringifyAndAddDollarSignToNumber:self.game.contestantOneScore];
-        self.contestantTwoScore.text = [self stringifyAndAddDollarSignToNumber:self.game.contestantTwoScore];
-        self.contestantThreeScore.text = [self stringifyAndAddDollarSignToNumber:self.game.contestantThreeScore];
-        self.contestantOneName.text = self.game.contestantOneName;
-        self.contestantTwoName.text = self.game.contestantTwoName;
-        self.contestantThreeName.text = self.game.contestantThreeName;
+        self.contestantOneScore.text = [self stringifyAndAddDollarSignToNumber:self.game.contestantOne.score];
+        self.contestantTwoScore.text = [self stringifyAndAddDollarSignToNumber:self.game.contestantTwo.score];
+        self.contestantThreeScore.text = [self stringifyAndAddDollarSignToNumber:self.game.contestantThree.score];
+        self.contestantOneName.text = self.game.contestantOne.name;
+        self.contestantTwoName.text = self.game.contestantTwo.name;
+        self.contestantThreeName.text = self.game.contestantThree.name;
         [self.contestantOneName setEditable:NO];
         [self.contestantTwoName setEditable:NO];
         [self.contestantThreeName setEditable:NO];
@@ -121,13 +115,13 @@
 
 -(void)doneButtonPressed:(id)sender{
     
-    self.game.contestantOneName = self.contestantOneName.text;
-    self.game.contestantTwoName = self.contestantTwoName.text;
-    self.game.contestantThreeName = self.contestantThreeName.text;
     [self.navigationController setNavigationBarHidden:YES];
-    if(self.isInInitializeMode)
+    if(self.isInInitializeMode){
+        self.game.contestantOne = [[NRFJeopartyContestant alloc] initWithName:self.contestantOneName.text];
+        self.game.contestantTwo = [[NRFJeopartyContestant alloc] initWithName:self.contestantTwoName.text];
+        self.game.contestantThree = [[NRFJeopartyContestant alloc] initWithName:self.contestantThreeName.text];
         [self.delegate scoreVCDidFinishWithGame:self.game];
-    else
+    } else
         [self.delegate scoreVCDidFinish];
 }
 
@@ -144,66 +138,76 @@
 }
 
 - (IBAction)contestantOnePlusButtonPressed:(id)sender {
-    int numberToAddTo = [self getIntValueFromLabel:self.contestantOneScore.text];
-    int newScore = numberToAddTo + self.contestantOneValueToAddOrSubtract;
-    self.contestantOneScore.text = [self stringifyAndAddDollarSignToNumber:newScore];
-    self.game.contestantOneScore = newScore;
-}
-- (IBAction)contestantOneMinusButtonPressed:(id)sender {
-    int numberToSubtractFrom = [self getIntValueFromLabel:self.contestantOneScore.text];
-    int newScore = numberToSubtractFrom - self.contestantOneValueToAddOrSubtract;
-    self.contestantOneScore.text = [self stringifyAndAddDollarSignToNumber:newScore];
-    self.game.contestantOneScore = newScore;
-}
-- (IBAction)contestantTwoPlusButtonPressed:(id)sender {
-    int numberToAddTo = [self getIntValueFromLabel:self.contestantTwoScore.text];
-    int newScore = numberToAddTo + self.contestantTwoValueToAddOrSubtract;
-    self.contestantTwoScore.text = [self stringifyAndAddDollarSignToNumber:newScore];
-    self.game.contestantTwoScore = newScore;
-}
-- (IBAction)contestantTwoMinusButtonPressed:(id)sender {
-    int numberToSubtractFrom = [self getIntValueFromLabel:self.contestantTwoScore.text];
-    int newScore = numberToSubtractFrom - self.contestantTwoValueToAddOrSubtract;
-    self.contestantTwoScore.text = [self stringifyAndAddDollarSignToNumber:newScore];
-    self.game.contestantTwoScore = newScore;
-}
-- (IBAction)contestantThreePlusButtonPressed:(id)sender {
-    int numberToAddTo = [self getIntValueFromLabel:self.contestantThreeScore.text];
-    int newScore = numberToAddTo + self.contestantThreeValueToAddOrSubtract;
-    self.contestantThreeScore.text = [self stringifyAndAddDollarSignToNumber:newScore];
-    self.game.contestantThreeScore = newScore;
-}
-- (IBAction)contestantThreeMinusButtonPressed:(id)sender {
-    int numberToSubtractFrom = [self getIntValueFromLabel:self.contestantThreeScore.text];
-    int newScore = numberToSubtractFrom - self.contestantThreeValueToAddOrSubtract;
-    self.contestantThreeScore.text = [self stringifyAndAddDollarSignToNumber:newScore];
-    self.game.contestantThreeScore = newScore;
+    int contestantOneValueToAdd;
+    if(self.isInEditMode)
+        contestantOneValueToAdd = [self getIntValueFromLabel:[self.contestantOneIncrementValueSegment titleForSegmentAtIndex:self.contestantOneIncrementValueSegment.selectedSegmentIndex]];
+    else if(self.isInFinalJeopartyMode)
+        contestantOneValueToAdd = -1;
+    else
+        contestantOneValueToAdd = self.questionValue;
+    [self.game.contestantOne addThisAmountToContestantScore:contestantOneValueToAdd];
+    self.contestantOneScore.text = [self stringifyAndAddDollarSignToNumber:self.game.contestantOne.score];
 }
 
-- (IBAction)contestantOneIncrementValueSelected:(UISegmentedControl *)sender {
-    if(sender.selectedSegmentIndex == 0)
-        self.contestantOneValueToAddOrSubtract = 1;
-    else if(sender.selectedSegmentIndex == 1)
-        self.contestantOneValueToAddOrSubtract = 10;
+- (IBAction)contestantOneMinusButtonPressed:(id)sender {
+    int contestantOneValueToSubtract;
+    if(self.isInEditMode)
+        contestantOneValueToSubtract = [self getIntValueFromLabel:[self.contestantOneIncrementValueSegment titleForSegmentAtIndex:self.contestantOneIncrementValueSegment.selectedSegmentIndex]];
+    else if(self.isInFinalJeopartyMode)
+        contestantOneValueToSubtract = -1;
     else
-        self.contestantOneValueToAddOrSubtract = 100;
+        contestantOneValueToSubtract = self.questionValue;
+    [self.game.contestantOne subtractThisAmoutnFromContestantScore:contestantOneValueToSubtract];
+    self.contestantOneScore.text = [self stringifyAndAddDollarSignToNumber:self.game.contestantOne.score];
 }
-- (IBAction)contestantTwoIncrementValueSelected:(UISegmentedControl *)sender {
-    if(sender.selectedSegmentIndex == 0)
-        self.contestantTwoValueToAddOrSubtract = 1;
-    else if(sender.selectedSegmentIndex == 1)
-        self.contestantTwoValueToAddOrSubtract = 10;
+
+- (IBAction)contestantTwoPlusButtonPressed:(id)sender {
+    int contestantTwoValueToAdd;
+    if(self.isInEditMode)
+        contestantTwoValueToAdd = [self getIntValueFromLabel:[self.contestantTwoIncrementValueSegment titleForSegmentAtIndex:self.contestantTwoIncrementValueSegment.selectedSegmentIndex]];
+    else if(self.isInFinalJeopartyMode)
+        contestantTwoValueToAdd = -1;
     else
-        self.contestantTwoValueToAddOrSubtract = 100;
+        contestantTwoValueToAdd = self.questionValue;
+    [self.game.contestantTwo addThisAmountToContestantScore:contestantTwoValueToAdd];
+    self.contestantTwoScore.text = [self stringifyAndAddDollarSignToNumber:self.game.contestantTwo.score];
 }
-- (IBAction)contestantThreeIncrementValueSelected:(UISegmentedControl *)sender {
-    if(sender.selectedSegmentIndex == 0)
-        self.contestantThreeValueToAddOrSubtract = 1;
-    else if(sender.selectedSegmentIndex == 1)
-        self.contestantThreeValueToAddOrSubtract = 10;
+
+- (IBAction)contestantTwoMinusButtonPressed:(id)sender {
+    int contestantTwoValueToSubtract;
+    if(self.isInEditMode)
+        contestantTwoValueToSubtract = [self getIntValueFromLabel:[self.contestantTwoIncrementValueSegment titleForSegmentAtIndex:self.contestantTwoIncrementValueSegment.selectedSegmentIndex]];
+    else if(self.isInFinalJeopartyMode)
+        contestantTwoValueToSubtract = -1;
     else
-        self.contestantThreeValueToAddOrSubtract = 100;
+        contestantTwoValueToSubtract = self.questionValue;
+    [self.game.contestantTwo subtractThisAmoutnFromContestantScore:contestantTwoValueToSubtract];
+    self.contestantTwoScore.text = [self stringifyAndAddDollarSignToNumber:self.game.contestantTwo.score];
 }
+- (IBAction)contestantThreePlusButtonPressed:(id)sender {
+    int contestantThreeValueToAdd;
+    if(self.isInEditMode)
+        contestantThreeValueToAdd = [self getIntValueFromLabel:[self.contestantThreeIncrementValueSegment titleForSegmentAtIndex:self.contestantThreeIncrementValueSegment.selectedSegmentIndex]];
+    else if(self.isInFinalJeopartyMode)
+        contestantThreeValueToAdd = -1;
+    else
+        contestantThreeValueToAdd = self.questionValue;
+    [self.game.contestantThree addThisAmountToContestantScore:contestantThreeValueToAdd];
+    self.contestantThreeScore.text = [self stringifyAndAddDollarSignToNumber:self.game.contestantThree.score];
+}
+
+- (IBAction)contestantThreeMinusButtonPressed:(id)sender {
+    int contestantThreeValueToSubtract;
+    if(self.isInEditMode)
+        contestantThreeValueToSubtract = [self getIntValueFromLabel:[self.contestantThreeIncrementValueSegment titleForSegmentAtIndex:self.contestantOneIncrementValueSegment.selectedSegmentIndex]];
+    else if(self.isInFinalJeopartyMode)
+        contestantThreeValueToSubtract = -1;
+    else
+        contestantThreeValueToSubtract = self.questionValue;
+    [self.game.contestantThree subtractThisAmoutnFromContestantScore:contestantThreeValueToSubtract];
+    self.contestantThreeScore.text = [self stringifyAndAddDollarSignToNumber:self.game.contestantThree.score];
+}
+
 - (IBAction)topPressed:(id)sender {
     if([self.navigationController isNavigationBarHidden])
         [self.navigationController setNavigationBarHidden:NO animated:YES];

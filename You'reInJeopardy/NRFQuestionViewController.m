@@ -13,8 +13,6 @@
 
 @property (strong, nonatomic) NRFQuestion *question;
 @property (strong, nonatomic) NRFJeopardyGamePlayable *game;
-@property (weak, nonatomic) IBOutlet UIButton *questionDisplay;
-@property (weak, nonatomic) UIButton *dailyDouble;
 @property BOOL isDailyDouble;
 @property BOOL isTransition;
 @property (strong, nonatomic) NSString *transitionMessage;
@@ -24,13 +22,9 @@
 
 @implementation NRFQuestionViewController
 
-- (id)initWithQuestion:(NRFQuestion *)question andGame:(NRFJeopardyGame *)game isDailyDouble:(BOOL)isDailyDouble
+- (id)initWithQuestion:(NRFQuestion *)question andGame:(NRFJeopardyGamePlayable *)game isDailyDouble:(BOOL)isDailyDouble
 {
-    if(isDailyDouble){
-        self = [super init];
-    } else {
-        self = [super initWithNibName:@"NRFQuestionViewController" bundle:nil];
-    }
+    self = [super init];
     if (self) {
         self.question = question;
         self.isDailyDouble = isDailyDouble;
@@ -41,7 +35,7 @@
 
 -(id)initWithTransition:(NSString *)transitionMessage{
     
-    self = [super initWithNibName:@"NRFQuestionViewController" bundle:nil];
+    self = [super init];
     
     if(self){
         
@@ -53,22 +47,39 @@
     return self;
 }
 
+-(void)loadView
+{
+    [super loadView];
+    self.view.backgroundColor = [UIColor blueColor];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIButton *questionButton;
+    
     if(self.isDailyDouble){
-        UIButton *button = [[UIButton alloc] initWithFrame:self.view.bounds];
+        questionButton = [[UIButton alloc] initWithFrame:self.view.frame];
         UIImage *buttonImage = [UIImage imageNamed:@"DailyDouble.png"];
-        [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(dailyDoublePressed:) forControlEvents:UIControlEventTouchUpInside];
-        [button setAdjustsImageWhenHighlighted:NO];
-        [self.view addSubview:button];
-        self.dailyDouble = button;
+        [questionButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [questionButton addTarget:self action:@selector(dailyDoublePressed:) forControlEvents:UIControlEventTouchUpInside];
+        [questionButton setAdjustsImageWhenHighlighted:NO];
+        [self.view addSubview:questionButton];
     } else if(self.isTransition){
-        [self.questionDisplay setTitle:self.transitionMessage forState:UIControlStateNormal];
+        questionButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 20, 984, 728)];
+        [questionButton setTitle:self.transitionMessage forState:UIControlStateNormal];
     } else {
-        [self.questionDisplay setTitle:self.question.question forState:UIControlStateNormal];
-
+        questionButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 20, 984, 728)];
+        questionButton.adjustsImageWhenHighlighted = NO;
+        questionButton.backgroundColor = [UIColor blueColor];
+        [questionButton.titleLabel setTextColor:[UIColor whiteColor]];
+        UIFont *customFont = [UIFont fontWithName:@"Hoefler Text" size:70];
+        questionButton.titleLabel.font = customFont;
+        [questionButton addTarget:self action:@selector(questionAnswered:) forControlEvents:UIControlEventTouchUpInside];
+        [questionButton setTitle:self.question.question forState:UIControlStateNormal];
+        [questionButton addTarget:self action:@selector(questionAnswered:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:questionButton];
     }
     
     self.navigationItem.title = @"Selected Question";
@@ -81,7 +92,7 @@
     [self.navigationController popViewControllerAnimated:NO];
 }
 
-- (IBAction)questionAnswered:(id)sender {
+- (void)questionAnswered:(id)sender {
     
     NRFScoreViewController *scoreVC = [[NRFScoreViewController alloc] initWithGame:self.game andQuestion:self.question];
     scoreVC.delegate = self;
@@ -100,7 +111,7 @@
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
-    if(self.dailyDouble){
+    if(self.isDailyDouble){
         NRFQuestionViewController *questionVC = [[NRFQuestionViewController alloc] initWithQuestion:self.question
                                                                                             andGame:self.game
                                                                                       isDailyDouble:NO];

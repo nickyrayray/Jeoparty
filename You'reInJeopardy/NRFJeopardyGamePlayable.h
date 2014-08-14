@@ -8,24 +8,20 @@
 
 #import "NRFJeopardyGame.h"
 #import "NRFJeopardyGameEditable.h"
+#import "NRFJeopartyContestant.h"
 
 @interface NRFJeopardyGamePlayable : NRFJeopardyGame
 
-@property int contestantOneScore;
-@property int contestantTwoScore;
-@property int contestantThreeScore;
-@property NSString *contestantOneName;
-@property NSString *contestantTwoName;
-@property NSString *contestantThreeName;
+@property (strong, nonatomic) NRFJeopartyContestant *contestantOne;
+@property (strong, nonatomic) NRFJeopartyContestant *contestantTwo;
+@property (strong, nonatomic) NRFJeopartyContestant *contestantThree;
 
 -(id)initWithEditableGame:(NRFJeopardyGameEditable *)editableGame;
 -(void)incrementQuestionsAnswered;
 -(void)incrementDoubleQuestionsAnswered;
 -(void)setDailyDoubles;
 -(BOOL)dailyDoublesAreSet;
--(BOOL)questionIsDailyDouble:(int)questionIndex forMode:(NSString *)mode;
--(void)addToContestantScore:(int)contestantScore thisAmount:(int)amount;
--(void)subtractFromContestantScore:(int)contestantScore thisAmount:(int)amount;
+-(BOOL)questionIsDailyDouble:(int)questionIndex forMode:(int)mode;
 +(NRFJeopardyGamePlayable *)makeCopyOfGame:(NRFJeopardyGameEditable *)gameToCopy;
 
 @end
