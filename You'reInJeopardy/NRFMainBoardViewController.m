@@ -65,6 +65,7 @@
     [super loadView];
     
     self.scrollView = [[UIScrollView alloc]initWithFrame:self.view.frame];
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.height, self.view.frame.size.width + self.tabBarController.tabBar.frame.size.height);
     self.view = self.scrollView;
     self.categoryPanels = [[NSMutableArray alloc]init];
     self.questionPanels = [[NSMutableArray alloc]init];
@@ -76,7 +77,7 @@
     [super viewDidLoad];
     
     CGRect frameSize = self.view.bounds;
-    float buttonWidth = (frameSize.size.width)/6;
+    float buttonWidth = (frameSize.size.width)/6 + (20/(TOTAL_QUESTION_PANELS/TOTAL_CATEGORY_PANELS + 1));
     float buttonHeight = (frameSize.size.height/6);
     UIButton *buttonToCreate;
     

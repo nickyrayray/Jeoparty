@@ -9,7 +9,8 @@
 #import "NRFCategoryEditViewController.h"
 
 @interface NRFCategoryEditViewController ()
-@property (weak, nonatomic) IBOutlet UITextView *categoryTextView;
+
+@property (strong, nonatomic) UITextView *categoryTextView;
 @property (strong, nonatomic) NSString *category;
 @property (nonatomic) int index;
 @property BOOL mightNeedIncrement;
@@ -20,7 +21,7 @@
 
 - (id)initWithCat:(NSString *)category atIndex:(int)index;
 {
-    self = [super initWithNibName:@"NRFCategoryEditViewController" bundle:nil];
+    self = [super init];
     if (self) {
         self.category = category;
         self.index = index;
@@ -32,15 +33,27 @@
     return self;
 }
 
+-(void)loadView
+{
+    [super loadView];
+    self.view.backgroundColor = [UIColor blueColor];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.categoryTextView = [[UITextView alloc] initWithFrame:CGRectMake(107, 108, 810, 512)];
+    self.categoryTextView.textAlignment = NSTextAlignmentCenter;
+    self.categoryTextView.font = [UIFont fontWithName:@"Hoefler Text" size:70];
+    self.categoryTextView.backgroundColor = [UIColor blueColor];
+    self.categoryTextView.textColor = [UIColor whiteColor];
+    [self.view addSubview:self.categoryTextView];
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed:)];
     if(![self.category isEqualToString:@""] && self.category != nil){
         self.categoryTextView.text = self.category;
     }
     self.navigationItem.rightBarButtonItem = doneButton;
-    self.navigationItem.title = @"Edit Category";
+    self.navigationItem.title = @"Enter Category Below";
 }
 
 - (void)doneButtonPressed:(id)sender {

@@ -17,7 +17,7 @@
 
 - (id)init
 {
-    self = [super initWithNibName:@"NRFMainMenuViewController" bundle:nil];
+    self = [super init];
     if (self) {
         self.games = [NSMutableArray array];
     }
@@ -41,14 +41,72 @@
     [coder encodeObject:self.games forKey:@"games"];
 }
 
+-(void)loadView{
+    [super loadView];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    CGRect frameSize = self.view.bounds;
+    float buttonWidth = (frameSize.size.width)/6 + (20/(TOTAL_QUESTION_PANELS/TOTAL_CATEGORY_PANELS + 1));
+    float buttonHeight = (frameSize.size.height/6);
+    NSMutableArray *buttonArray = [[NSMutableArray alloc]init];
+    UIButton *buttonToCreate;
+    
+    for(int i = 0; i < TOTAL_CATEGORY_PANELS; i++){
+        for(int j = 0; j < (TOTAL_QUESTION_PANELS / TOTAL_CATEGORY_PANELS) + 1; j++){
+            buttonToCreate = [[UIButton alloc] initWithFrame:CGRectMake(j*buttonHeight, i*buttonWidth, buttonHeight, buttonWidth)];
+            [buttonToCreate setBackgroundImage:[UIImage imageNamed:@"Square.png"] forState:UIControlStateNormal];
+            buttonToCreate.adjustsImageWhenDisabled = NO;
+            buttonToCreate.titleLabel.textColor = [UIColor yellowColor];
+            [buttonToCreate setEnabled:NO];
+            [buttonArray addObject:buttonToCreate];
+            [self.view addSubview:buttonToCreate];
+        }
+    }
+    
+    for(int i = 7; i < 11; i++){
+        [[buttonArray objectAtIndex:7] removeFromSuperview];
+        [buttonArray removeObjectAtIndex:7];
+    }
+    
+    for(int i = 9; i < 13; i++){
+        [[buttonArray objectAtIndex:9] removeFromSuperview];
+        [buttonArray removeObjectAtIndex:9];
+    }
+    
+    UIButton *buttonToFormat;
+    for(int i = 17; i < 21; i++){
+        buttonToFormat= [buttonArray objectAtIndex:i];
+        [buttonToFormat.titleLabel setFont:[UIFont boldSystemFontOfSize:20]];
+        [buttonToFormat setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
+        [buttonToFormat setEnabled:YES];
+        if(i == 17){
+            [buttonToFormat setTitle:@"Create Game" forState:UIControlStateNormal];
+            [buttonToFormat addTarget:self action:@selector(createGame:) forControlEvents:UIControlEventTouchUpInside];
+        } else if(i == 18){
+            [buttonToFormat setTitle:@"Play Game" forState:UIControlStateNormal];
+            [buttonToFormat addTarget:self action:@selector(playGame:) forControlEvents:UIControlEventTouchUpInside];
+        } else if(i == 19){
+            [buttonToFormat setTitle:@"Edit Game" forState:UIControlStateNormal];
+            [buttonToFormat addTarget:self action:@selector(editGame:) forControlEvents:UIControlEventTouchUpInside];
+        } else {
+            [buttonToFormat setTitle:@"Options" forState:UIControlStateNormal];
+            [buttonToFormat addTarget:self action:@selector(options:) forControlEvents:UIControlEventTouchUpInside];
+        }
+    }
+    
+    UIImageView *titleImage = [[UIImageView alloc] initWithFrame:CGRectMake(buttonHeight, buttonWidth, 4*buttonHeight, 2*buttonWidth)];
+    titleImage.image = [UIImage imageNamed:@"Logo.png"];
+    [self.view addSubview:titleImage];
+    
     self.navigationItem.title = @"Main Menu";
     [self.navigationController setNavigationBarHidden:YES];
 }
 
-- (IBAction)createGame:(id)sender {
+- (void)createGame:(id)sender {
     
     [self.navigationController setNavigationBarHidden:NO];
     
@@ -59,15 +117,15 @@
     
 }
 
-- (IBAction)playGame:(id)sender {
+- (void)playGame:(id)sender {
     NRFOldGamesTableViewController *oldGames = [[NRFOldGamesTableViewController alloc] initWithGames:self.games inMode:OLD_GAMES_PLAY_MODE];
     [self.navigationController pushViewController:oldGames animated:YES];
 }
-- (IBAction)editGame:(id)sender {
+- (void)editGame:(id)sender {
     NRFOldGamesTableViewController *oldGames = [[NRFOldGamesTableViewController alloc] initWithGames:self.games inMode:OLD_GAMES_EDIT_MODE];
     [self.navigationController pushViewController:oldGames animated:YES];
 }
-- (IBAction)options:(id)sender {
+- (void)options:(id)sender {
 }
 
 -(void)tabBarViewControllerDidFinishWithEditedGame:(NRFJeopardyGameEditable *)editableGame
