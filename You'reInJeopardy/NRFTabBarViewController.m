@@ -22,8 +22,10 @@
         NRFMainBoardViewController *createRegJGameBoard = [[NRFMainBoardViewController alloc] initWithEditableGame:gameToInitialize inMode:REGULAR_JEOPARDY_SETUP];
         createRegJGameBoard.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Regular Jeoparty" image:nil tag:0];
         NRFMainBoardViewController *createDoubleJGameBoard = [[NRFMainBoardViewController alloc] initWithEditableGame:gameToInitialize inMode:DOUBLE_JEOPARDY_SETUP];
+        [self addOffsetToViewController:createDoubleJGameBoard];
         createDoubleJGameBoard.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Double Jeopardy" image:nil tag:0];
         NRFQuestionEditViewController *finalJeopartySetup = [[NRFQuestionEditViewController alloc] initWithFinalJeopartyQuestion:gameToInitialize.finalJeopartyQuestion];
+        //[self addOffsetToViewController:finalJeopartySetup];
         finalJeopartySetup.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Final Jeoparty" image:nil tag:0];
         self.viewControllers = [NSArray arrayWithObjects:createRegJGameBoard, createDoubleJGameBoard, finalJeopartySetup, nil];
     }
@@ -33,7 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.navigationController setNavigationBarHidden:YES];
     [self loadButtons];
     self.navigationItem.title = @"Main Board: Edit Mode";
     
@@ -69,6 +71,11 @@
         [self gameIsCompletelyEdited];
     else
         [self gameIsNoLongerCompletelyEdited];
+}
+
+-(void)addOffsetToViewController:(UIViewController *)viewController{
+    UIScrollView *scrollView = (UIScrollView *)viewController.view;
+    [scrollView setContentInset:UIEdgeInsetsMake(64, 0, 44, 0)];
 }
 
 @end

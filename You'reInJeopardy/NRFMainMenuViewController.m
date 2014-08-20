@@ -133,6 +133,9 @@
     [self.games addObject:editableGame];
     [self.navigationController popViewControllerAnimated:NO];
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:YES];
+}
 
 
 @end

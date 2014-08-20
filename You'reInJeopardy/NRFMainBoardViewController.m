@@ -16,9 +16,6 @@
 @property (strong, nonatomic) NSMutableArray *questionPanels;
 @property (strong, nonatomic) NSMutableArray *categoryPanels;
 
-@property (strong, nonatomic) UIScrollView *scrollView;
-
-
 
 
 @end
@@ -64,9 +61,10 @@
 {
     [super loadView];
     
-    self.scrollView = [[UIScrollView alloc]initWithFrame:self.view.frame];
-    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.height, self.view.frame.size.width + self.tabBarController.tabBar.frame.size.height);
-    self.view = self.scrollView;
+    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    scrollView.contentSize = CGSizeMake(self.view.bounds.size.height, self.view.bounds.size.width + self.tabBarController.tabBar.frame.size.height);
+    scrollView.backgroundColor = [UIColor blueColor];
+    self.view = scrollView;
     self.categoryPanels = [[NSMutableArray alloc]init];
     self.questionPanels = [[NSMutableArray alloc]init];
     
