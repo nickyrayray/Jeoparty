@@ -25,7 +25,7 @@
         [self addOffsetToViewController:createDoubleJGameBoard];
         createDoubleJGameBoard.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Double Jeopardy" image:nil tag:0];
         NRFQuestionEditViewController *finalJeopartySetup = [[NRFQuestionEditViewController alloc] initWithFinalJeopartyQuestion:gameToInitialize.finalJeopartyQuestion];
-        //[self addOffsetToViewController:finalJeopartySetup];
+        [self addOffsetToViewController:finalJeopartySetup];
         finalJeopartySetup.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Final Jeoparty" image:nil tag:0];
         self.viewControllers = [NSArray arrayWithObjects:createRegJGameBoard, createDoubleJGameBoard, finalJeopartySetup, nil];
     }

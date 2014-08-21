@@ -49,7 +49,7 @@
 {
     [super viewDidLoad];
     
-    CGRect frameSize = self.view.bounds;
+    CGRect frameSize = [[UIScreen mainScreen]applicationFrame];
     float buttonWidth = (frameSize.size.width)/6 + (20/(TOTAL_QUESTION_PANELS/TOTAL_CATEGORY_PANELS + 1));
     float buttonHeight = (frameSize.size.height/6);
     NSMutableArray *buttonArray = [[NSMutableArray alloc]init];

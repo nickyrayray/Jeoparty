@@ -26,7 +26,6 @@
 		3886A37419478E0C005E3362 /* NRFQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886A37319478E0C005E3362 /* NRFQuestion.m */; };
 		3886A37719478F41005E3362 /* NRFJeopardyGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886A37619478F41005E3362 /* NRFJeopardyGame.m */; };
 		3886A37B19495C80005E3362 /* NRFQuestionEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886A37919495C80005E3362 /* NRFQuestionEditViewController.m */; };
-		3886A37C19495C80005E3362 /* NRFQuestionEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3886A37A19495C80005E3362 /* NRFQuestionEditViewController.xib */; };
 		3886A383194A63F0005E3362 /* NRFCategoryEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886A381194A63F0005E3362 /* NRFCategoryEditViewController.m */; };
 		3886A388194B9EBB005E3362 /* NRFQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886A386194B9EBB005E3362 /* NRFQuestionViewController.m */; };
 		3886A38F195B761E005E3362 /* NRFOldGamesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886A38E195B761E005E3362 /* NRFOldGamesTableViewController.m */; };
@@ -79,7 +78,6 @@
 		3886A37619478F41005E3362 /* NRFJeopardyGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFJeopardyGame.m; sourceTree = "<group>"; };
 		3886A37819495C80005E3362 /* NRFQuestionEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFQuestionEditViewController.h; sourceTree = "<group>"; };
 		3886A37919495C80005E3362 /* NRFQuestionEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFQuestionEditViewController.m; sourceTree = "<group>"; };
-		3886A37A19495C80005E3362 /* NRFQuestionEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NRFQuestionEditViewController.xib; sourceTree = "<group>"; };
 		3886A380194A63F0005E3362 /* NRFCategoryEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFCategoryEditViewController.h; sourceTree = "<group>"; };
 		3886A381194A63F0005E3362 /* NRFCategoryEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFCategoryEditViewController.m; sourceTree = "<group>"; };
 		3886A385194B9EBB005E3362 /* NRFQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFQuestionViewController.h; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				3886A381194A63F0005E3362 /* NRFCategoryEditViewController.m */,
 				3886A37819495C80005E3362 /* NRFQuestionEditViewController.h */,
 				3886A37919495C80005E3362 /* NRFQuestionEditViewController.m */,
-				3886A37A19495C80005E3362 /* NRFQuestionEditViewController.xib */,
 				380AD04D1995BD720034D824 /* NRFMainMenuViewController.h */,
 				380AD04E1995BD720034D824 /* NRFMainMenuViewController.m */,
 				38944233198AF2A200265DCA /* NRFTabBarViewController.h */,
@@ -317,7 +314,6 @@
 				3886A3441947863D005E3362 /* InfoPlist.strings in Resources */,
 				38D2C4E6197F26CA00144155 /* NRFScoreViewController.xib in Resources */,
 				3886A34C1947863D005E3362 /* Images.xcassets in Resources */,
-				3886A37C19495C80005E3362 /* NRFQuestionEditViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
