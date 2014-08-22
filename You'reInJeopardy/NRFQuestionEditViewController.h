@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "NRFQuestion.h"
 #import "NRFFinalJeopartyQuestion.h"
+#import "NRFJeopardyGameEditable.h"
+#import "NRFTabBarViewController.h"
 
 @class NRFQuestionEditViewController;
 
@@ -18,7 +20,7 @@
 
 @end
 
-@interface NRFQuestionEditViewController : UIViewController
+@interface NRFQuestionEditViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
 
 @property (nonatomic) id<NRFQuestionEditViewControllerDelegate> delegate;
 

@@ -22,10 +22,10 @@
         NRFMainBoardViewController *createRegJGameBoard = [[NRFMainBoardViewController alloc] initWithEditableGame:gameToInitialize inMode:REGULAR_JEOPARDY_SETUP];
         createRegJGameBoard.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Regular Jeoparty" image:nil tag:0];
         NRFMainBoardViewController *createDoubleJGameBoard = [[NRFMainBoardViewController alloc] initWithEditableGame:gameToInitialize inMode:DOUBLE_JEOPARDY_SETUP];
-        [self addOffsetToViewController:createDoubleJGameBoard];
+        [self addOffsetToMainBoardViewController:createDoubleJGameBoard];
         createDoubleJGameBoard.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Double Jeopardy" image:nil tag:0];
         NRFQuestionEditViewController *finalJeopartySetup = [[NRFQuestionEditViewController alloc] initWithFinalJeopartyQuestion:gameToInitialize.finalJeopartyQuestion];
-        [self addOffsetToViewController:finalJeopartySetup];
+        [self addOffsetToFinalJeopartyViewController:finalJeopartySetup];
         finalJeopartySetup.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Final Jeoparty" image:nil tag:0];
         self.viewControllers = [NSArray arrayWithObjects:createRegJGameBoard, createDoubleJGameBoard, finalJeopartySetup, nil];
     }
@@ -73,9 +73,26 @@
         [self gameIsNoLongerCompletelyEdited];
 }
 
--(void)addOffsetToViewController:(UIViewController *)viewController{
+-(void)checkForGameIsCompletelyEditedAndUpdateTabBarController
+{
+    NRFMainBoardViewController *mainBoardVC = self.viewControllers[0];
+    NRFJeopardyGameEditable *editGameToCheck = (NRFJeopardyGameEditable *)mainBoardVC.game;
+    if([editGameToCheck checkForJeopartyGameCompletelyEdited])
+        [self gameIsCompletelyEdited];
+    else
+        [self gameIsNoLongerCompletelyEdited];
+}
+
+-(void)addOffsetToMainBoardViewController:(UIViewController *)viewController{
     UIScrollView *scrollView = (UIScrollView *)viewController.view;
     [scrollView setContentInset:UIEdgeInsetsMake(64, 0, 44, 0)];
 }
+
+-(void)addOffsetToFinalJeopartyViewController:(UIViewController *)viewController{
+    UIScrollView *scrollView = (UIScrollView *)viewController.view;
+    [scrollView setContentInset:UIEdgeInsetsMake(64, 0, 0, 0)];
+}
+
+
 
 @end

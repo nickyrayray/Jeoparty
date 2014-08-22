@@ -8,7 +8,7 @@
 
 #import "NRFMainBoardViewController.h"
 
-@interface NRFMainBoardViewController ()
+@interface NRFMainBoardViewController () <NRFQuestionEditViewControllerDelegate, NRFCategoryEditViewControllerDelegate, NRFQuestionViewControllerDelegate, NRFScoreViewControllerDelegate>
 
 @property int mode;
 @property BOOL transitioningToDouble;
@@ -89,12 +89,15 @@
                 buttonToCreate.titleLabel.font = [UIFont systemFontOfSize:18];
                 [buttonToCreate setTitle:@"Select Category" forState:UIControlStateNormal];
                 [buttonToCreate addTarget:self action:@selector(choseCategoryPanel:) forControlEvents:UIControlEventTouchUpInside];
+                buttonToCreate.titleLabel.numberOfLines = 2;
                 [self.categoryPanels addObject:buttonToCreate];
                 [self.view addSubview:buttonToCreate];
             } else {
                 [buttonToCreate.titleLabel setFont:[UIFont boldSystemFontOfSize:50]];
                 [buttonToCreate setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
                 [buttonToCreate setTitle:[NSString stringWithFormat:@"$%d", i*200] forState:UIControlStateNormal];
+                buttonToCreate.titleLabel.numberOfLines = 4;
+                buttonToCreate.titleLabel.textAlignment = NSTextAlignmentCenter;
                 [buttonToCreate addTarget:self action:@selector(choseQuestionPanel:) forControlEvents:UIControlEventTouchUpInside];
                 [self.questionPanels addObject:buttonToCreate];
                 [self.view addSubview:buttonToCreate];
@@ -117,6 +120,8 @@
         if(!self.game.doubleQuestions){
             [self.game createDoubleQuestionArrayWithSize:self.questionPanels.count];
             [self.game createDoubleCategoryArrayWithSize:self.categoryPanels.count];
+        } else {
+            [self updateViewWithGameData];
         }
         
     } else if(self.mode == REGULAR_JEOPARDY_SETUP){
@@ -126,6 +131,8 @@
             [self.game createCategoryArrayWithSize:self.categoryPanels.count];
             [self.game setMaxQuestionCount:self.questionPanels.count];
             [self.game setMaxCategoryCount:self.categoryPanels.count];
+        } else {
+            [self updateViewWithGameData];
         }
         
     }
@@ -225,7 +232,7 @@
     }
     
     [self.navigationController popViewControllerAnimated:YES];
-    [self checkForFinishedGameAndUpdateTabViewController];
+    [(NRFTabBarViewController *)self.tabBarController checkForGameIsCompletelyEditedAndUpdateTabBarController];
     
 }
 
@@ -253,7 +260,7 @@
         [catPanel setTitle:@"Select Category" forState:UIControlStateNormal];
     
     [self.navigationController popViewControllerAnimated:YES];
-    [self checkForFinishedGameAndUpdateTabViewController];
+    [(NRFTabBarViewController *)self.tabBarController checkForGameIsCompletelyEditedAndUpdateTabBarController];
     
 }
 
@@ -365,12 +372,44 @@
     
 }
 
--(void)checkForFinishedGameAndUpdateTabViewController
+-(void)updateViewWithGameData
 {
-    if([(NRFJeopardyGameEditable *)self.game checkForJeopartyGameCompletelyEdited])
-        [(NRFTabBarViewController *)self.tabBarController gameIsCompletelyEdited];
+    UIButton *buttonInQuestion;
+    NRFQuestion *questionInQuestion;
+    if(self.mode == REGULAR_JEOPARDY_SETUP){
+        for(int i = 0; i < self.game.questions.count; i++){
+            if([[self.game getQuestionAtIndex:i] isFinished]){
+                buttonInQuestion = self.questionPanels[i];
+                questionInQuestion = [self.game getQuestionAtIndex:i];
+                buttonInQuestion.titleLabel.font = [UIFont systemFontOfSize:17];
+                buttonInQuestion.titleLabel.text = questionInQuestion.question;
+            }
+        }
+        
+        for(int i = 0; i < self.game.categories.count; i++){
+            if(self.game.categories[i] && ![self.game.categories[i] isEqualToString:@""]){
+                buttonInQuestion = self.categoryPanels[i];
+                buttonInQuestion.titleLabel.text = self.game.categories[i];
+            }
+        }
+    } else if(self.mode == DOUBLE_JEOPARDY_SETUP){
+        for(int i = 0; i < self.game.doubleQuestions.count; i++){
+            if([[self.game getQuestionAtIndex:i] isFinished]){
+                buttonInQuestion = self.questionPanels[i];
+                questionInQuestion = [self.game getDoubleQuestionAtIndex:i];
+                buttonInQuestion.titleLabel.font = [UIFont systemFontOfSize:17];
+                buttonInQuestion.titleLabel.text = questionInQuestion.question;
+            }
+        }
+        
+        for(int i = 0; i < self.game.doubleCategories.count; i++){
+            if(self.game.doubleCategories[i] && ![self.game.doubleCategories[i] isEqualToString:@""]){
+                buttonInQuestion = self.categoryPanels[i];
+                buttonInQuestion.titleLabel.text = self.game.doubleCategories[i];
+            }
+        }
+    }
 }
-
 
 
 @end

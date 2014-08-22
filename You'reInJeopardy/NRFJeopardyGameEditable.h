@@ -24,6 +24,5 @@
 -(void)incrementDoubleCategoriesCompleted;
 -(void)decrementDoubleCategoriesCompleted;
 -(BOOL)checkForJeopartyGameCompletelyEdited;
--(BOOL)doesAnythingExist;
 
 @end

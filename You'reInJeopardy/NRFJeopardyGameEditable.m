@@ -16,6 +16,7 @@
 @property int doubleCategoriesCreated;
 @property BOOL regularJeopartyCompletelyEdited;
 @property BOOL doubleJeopartyCompletelyEdited;
+@property BOOL finalJeopartyCompletelyEdited;
 
 @end
 
@@ -123,14 +124,6 @@
         return YES;
     else
         return NO;
-}
-
--(BOOL)doesAnythingExist
-{
-    if(self.questionsEdited == 0 && self.doubleQuestionsEdited == 0 && self.categoriesCreated == 0 && self.doubleCategoriesCreated == 0)
-        return NO;
-    else
-        return YES;
 }
 
 

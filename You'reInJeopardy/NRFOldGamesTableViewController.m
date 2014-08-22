@@ -22,7 +22,7 @@
     self = [super initWithStyle:UITableViewStylePlain];
     
     if (self) {
-        if(!self.games){
+        /*if(!self.games){
             self.games = [NSMutableArray array];
             NRFJeopardyGamePlayable *test = [[NRFJeopardyGamePlayable alloc] init];
             test.gameTitle = @"Test Title";
@@ -47,8 +47,12 @@
             test.doubleCategories = mutableCategories;
     
             [self.games addObject:test];
-        }
+        }*/
         self.mode = mode;
+        if([self isInEditMode])
+            self.games = games;
+        else
+            self.games = [self arrayOfPlayableGamesFromEditableGames:games];
     }
     return self;
 }
@@ -56,6 +60,17 @@
 -(void) loadView
 {
     [super loadView];
+    
+    if([self.games count] == 0){
+        UILabel *label = [[UILabel alloc]initWithFrame:[[UIScreen mainScreen]applicationFrame]];
+        label.text = @"NO GAMES FOUND";
+        label.textAlignment = NSTextAlignmentCenter;
+        label.font = [UIFont boldSystemFontOfSize:70.0];
+        label.textColor = [UIColor whiteColor];
+        label.backgroundColor = [UIColor blueColor];
+        self.view = label;
+        return;
+    }
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds
                                                           style:UITableViewStylePlain];
@@ -134,6 +149,16 @@
         return YES;
     else
         return NO;
+}
+
+-(NSMutableArray *)arrayOfPlayableGamesFromEditableGames:(NSMutableArray *)games
+{
+    NSMutableArray *playableGames = [[NSMutableArray alloc]init];
+    for(NRFJeopardyGameEditable *game in games){
+        if([game checkForJeopartyGameCompletelyEdited])
+            [playableGames addObject:game];
+    }
+    return playableGames;
 }
 
 -(void)viewWillDisappear:(BOOL)animated{

@@ -18,7 +18,7 @@
 #define TOTAL_QUESTION_PANELS 30
 #define TOTAL_CATEGORY_PANELS 6
 
-@interface NRFMainBoardViewController : UIViewController <NRFQuestionEditViewControllerDelegate, NRFCategoryEditViewControllerDelegate, NRFQuestionViewControllerDelegate, NRFScoreViewControllerDelegate>
+@interface NRFMainBoardViewController : UIViewController 
 
 @property (strong, nonatomic)NRFJeopardyGame *game;
 

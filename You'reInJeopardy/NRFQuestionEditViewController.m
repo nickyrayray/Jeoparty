@@ -49,8 +49,9 @@
 -(void)loadView
 {
     [super loadView];
+    [self registerForKeyboardNotifications];
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    scrollView.contentSize = CGSizeMake(self.view.bounds.size.height, 600);
+    scrollView.contentSize = CGSizeMake(self.view.frame.size.height, self.view.frame.size.width-200);
     scrollView.backgroundColor = [UIColor blueColor];
     self.view = scrollView;
 }
@@ -61,12 +62,13 @@
     
     if(self.isFinalJeoparty){
         self.finalJeopardyCategoryTextField = [self textFieldSetupWithPlaceHolderString:@"Enter Final Jeoparty Category" andFrame:CGRectMake(261, 30, 502, 30)];
+        self.finalJeopardyCategoryTextField.delegate = self;
         self.questionTextView = [self textViewToSetupWithFrame:CGRectMake(161, 90, 702, 460)];
         self.questionAnswerTextLabel = [self textFieldSetupWithPlaceHolderString:@"Enter Final Jeoparty Answer" andFrame:CGRectMake(261, 570, 502, 30)];
-        [self.view addSubview:self.finalJeopardyCategoryTextField];
         NRFFinalJeopartyQuestion *castedFJQuestion = (NRFFinalJeopartyQuestion *)self.question;
         if(castedFJQuestion.category && ![castedFJQuestion.category isEqualToString:@""])
             self.finalJeopardyCategoryTextField.text = castedFJQuestion.category;
+        [self.view addSubview:self.finalJeopardyCategoryTextField];
     } else {
         self.questionTextView = [self textViewToSetupWithFrame:CGRectMake(161, 30, 702, 460)];
         self.questionAnswerTextLabel = [self textFieldSetupWithPlaceHolderString:@"Enter Question's Answer" andFrame:CGRectMake(261, 520, 502, 30)];
@@ -75,6 +77,8 @@
         self.navigationItem.rightBarButtonItem = doneButton;
     }
     
+    self.questionAnswerTextLabel.delegate = self;
+    self.questionTextView.delegate = self;
     [self.view addSubview:self.questionTextView];
     [self.view addSubview:self.questionAnswerTextLabel];
     
@@ -109,7 +113,7 @@
     textFieldToReturn.autocorrectionType = UITextAutocorrectionTypeYes;
     textFieldToReturn.autocapitalizationType = UITextAutocapitalizationTypeWords;
     textFieldToReturn.keyboardType = UIKeyboardTypeDefault;
-    textFieldToReturn.returnKeyType = UIReturnKeyDone;
+    textFieldToReturn.returnKeyType = UIReturnKeyDefault;
     return textFieldToReturn;
 }
 
@@ -118,10 +122,61 @@
     UITextView *textViewToReturn = [[UITextView alloc]initWithFrame:frame];
     textViewToReturn.backgroundColor = [UIColor blueColor];
     textViewToReturn.font = [UIFont fontWithName:@"Hoefler Text" size:70];
+    textViewToReturn.textColor = [UIColor whiteColor];
     textViewToReturn.textAlignment = NSTextAlignmentCenter;
     textViewToReturn.autocapitalizationType = UITextAutocorrectionTypeDefault;
     return textViewToReturn;
 }
 
+
+-(void)textViewDidEndEditing:(UITextView *)textView
+{
+    self.question.question = textView.text;
+    [(NRFTabBarViewController *)self.tabBarController checkForGameIsCompletelyEditedAndUpdateTabBarController];
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if(textField == self.questionAnswerTextLabel)
+        self.question.answer = textField.text;
+    else{
+        NRFFinalJeopartyQuestion *castedFJQ = (NRFFinalJeopartyQuestion *)self.question;
+        castedFJQ.category = textField.text;
+    }
+    [(NRFTabBarViewController *)self.tabBarController checkForGameIsCompletelyEditedAndUpdateTabBarController];
+}
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+    
+}
+
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    UIScrollView *scrollView = (UIScrollView *)self.view;
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(64, 0.0, kbSize.width + 20, 0.0);
+    scrollView.contentInset = contentInsets;
+    scrollView.scrollIndicatorInsets = contentInsets;
+    
+}
+
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(64,0,0,0);
+    UIScrollView *scrollView = (UIScrollView *)self.view;
+    scrollView.contentInset = contentInsets;
+    scrollView.scrollIndicatorInsets = contentInsets;
+}
 
 @end

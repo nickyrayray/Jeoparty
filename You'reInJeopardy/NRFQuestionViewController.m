@@ -78,7 +78,6 @@
         questionButton.titleLabel.font = customFont;
         [questionButton addTarget:self action:@selector(questionAnswered:) forControlEvents:UIControlEventTouchUpInside];
         [questionButton setTitle:self.question.question forState:UIControlStateNormal];
-        [questionButton addTarget:self action:@selector(questionAnswered:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:questionButton];
     }
     

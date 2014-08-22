@@ -22,7 +22,6 @@
 @property (strong, nonatomic) id<NRFTabBarViewControllerDelegate> myDelegate;
 
 -(id)init;
--(void)gameIsCompletelyEdited;
--(void)gameIsNoLongerCompletelyEdited;
+-(void)checkForGameIsCompletelyEditedAndUpdateTabBarController;
 
 @end
