@@ -69,7 +69,7 @@
 
 - (BOOL)isFinished
 {
-    if([self.question isEqualToString:@""] || [self.answer isEqualToString:@""] || self.value == 0)
+    if([self.question isEqualToString:@""] || [self.answer isEqualToString:@""])
         return NO;
     else if (self.question == nil || self.answer == nil)
         return NO;

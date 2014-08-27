@@ -33,5 +33,7 @@
 -(void)createDoubleQuestionArrayWithSize:(int)size;
 -(void)createCategoryArrayWithSize:(int)size;
 -(void)createDoubleCategoryArrayWithSize:(int)size;
+-(BOOL)gameTitleCreated;
+-(BOOL)gameDescriptionCreated;
 
 @end

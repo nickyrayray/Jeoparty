@@ -110,7 +110,7 @@
     
     [self.navigationController setNavigationBarHidden:NO];
     
-    NRFTabBarViewController *boardsTabViewController = [[NRFTabBarViewController alloc] init];
+    NRFTabBarViewController *boardsTabViewController = [[NRFTabBarViewController alloc] initWithGame:nil];
     boardsTabViewController.myDelegate = self;
     
     [self.navigationController pushViewController:boardsTabViewController animated:YES];

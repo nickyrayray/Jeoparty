@@ -16,7 +16,6 @@
 @property int doubleCategoriesCreated;
 @property BOOL regularJeopartyCompletelyEdited;
 @property BOOL doubleJeopartyCompletelyEdited;
-@property BOOL finalJeopartyCompletelyEdited;
 
 @end
 
@@ -120,7 +119,7 @@
 
 -(BOOL)checkForJeopartyGameCompletelyEdited
 {
-    if(self.regularJeopartyCompletelyEdited && self.doubleJeopartyCompletelyEdited && [[super finalJeopartyQuestion] finalJeopartyQuestionIsFinished])
+    if(self.regularJeopartyCompletelyEdited && self.doubleJeopartyCompletelyEdited && [[super finalJeopartyQuestion] finalJeopartyQuestionIsFinished] && [super gameTitleCreated] && [super gameDescriptionCreated])
         return YES;
     else
         return NO;

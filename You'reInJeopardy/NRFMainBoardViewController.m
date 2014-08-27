@@ -242,12 +242,14 @@
     NRFJeopardyGameEditable *castedEditVC = (NRFJeopardyGameEditable *)self.game;
     if(self.mode == REGULAR_JEOPARDY_SETUP){
         catPanel = [self.categoryPanels objectAtIndex:index];
+        castedEditVC.categories[index] = category;
         if((category == nil || [category isEqualToString:@""]) && !mightNeedIncrement)
             [castedEditVC decrementCategoriesCompleted];
         else if(category && ![category isEqualToString:@""] && mightNeedIncrement)
             [castedEditVC incrementCategoriesCompleted];
     }else{
         catPanel = [self.categoryPanels objectAtIndex:index];
+        castedEditVC.doubleCategories[index] = category;
         if((category == nil || [category isEqualToString:@""]) && !mightNeedIncrement)
             [castedEditVC decrementDoubleCategoriesCompleted];
         else if(category && ![category isEqualToString:@""] && mightNeedIncrement)

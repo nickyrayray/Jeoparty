@@ -49,7 +49,7 @@
     self.categoryTextView.textColor = [UIColor whiteColor];
     [self.view addSubview:self.categoryTextView];
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed:)];
-    if(![self.category isEqualToString:@""] && self.category != nil){
+    if(![self.category isEqualToString:@""] && self.category){
         self.categoryTextView.text = self.category;
     }
     self.navigationItem.rightBarButtonItem = doneButton;

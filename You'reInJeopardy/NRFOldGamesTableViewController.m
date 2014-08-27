@@ -123,8 +123,8 @@
 {
     NRFJeopardyGameEditable *gameSelected = self.games[indexPath.row];
     if([self isInEditMode]){
-        NRFMainBoardViewController *editBoard = [[NRFMainBoardViewController alloc] initWithEditableGame:gameSelected inMode:REGULAR_JEOPARDY_SETUP];
-        [self.navigationController pushViewController:editBoard animated:YES];
+        NRFTabBarViewController *editGame = [[NRFTabBarViewController alloc]initWithGame:gameSelected];
+        [self.navigationController pushViewController:editGame animated:YES];
     } else {
         NRFJeopardyGamePlayable *playableGame = [NRFJeopardyGamePlayable makeCopyOfGame:gameSelected];
         NRFScoreViewController *scoreVC = [[NRFScoreViewController alloc] initWithGame:playableGame inInitializeMode:YES];

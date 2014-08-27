@@ -10,6 +10,7 @@
 #import "NRFMainMenuViewController.h"
 #import "NRFJeopardyGame.h"
 #import "NRFMainBoardViewController.h"
+#import "NRFGameDescriptionViewController.h"
 
 @protocol NRFTabBarViewControllerDelegate <NSObject>
 
@@ -21,7 +22,7 @@
 
 @property (strong, nonatomic) id<NRFTabBarViewControllerDelegate> myDelegate;
 
--(id)init;
+-(id)initWithGame:(NRFJeopardyGameEditable *)game;
 -(void)checkForGameIsCompletelyEditedAndUpdateTabBarController;
 
 @end

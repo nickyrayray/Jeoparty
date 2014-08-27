@@ -123,5 +123,20 @@
     self.doubleCategories = cats;
 }
 
+-(BOOL)gameTitleCreated
+{
+    if(self.gameTitle && ![self.gameTitle isEqualToString:@""])
+        return YES;
+    else
+        return NO;
+}
+
+-(BOOL)gameDescriptionCreated
+{
+    if(self.gameDescription && ![self.gameDescription isEqualToString:@""])
+        return YES;
+    else
+        return NO;
+}
 
 @end

@@ -10,6 +10,9 @@
 		380AD04F1995BD720034D824 /* NRFMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380AD04E1995BD720034D824 /* NRFMainMenuViewController.m */; };
 		380AD05519997BFD0034D824 /* NRFFinalJeopartyQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 380AD05419997BFD0034D824 /* NRFFinalJeopartyQuestion.m */; };
 		380AD058199995EA0034D824 /* NRFJeopartyContestant.m in Sources */ = {isa = PBXBuildFile; fileRef = 380AD057199995EA0034D824 /* NRFJeopartyContestant.m */; };
+		3883577719A7A6F600D73781 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3883577619A7A6F600D73781 /* CoreData.framework */; };
+		3883577A19A7C2D300D73781 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3883577819A7C2D300D73781 /* Model.xcdatamodeld */; };
+		3883577D19ACCFDA00D73781 /* NRFGameDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3883577C19ACCFDA00D73781 /* NRFGameDescriptionViewController.m */; };
 		3886A33A1947863D005E3362 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3886A3391947863D005E3362 /* Foundation.framework */; };
 		3886A33C1947863D005E3362 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3886A33B1947863D005E3362 /* CoreGraphics.framework */; };
 		3886A33E1947863D005E3362 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3886A33D1947863D005E3362 /* UIKit.framework */; };
@@ -54,6 +57,10 @@
 		380AD05419997BFD0034D824 /* NRFFinalJeopartyQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFFinalJeopartyQuestion.m; sourceTree = "<group>"; };
 		380AD056199995EA0034D824 /* NRFJeopartyContestant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFJeopartyContestant.h; sourceTree = "<group>"; };
 		380AD057199995EA0034D824 /* NRFJeopartyContestant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFJeopartyContestant.m; sourceTree = "<group>"; };
+		3883577619A7A6F600D73781 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3883577919A7C2D300D73781 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		3883577B19ACCFDA00D73781 /* NRFGameDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFGameDescriptionViewController.h; sourceTree = "<group>"; };
+		3883577C19ACCFDA00D73781 /* NRFGameDescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFGameDescriptionViewController.m; sourceTree = "<group>"; };
 		3886A3361947863D005E3362 /* You'reInJeopardy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "You'reInJeopardy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3886A3391947863D005E3362 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3886A33B1947863D005E3362 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -100,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3883577719A7A6F600D73781 /* CoreData.framework in Frameworks */,
 				3886A33C1947863D005E3362 /* CoreGraphics.framework in Frameworks */,
 				3886A33E1947863D005E3362 /* UIKit.framework in Frameworks */,
 				3886A33A1947863D005E3362 /* Foundation.framework in Frameworks */,
@@ -122,6 +130,8 @@
 		3846AE4E196CD9E0002B97AB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3883577B19ACCFDA00D73781 /* NRFGameDescriptionViewController.h */,
+				3883577C19ACCFDA00D73781 /* NRFGameDescriptionViewController.m */,
 				3886A385194B9EBB005E3362 /* NRFQuestionViewController.h */,
 				3886A386194B9EBB005E3362 /* NRFQuestionViewController.m */,
 				3886A38D195B761E005E3362 /* NRFOldGamesTableViewController.h */,
@@ -185,6 +195,7 @@
 		3886A3381947863D005E3362 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3883577619A7A6F600D73781 /* CoreData.framework */,
 				3886A3391947863D005E3362 /* Foundation.framework */,
 				3886A33B1947863D005E3362 /* CoreGraphics.framework */,
 				3886A33D1947863D005E3362 /* UIKit.framework */,
@@ -200,6 +211,7 @@
 				3846AE4E196CD9E0002B97AB /* ViewControllers */,
 				3886A3481947863D005E3362 /* NRFAppDelegate.h */,
 				3886A3491947863D005E3362 /* NRFAppDelegate.m */,
+				3883577819A7C2D300D73781 /* Model.xcdatamodeld */,
 				3886A34B1947863D005E3362 /* Images.xcassets */,
 				3886A3401947863D005E3362 /* Supporting Files */,
 			);
@@ -336,10 +348,12 @@
 				3886A370194788C4005E3362 /* NRFMainBoardViewController.m in Sources */,
 				380AD04F1995BD720034D824 /* NRFMainMenuViewController.m in Sources */,
 				38944235198AF2A200265DCA /* NRFTabBarViewController.m in Sources */,
+				3883577D19ACCFDA00D73781 /* NRFGameDescriptionViewController.m in Sources */,
 				3886A3461947863D005E3362 /* main.m in Sources */,
 				3886A37719478F41005E3362 /* NRFJeopardyGame.m in Sources */,
 				389442381990040A00265DCA /* NRFJeopardyGamePlayable.m in Sources */,
 				3886A388194B9EBB005E3362 /* NRFQuestionViewController.m in Sources */,
+				3883577A19A7C2D300D73781 /* Model.xcdatamodeld in Sources */,
 				3886A37B19495C80005E3362 /* NRFQuestionEditViewController.m in Sources */,
 				380AD058199995EA0034D824 /* NRFJeopartyContestant.m in Sources */,
 				3886A37419478E0C005E3362 /* NRFQuestion.m in Sources */,
@@ -560,6 +574,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3883577819A7C2D300D73781 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3883577919A7C2D300D73781 /* Model.xcdatamodel */,
+			);
+			currentVersion = 3883577919A7C2D300D73781 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3886A32E1947863D005E3362 /* Project object */;
 }

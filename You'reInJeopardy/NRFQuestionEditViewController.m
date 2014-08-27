@@ -38,7 +38,7 @@
 -(id)initWithFinalJeopartyQuestion:(NRFFinalJeopartyQuestion *)finalJeopartyQuestion;
 {
     self = [super init];
-    if(self) {
+    if(self){
         self.question = finalJeopartyQuestion;
         self.isFinalJeoparty = YES;
     }
@@ -72,7 +72,7 @@
     } else {
         self.questionTextView = [self textViewToSetupWithFrame:CGRectMake(161, 30, 702, 460)];
         self.questionAnswerTextLabel = [self textFieldSetupWithPlaceHolderString:@"Enter Question's Answer" andFrame:CGRectMake(261, 520, 502, 30)];
-        self.navigationController.title = @"Enter Jeoparty Question Below";
+        self.navigationItem.title = @"Enter Jeoparty Question Below";
         UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed:)];
         self.navigationItem.rightBarButtonItem = doneButton;
     }
@@ -93,7 +93,6 @@
 }
 
 - (IBAction)doneButtonPressed:(id)sender {
-    
     self.question.question = self.questionTextView.text;
     self.question.answer = self.questionAnswerTextLabel.text;
     if(self.isFinalJeoparty){
@@ -124,7 +123,7 @@
     textViewToReturn.font = [UIFont fontWithName:@"Hoefler Text" size:70];
     textViewToReturn.textColor = [UIColor whiteColor];
     textViewToReturn.textAlignment = NSTextAlignmentCenter;
-    textViewToReturn.autocapitalizationType = UITextAutocorrectionTypeDefault;
+    textViewToReturn.autocapitalizationType = UITextAutocapitalizationTypeSentences;
     return textViewToReturn;
 }
 
