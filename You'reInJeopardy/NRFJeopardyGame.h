@@ -29,10 +29,10 @@
 -(NRFQuestion *)getQuestionAtIndex:(int)index;
 -(NSString *)getCatAtIndex:(int)index;
 -(NSString *)getDoubleCatAtIndex:(int)index;
--(void)createQuestionArrayWithSize:(int)size;
--(void)createDoubleQuestionArrayWithSize:(int)size;
--(void)createCategoryArrayWithSize:(int)size;
--(void)createDoubleCategoryArrayWithSize:(int)size;
+-(void)createQuestionArrayWithSize:(NSUInteger)size;
+-(void)createDoubleQuestionArrayWithSize:(NSUInteger)size;
+-(void)createCategoryArrayWithSize:(NSUInteger)size;
+-(void)createDoubleCategoryArrayWithSize:(NSUInteger)size;
 -(BOOL)gameTitleCreated;
 -(BOOL)gameDescriptionCreated;
 

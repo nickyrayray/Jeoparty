@@ -8,19 +8,12 @@
             <connections>
                 <outlet property="contestantOneIncrementValueSegment" destination="wLA-ja-8wP" id="lHt-lb-lAd"/>
                 <outlet property="contestantOneMinus" destination="uoq-lu-ECh" id="rWd-fZ-wr4"/>
-                <outlet property="contestantOneName" destination="si7-w8-P4r" id="2bd-6D-nxg"/>
-                <outlet property="contestantOnePlus" destination="561-Hf-og5" id="z7c-PV-ufP"/>
-                <outlet property="contestantOneScore" destination="Z93-Ol-asG" id="Zwr-I9-mKY"/>
                 <outlet property="contestantThreeIncrementValueSegment" destination="gP8-pj-WkD" id="dCJ-OI-At3"/>
                 <outlet property="contestantThreeMinus" destination="vEt-fw-p0q" id="Dhl-a8-atK"/>
-                <outlet property="contestantThreeName" destination="0h9-ce-y67" id="aKt-N8-I6v"/>
                 <outlet property="contestantThreePlus" destination="c2K-j4-fjk" id="iUU-sl-b9r"/>
-                <outlet property="contestantThreeScore" destination="9ls-fG-f3G" id="2X8-Oe-4X0"/>
                 <outlet property="contestantTwoIncrementValueSegment" destination="jHl-iF-tFY" id="Xxq-Z9-CU4"/>
                 <outlet property="contestantTwoMinus" destination="LON-Ok-SeN" id="45u-BS-taS"/>
-                <outlet property="contestantTwoName" destination="2OY-xU-lnV" id="cpR-ck-mgM"/>
                 <outlet property="contestantTwoPlus" destination="UTy-do-Tym" id="c4F-QJ-O9c"/>
-                <outlet property="contestantTwoScore" destination="JBW-H9-yUi" id="l4Y-dz-0di"/>
                 <outlet property="navAppearDisappearButton" destination="xXR-nU-pSW" id="tfS-Tl-INq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -65,7 +58,7 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="si7-w8-P4r">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" text="Tap to Enter Contestant Name" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="si7-w8-P4r">
                             <rect key="frame" x="20" y="219" width="301" height="219"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.10975981629999999" green="0.092322363759999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,7 +66,7 @@
                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2OY-xU-lnV">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" text="Tap to Enter Contestant Name" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2OY-xU-lnV">
                             <rect key="frame" x="362" y="219" width="301" height="219"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.10975981629999999" green="0.092322363759999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -81,7 +74,7 @@
                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0h9-ce-y67">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" text="Tap to Enter Contestant Name" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0h9-ce-y67">
                             <rect key="frame" x="703" y="219" width="301" height="219"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.10975981629999999" green="0.092322363759999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -98,9 +91,6 @@
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
-                            <connections>
-                                <action selector="contestantOnePlusButtonPressed:" destination="-1" eventType="touchUpInside" id="dXH-ch-f9V"/>
-                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTy-do-Tym">
                             <rect key="frame" x="362" y="518" width="100" height="100"/>
@@ -178,7 +168,7 @@
                             </connections>
                         </button>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wLA-ja-8wP">
-                            <rect key="frame" x="80" y="670" width="181" height="29"/>
+                            <rect key="frame" x="80" y="663" width="181" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <segments>
@@ -187,7 +177,7 @@
                                 <segment title="$100"/>
                             </segments>
                             <connections>
-                                <action selector="contestantOneIncrementValueSelected:" destination="-1" eventType="valueChanged" id="xeE-hg-cjV"/>
+                                <action selector="contestantOneSegmentedControlPressed:" destination="-1" eventType="valueChanged" id="bMa-QC-4JF"/>
                             </connections>
                         </segmentedControl>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jHl-iF-tFY">
@@ -200,7 +190,7 @@
                                 <segment title="$100"/>
                             </segments>
                             <connections>
-                                <action selector="contestantTwoIncrementValueSelected:" destination="-1" eventType="valueChanged" id="cPq-Px-uN6"/>
+                                <action selector="contestantTwoSegmentedControlPressed:" destination="-1" eventType="valueChanged" id="J2E-4g-Dbj"/>
                             </connections>
                         </segmentedControl>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gP8-pj-WkD">
@@ -213,9 +203,30 @@
                                 <segment title="$100"/>
                             </segments>
                             <connections>
-                                <action selector="contestantThreeIncrementValueSelected:" destination="-1" eventType="valueChanged" id="ZY7-Np-2Tg"/>
+                                <action selector="contestantThreeSegmentedControlPressed:" destination="-1" eventType="valueChanged" id="Y4d-lG-xgk"/>
                             </connections>
                         </segmentedControl>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wager : $0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srN-Kn-Z1d">
+                            <rect key="frame" x="20" y="133" width="301" height="78"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wager : $0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xr2-6J-ZRw">
+                            <rect key="frame" x="362" y="133" width="301" height="78"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wager : $0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzF-3y-NsV">
+                            <rect key="frame" x="703" y="133" width="301" height="78"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                 </scrollView>
             </subviews>

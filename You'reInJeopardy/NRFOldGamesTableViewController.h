@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NRFScoreViewController.h"
+#import "NRFInitializerScoreViewController.h"
 #import "NRFMainMenuViewController.h"
 #import "NRFJeopardyGamePlayable.h"
 #import "NRFJeopardyGame.h"
 #import "NRFMainBoardViewController.h"
 #import "Constants.h"
 
-@interface NRFOldGamesTableViewController : UITableViewController<NRFScoreViewControllerDelegate>
+@interface NRFOldGamesTableViewController : UITableViewController
 
 @property (strong, nonatomic)NRFScoreViewController *delegate;
 

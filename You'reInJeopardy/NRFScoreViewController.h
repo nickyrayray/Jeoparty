@@ -9,18 +9,21 @@
 #import <UIKit/UIKit.h>
 #import "NRFJeopardyGamePlayable.h"
 
-@protocol NRFScoreViewControllerDelegate <NSObject>
-
--(void)scoreVCDidFinish;
--(void)scoreVCDidFinishWithGame:(NRFJeopardyGame *)game;
-
-@end
-
 @interface NRFScoreViewController : UIViewController
 
-@property (strong, nonatomic) id<NRFScoreViewControllerDelegate> delegate;
+@property (strong, nonatomic)NRFJeopardyGamePlayable *game;
 
--(id)initWithGame:(NRFJeopardyGamePlayable *)game andQuestion:(NRFQuestion *)question;
--(id)initWithGame:(NRFJeopardyGamePlayable *)game inInitializeMode:(BOOL)isInInitializeMode;
+@property (strong, nonatomic) UILabel *contestantOneScore;
+@property (strong, nonatomic) UITextView *contestantOneName;
+
+@property (strong, nonatomic) UILabel *contestantTwoScore;
+@property (strong, nonatomic) UITextView *contestantTwoName;
+
+@property (strong, nonatomic) UILabel *contestantThreeScore;
+@property (strong, nonatomic) UITextView *contestantThreeName;
+
+-(id)initWithGame:(NRFJeopardyGamePlayable *)game;
+-(NSString *)stringifyAndAddDollarSignToNumber:(int)number;
+-(int)getIntValueFromLabel:(NSString *)labelString;
 
 @end

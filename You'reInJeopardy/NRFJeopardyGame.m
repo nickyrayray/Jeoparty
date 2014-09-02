@@ -73,7 +73,7 @@
     return self.doubleCategories[index];
 }
 
--(void)createQuestionArrayWithSize:(int)size
+-(void)createQuestionArrayWithSize:(NSUInteger)size
 {
     NSMutableArray *questions = [[NSMutableArray alloc] initWithCapacity:size];
     NRFQuestion *questionToAdd;
@@ -86,7 +86,7 @@
     self.questions = questions;
 }
 
--(void)createDoubleQuestionArrayWithSize:(int)size
+-(void)createDoubleQuestionArrayWithSize:(NSUInteger)size
 {
     NSMutableArray *questions = [[NSMutableArray alloc] initWithCapacity:size];
     NRFQuestion *questionToAdd;
@@ -99,7 +99,7 @@
     self.doubleQuestions = questions;
 }
 
--(void)createCategoryArrayWithSize:(int)size
+-(void)createCategoryArrayWithSize:(NSUInteger)size
 {
     NSMutableArray *cats = [[NSMutableArray alloc] initWithCapacity:size];
     NSString *catToAdd;
@@ -111,7 +111,7 @@
     self.categories = cats;
 }
 
--(void)createDoubleCategoryArrayWithSize:(int)size
+-(void)createDoubleCategoryArrayWithSize:(NSUInteger)size
 {
     NSMutableArray *cats = [[NSMutableArray alloc] initWithCapacity:size];
     NSString *catToAdd;

@@ -22,6 +22,8 @@
 -(void)setDailyDoubles;
 -(BOOL)dailyDoublesAreSet;
 -(BOOL)questionIsDailyDouble:(int)questionIndex forMode:(int)mode;
+-(BOOL)regularJeopartyIsCompletelyPlayed;
+-(BOOL)doubleJeopartyIsCompletelyPlayed;
 +(NRFJeopardyGamePlayable *)makeCopyOfGame:(NRFJeopardyGameEditable *)gameToCopy;
 
 @end

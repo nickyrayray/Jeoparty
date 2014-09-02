@@ -93,20 +93,9 @@
 
 - (void)questionAnswered:(id)sender {
     
-    NRFScoreViewController *scoreVC = [[NRFScoreViewController alloc] initWithGame:self.game andQuestion:self.question];
-    scoreVC.delegate = self;
+    NRFScoreViewController *scoreVC = [[NRFQuestionScoreViewController alloc]initWithGame:self.game andQuestion:self.question];
     [self.navigationController pushViewController:scoreVC animated:YES];
     
-}
-
--(void)scoreVCDidFinish{
-    
-    
-    if(self.isTransition)
-        [self.delegate questionViewControllerDidFinishTransition];
-    else
-        [self.delegate questionViewController:self didFinishWithQuestion:self.question];
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void) viewWillDisappear:(BOOL)animated {

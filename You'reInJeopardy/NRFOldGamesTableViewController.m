@@ -8,7 +8,7 @@
 
 #import "NRFOldGamesTableViewController.h"
 
-@interface NRFOldGamesTableViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface NRFOldGamesTableViewController ()<UITableViewDataSource, UITableViewDelegate, NRFInitializerScoreViewControllerProtocol>
 
 @property (strong, nonatomic) NSMutableArray *games;
 @property int mode;
@@ -22,7 +22,8 @@
     self = [super initWithStyle:UITableViewStylePlain];
     
     if (self) {
-        /*if(!self.games){
+        self.mode = mode;
+        if(self.games.count == 0){
             self.games = [NSMutableArray array];
             NRFJeopardyGamePlayable *test = [[NRFJeopardyGamePlayable alloc] init];
             test.gameTitle = @"Test Title";
@@ -47,12 +48,12 @@
             test.doubleCategories = mutableCategories;
     
             [self.games addObject:test];
-        }*/
-        self.mode = mode;
-        if([self isInEditMode])
-            self.games = games;
-        else
-            self.games = [self arrayOfPlayableGamesFromEditableGames:games];
+        } else {
+            if([self isInEditMode])
+                self.games = games;
+            else
+                self.games = [self arrayOfPlayableGamesFromEditableGames:games];
+        }
     }
     return self;
 }
@@ -127,21 +128,17 @@
         [self.navigationController pushViewController:editGame animated:YES];
     } else {
         NRFJeopardyGamePlayable *playableGame = [NRFJeopardyGamePlayable makeCopyOfGame:gameSelected];
-        NRFScoreViewController *scoreVC = [[NRFScoreViewController alloc] initWithGame:playableGame inInitializeMode:YES];
+        NRFInitializerScoreViewController *scoreVC = [[NRFInitializerScoreViewController alloc]initWithGame:playableGame];
         scoreVC.delegate = self;
         [self.navigationController pushViewController:scoreVC animated:YES];
     }
     
 }
 
--(void)scoreVCDidFinishWithGame:(NRFJeopardyGamePlayable *)game{
+-(void)initializerScoreViewControllerDidFinishWithGame:(NRFJeopardyGamePlayable *)game{
     [self.navigationController popViewControllerAnimated:NO];
     NRFMainBoardViewController *playBoard = [[NRFMainBoardViewController alloc] initWithPlayableGame:game inMode:REGULAR_JEOPARDY_PLAY];
     [self.navigationController pushViewController:playBoard animated:YES];
-}
-
--(void)scoreVCDidFinish{
-    return;
 }
 
 -(BOOL)isInEditMode{

@@ -116,6 +116,20 @@
     }
 }
 
+-(BOOL)regularJeopartyIsCompletelyPlayed{
+    if(self.regularJeopartyCompletelyPlayed)
+        return YES;
+    else
+        return NO;
+}
+
+-(BOOL)doubleJeopartyIsCompletelyPlayed{
+    if(self.doubleJeopartyCompletelyPlayed)
+        return YES;
+    else
+        return NO;
+}
+
 +(NRFJeopardyGamePlayable *)makeCopyOfGame:(NRFJeopardyGameEditable *)gameToCopy
 {
     NRFJeopardyGamePlayable *playableGame = [[NRFJeopardyGamePlayable alloc] init];

@@ -12,10 +12,12 @@
 
 @property (strong, nonatomic) NSString *name;
 @property int score;
-@property int finalJeopartyWager;
+@property int wager;
 
 -(id)initWithName:(NSString *)name;
 -(void)addThisAmountToContestantScore:(int)amountToAdd;
--(void)subtractThisAmoutnFromContestantScore:(int)amountToSubtract;
+-(void)subtractThisAmountFromContestantScore:(int)amountToSubtract;
+-(void)increaseWagerBy:(int)amountToAdd;
+-(void)decreaseWagerBy:(int)amountToSubtract;
 
 @end

@@ -22,6 +22,9 @@
     self.mainMenu = rootMVC;
     [self loadData];
     UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:rootMVC];
+    naviVC.navigationBar.barStyle = UIBarStyleBlack;
+    naviVC.navigationBar.tintColor = [UIColor yellowColor];
+    [naviVC.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor yellowColor],NSForegroundColorAttributeName, nil]];
     self.window.rootViewController = naviVC;
     [self.window makeKeyAndVisible];
     return YES;

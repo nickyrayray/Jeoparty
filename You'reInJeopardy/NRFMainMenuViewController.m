@@ -93,8 +93,10 @@
             [buttonToFormat setTitle:@"Edit Game" forState:UIControlStateNormal];
             [buttonToFormat addTarget:self action:@selector(editGame:) forControlEvents:UIControlEventTouchUpInside];
         } else {
-            [buttonToFormat setTitle:@"Options" forState:UIControlStateNormal];
-            [buttonToFormat addTarget:self action:@selector(options:) forControlEvents:UIControlEventTouchUpInside];
+            if(self.currentGame){
+                [buttonToFormat setTitle:@"Resume Game" forState:UIControlStateNormal];
+                [buttonToFormat addTarget:self action:@selector(resumeGame:) forControlEvents:UIControlEventTouchUpInside];
+            }
         }
     }
     
@@ -125,7 +127,8 @@
     NRFOldGamesTableViewController *oldGames = [[NRFOldGamesTableViewController alloc] initWithGames:self.games inMode:OLD_GAMES_EDIT_MODE];
     [self.navigationController pushViewController:oldGames animated:YES];
 }
-- (void)options:(id)sender {
+-(void)resumeGame:(id)sender{
+    
 }
 
 -(void)tabBarViewControllerDidFinishWithEditedGame:(NRFJeopardyGameEditable *)editableGame

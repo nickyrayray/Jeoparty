@@ -15,7 +15,7 @@
     self = [super init];
     if(self){
         self.score = 0;
-        self.finalJeopartyWager = 0;
+        self.wager = -1;
         self.name = name;
     }
     return self;
@@ -27,7 +27,7 @@
     if(self){
         self.name = [decoder decodeObjectForKey:@"name"];
         self.score = [[decoder decodeObjectForKey:@"score"] intValue];
-        self.finalJeopartyWager = [[decoder decodeObjectForKey:@"wager"] intValue];
+        self.wager = [[decoder decodeObjectForKey:@"wager"] intValue];
     }
     return self;
 }
@@ -36,19 +36,33 @@
 {
     [encoder encodeObject:self.name forKey:@"name"];
     [encoder encodeObject:[NSNumber numberWithInt:self.score] forKey:@"score"];
-    [encoder encodeObject:[NSNumber numberWithInt:self.finalJeopartyWager] forKey:@"wager"];
+    [encoder encodeObject:[NSNumber numberWithInt:self.wager] forKey:@"wager"];
 }
 
--(int)addThisAmountToContestantScore:(int)amountToAdd
+-(void)addThisAmountToContestantScore:(int)amountToAdd
 {
     self.score += amountToAdd;
-    return self.score;
 }
 
--(int)subtractThisAmoutnFromContestantScore:(int)amountToSubtract
+-(void)subtractThisAmountFromContestantScore:(int)amountToSubtract
 {
-    self.score -=amountToSubtract;
-    return self.score;
+    self.score -= amountToSubtract;
+}
+
+-(void)increaseWagerBy:(int)amountToAdd
+{
+    if(self.wager == -1)
+        self.wager = 0;
+    self.wager += amountToAdd;
+    if(self.wager > self.score)
+        self.wager = self.score;
+}
+
+-(void)decreaseWagerBy:(int)amountToSubtract
+{
+    self.wager -= amountToSubtract;
+    if(self.wager < 0)
+        self.wager = 0;
 }
 
 @end

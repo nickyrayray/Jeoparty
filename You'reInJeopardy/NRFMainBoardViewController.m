@@ -8,7 +8,7 @@
 
 #import "NRFMainBoardViewController.h"
 
-@interface NRFMainBoardViewController () <NRFQuestionEditViewControllerDelegate, NRFCategoryEditViewControllerDelegate, NRFQuestionViewControllerDelegate, NRFScoreViewControllerDelegate>
+@interface NRFMainBoardViewController () <NRFQuestionEditViewControllerDelegate, NRFCategoryEditViewControllerDelegate, NRFQuestionViewControllerDelegate>
 
 @property int mode;
 @property BOOL transitioningToDouble;
@@ -129,8 +129,8 @@
         if(!self.game.questions){
             [self.game createQuestionArrayWithSize:self.questionPanels.count];
             [self.game createCategoryArrayWithSize:self.categoryPanels.count];
-            [self.game setMaxQuestionCount:self.questionPanels.count];
-            [self.game setMaxCategoryCount:self.categoryPanels.count];
+            [self.game setMaxQuestionCount:(int)self.questionPanels.count];
+            [self.game setMaxCategoryCount:(int)self.categoryPanels.count];
         } else {
             [self updateViewWithGameData];
         }
@@ -161,10 +161,7 @@
             [current setTitle:cats[i] forState:UIControlStateNormal];
         }
         
-        UIBarButtonItem *editScores = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
-                                                                                    target:self
-                                                                                    action:@selector(editButtonPressed:)];
-        editScores.title = @"Edit Scores";
+        UIBarButtonItem *editScores = [[UIBarButtonItem alloc] initWithTitle:@"Edit Scores" style:UIBarButtonItemStyleDone target:self action:@selector(editButtonPressed:)];
         self.navigationItem.rightBarButtonItem = editScores;
         
         UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
@@ -186,8 +183,7 @@
 -(void)editButtonPressed:(id)sender
 {
     NRFJeopardyGamePlayable *castedPlayableGame = (NRFJeopardyGamePlayable *)self.game;
-    NRFScoreViewController *scoreVC = [[NRFScoreViewController alloc] initWithGame:castedPlayableGame inInitializeMode:NO];
-    scoreVC.delegate = self;
+    NRFEditScoreViewController *scoreVC = [[NRFEditScoreViewController alloc]initWithGame:castedPlayableGame];
     [self.navigationController pushViewController:scoreVC animated:YES];
 }
 
@@ -196,10 +192,6 @@
         return YES;
     else
         return NO;
-}
-
--(void)scoreVCDidFinish{
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void) questionEditViewControllerDidFinishWithQuestion:(NRFQuestion *)question mightNeedIncrement:(BOOL)mightNeedIncrement
@@ -269,7 +261,7 @@
 -(void)questionViewController:(NRFQuestionViewController *)questionVC didFinishWithQuestion:(NRFQuestion *)question
 {
     question.chosen = YES;
-    int index;
+    NSUInteger index;
     
     if(self.mode == REGULAR_JEOPARDY_PLAY)
         index = [self.game.questions indexOfObject:question];
@@ -297,7 +289,7 @@
         
     NRFQuestion *question;
     
-    int index = [self.questionPanels indexOfObject:sender];
+    int index = (int)[self.questionPanels indexOfObject:sender];
         
     if(self.mode == REGULAR_JEOPARDY_SETUP || self.mode == REGULAR_JEOPARDY_PLAY)
         question = [self.game getQuestionAtIndex:index];
@@ -352,7 +344,7 @@
         
         NSString *categoryToEdit;
         
-        int index = [self.categoryPanels indexOfObject:sender];
+        int index = (int)[self.categoryPanels indexOfObject:sender];
         
         if(self.mode == REGULAR_JEOPARDY_SETUP)
             categoryToEdit = [self.game getCatAtIndex:index];

@@ -8,7 +8,7 @@
 
 #import "NRFCategoryEditViewController.h"
 
-@interface NRFCategoryEditViewController ()
+@interface NRFCategoryEditViewController () <UITextViewDelegate>
 
 @property (strong, nonatomic) UITextView *categoryTextView;
 @property (strong, nonatomic) NSString *category;
@@ -47,6 +47,8 @@
     self.categoryTextView.font = [UIFont fontWithName:@"Hoefler Text" size:70];
     self.categoryTextView.backgroundColor = [UIColor blueColor];
     self.categoryTextView.textColor = [UIColor whiteColor];
+    self.categoryTextView.text = @"Tap to Enter a Category Title";
+    self.categoryTextView.delegate = self;
     [self.view addSubview:self.categoryTextView];
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed:)];
     if(![self.category isEqualToString:@""] && self.category){
@@ -61,6 +63,18 @@
     self.category = self.categoryTextView.text;
     [self.delegate catEditViewController:self didFinishWithCat:self.category forIndex:self.index andMightNeedIncrement:self.mightNeedIncrement];
     
+}
+
+-(void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if([textView.text isEqualToString:@"Tap to Enter a Category Title"])
+        textView.text = @"";
+}
+
+-(void)textViewDidEndEditing:(UITextView *)textView
+{
+    if([textView.text isEqualToString:@""] || textView.text != nil)
+        textView.text = @"Tap to Enter a Category Title";
 }
 
 @end

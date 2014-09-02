@@ -13,6 +13,10 @@
 		3883577719A7A6F600D73781 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3883577619A7A6F600D73781 /* CoreData.framework */; };
 		3883577A19A7C2D300D73781 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3883577819A7C2D300D73781 /* Model.xcdatamodeld */; };
 		3883577D19ACCFDA00D73781 /* NRFGameDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3883577C19ACCFDA00D73781 /* NRFGameDescriptionViewController.m */; };
+		388357C919B50E4800D73781 /* NRFInitializerScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 388357C819B50E4800D73781 /* NRFInitializerScoreViewController.m */; };
+		388357CC19B54DFA00D73781 /* NRFQuestionScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 388357CB19B54DFA00D73781 /* NRFQuestionScoreViewController.m */; };
+		388357CF19B555EC00D73781 /* NRFEditScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 388357CE19B555EC00D73781 /* NRFEditScoreViewController.m */; };
+		388357D219B61C5700D73781 /* NRFWagerScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 388357D119B61C5700D73781 /* NRFWagerScoreViewController.m */; };
 		3886A33A1947863D005E3362 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3886A3391947863D005E3362 /* Foundation.framework */; };
 		3886A33C1947863D005E3362 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3886A33B1947863D005E3362 /* CoreGraphics.framework */; };
 		3886A33E1947863D005E3362 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3886A33D1947863D005E3362 /* UIKit.framework */; };
@@ -61,6 +65,14 @@
 		3883577919A7C2D300D73781 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		3883577B19ACCFDA00D73781 /* NRFGameDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFGameDescriptionViewController.h; sourceTree = "<group>"; };
 		3883577C19ACCFDA00D73781 /* NRFGameDescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFGameDescriptionViewController.m; sourceTree = "<group>"; };
+		388357C719B50E4800D73781 /* NRFInitializerScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFInitializerScoreViewController.h; sourceTree = "<group>"; };
+		388357C819B50E4800D73781 /* NRFInitializerScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFInitializerScoreViewController.m; sourceTree = "<group>"; };
+		388357CA19B54DFA00D73781 /* NRFQuestionScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFQuestionScoreViewController.h; sourceTree = "<group>"; };
+		388357CB19B54DFA00D73781 /* NRFQuestionScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFQuestionScoreViewController.m; sourceTree = "<group>"; };
+		388357CD19B555EC00D73781 /* NRFEditScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFEditScoreViewController.h; sourceTree = "<group>"; };
+		388357CE19B555EC00D73781 /* NRFEditScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFEditScoreViewController.m; sourceTree = "<group>"; };
+		388357D019B61C5700D73781 /* NRFWagerScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFWagerScoreViewController.h; sourceTree = "<group>"; };
+		388357D119B61C5700D73781 /* NRFWagerScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFWagerScoreViewController.m; sourceTree = "<group>"; };
 		3886A3361947863D005E3362 /* You'reInJeopardy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "You'reInJeopardy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3886A3391947863D005E3362 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3886A33B1947863D005E3362 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -130,6 +142,7 @@
 		3846AE4E196CD9E0002B97AB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				388357C619B5036F00D73781 /* ScoreViewControllers */,
 				3883577B19ACCFDA00D73781 /* NRFGameDescriptionViewController.h */,
 				3883577C19ACCFDA00D73781 /* NRFGameDescriptionViewController.m */,
 				3886A385194B9EBB005E3362 /* NRFQuestionViewController.h */,
@@ -138,8 +151,6 @@
 				3886A38E195B761E005E3362 /* NRFOldGamesTableViewController.m */,
 				3886A36D194788C4005E3362 /* NRFMainBoardViewController.h */,
 				3886A36E194788C4005E3362 /* NRFMainBoardViewController.m */,
-				38D2C4E2197F26CA00144155 /* NRFScoreViewController.h */,
-				38D2C4E3197F26CA00144155 /* NRFScoreViewController.m */,
 				38D2C4E4197F26CA00144155 /* NRFScoreViewController.xib */,
 				3886A380194A63F0005E3362 /* NRFCategoryEditViewController.h */,
 				3886A381194A63F0005E3362 /* NRFCategoryEditViewController.m */,
@@ -171,6 +182,23 @@
 				380AD052199884360034D824 /* Constants.h */,
 			);
 			name = GroupingClasses;
+			sourceTree = "<group>";
+		};
+		388357C619B5036F00D73781 /* ScoreViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				38D2C4E2197F26CA00144155 /* NRFScoreViewController.h */,
+				38D2C4E3197F26CA00144155 /* NRFScoreViewController.m */,
+				388357C719B50E4800D73781 /* NRFInitializerScoreViewController.h */,
+				388357C819B50E4800D73781 /* NRFInitializerScoreViewController.m */,
+				388357CA19B54DFA00D73781 /* NRFQuestionScoreViewController.h */,
+				388357CB19B54DFA00D73781 /* NRFQuestionScoreViewController.m */,
+				388357CD19B555EC00D73781 /* NRFEditScoreViewController.h */,
+				388357CE19B555EC00D73781 /* NRFEditScoreViewController.m */,
+				388357D019B61C5700D73781 /* NRFWagerScoreViewController.h */,
+				388357D119B61C5700D73781 /* NRFWagerScoreViewController.m */,
+			);
+			name = ScoreViewControllers;
 			sourceTree = "<group>";
 		};
 		3886A32D1947863D005E3362 = {
@@ -350,6 +378,7 @@
 				38944235198AF2A200265DCA /* NRFTabBarViewController.m in Sources */,
 				3883577D19ACCFDA00D73781 /* NRFGameDescriptionViewController.m in Sources */,
 				3886A3461947863D005E3362 /* main.m in Sources */,
+				388357CF19B555EC00D73781 /* NRFEditScoreViewController.m in Sources */,
 				3886A37719478F41005E3362 /* NRFJeopardyGame.m in Sources */,
 				389442381990040A00265DCA /* NRFJeopardyGamePlayable.m in Sources */,
 				3886A388194B9EBB005E3362 /* NRFQuestionViewController.m in Sources */,
@@ -358,10 +387,13 @@
 				380AD058199995EA0034D824 /* NRFJeopartyContestant.m in Sources */,
 				3886A37419478E0C005E3362 /* NRFQuestion.m in Sources */,
 				3886A34A1947863D005E3362 /* NRFAppDelegate.m in Sources */,
+				388357C919B50E4800D73781 /* NRFInitializerScoreViewController.m in Sources */,
 				38D2C4E5197F26CA00144155 /* NRFScoreViewController.m in Sources */,
+				388357CC19B54DFA00D73781 /* NRFQuestionScoreViewController.m in Sources */,
 				3886A383194A63F0005E3362 /* NRFCategoryEditViewController.m in Sources */,
 				3894423B1990066C00265DCA /* NRFJeopardyGameEditable.m in Sources */,
 				3886A38F195B761E005E3362 /* NRFOldGamesTableViewController.m in Sources */,
+				388357D219B61C5700D73781 /* NRFWagerScoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

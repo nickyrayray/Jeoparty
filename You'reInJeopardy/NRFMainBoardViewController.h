@@ -13,6 +13,7 @@
 #import "NRFCategoryEditViewController.h"
 #import "NRFQuestionViewController.h"
 #import "NRFMainMenuViewController.h"
+#import "NRFEditScoreViewController.h"
 #import "Constants.h"
 
 #define TOTAL_QUESTION_PANELS 30

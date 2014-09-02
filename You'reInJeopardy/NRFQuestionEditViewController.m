@@ -63,14 +63,14 @@
     if(self.isFinalJeoparty){
         self.finalJeopardyCategoryTextField = [self textFieldSetupWithPlaceHolderString:@"Enter Final Jeoparty Category" andFrame:CGRectMake(261, 30, 502, 30)];
         self.finalJeopardyCategoryTextField.delegate = self;
-        self.questionTextView = [self textViewToSetupWithFrame:CGRectMake(161, 90, 702, 460)];
+        self.questionTextView = [self textViewToSetupWithPlaceholderString:@"Tap to Enter Final Jeoparty Question" andFrame:CGRectMake(161, 90, 702, 460)];
         self.questionAnswerTextLabel = [self textFieldSetupWithPlaceHolderString:@"Enter Final Jeoparty Answer" andFrame:CGRectMake(261, 570, 502, 30)];
         NRFFinalJeopartyQuestion *castedFJQuestion = (NRFFinalJeopartyQuestion *)self.question;
         if(castedFJQuestion.category && ![castedFJQuestion.category isEqualToString:@""])
             self.finalJeopardyCategoryTextField.text = castedFJQuestion.category;
         [self.view addSubview:self.finalJeopardyCategoryTextField];
     } else {
-        self.questionTextView = [self textViewToSetupWithFrame:CGRectMake(161, 30, 702, 460)];
+        self.questionTextView = [self textViewToSetupWithPlaceholderString:@"Tap to Enter Question" andFrame:CGRectMake(161, 30, 702, 460)];
         self.questionAnswerTextLabel = [self textFieldSetupWithPlaceHolderString:@"Enter Question's Answer" andFrame:CGRectMake(261, 520, 502, 30)];
         self.navigationItem.title = @"Enter Jeoparty Question Below";
         UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed:)];
@@ -116,7 +116,7 @@
     return textFieldToReturn;
 }
 
--(UITextView *)textViewToSetupWithFrame:(CGRect)frame
+-(UITextView *)textViewToSetupWithPlaceholderString:(NSString *)placeHolderString andFrame:(CGRect)frame
 {
     UITextView *textViewToReturn = [[UITextView alloc]initWithFrame:frame];
     textViewToReturn.backgroundColor = [UIColor blueColor];
@@ -124,9 +124,15 @@
     textViewToReturn.textColor = [UIColor whiteColor];
     textViewToReturn.textAlignment = NSTextAlignmentCenter;
     textViewToReturn.autocapitalizationType = UITextAutocapitalizationTypeSentences;
+    textViewToReturn.text = placeHolderString;
     return textViewToReturn;
 }
 
+-(void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if([textView.text isEqualToString:@"Tap to Enter Final Jeoparty Question"] || [textView.text isEqualToString:@"Tap to Enter Question"])
+        textView.text =  @"";
+}
 
 -(void)textViewDidEndEditing:(UITextView *)textView
 {

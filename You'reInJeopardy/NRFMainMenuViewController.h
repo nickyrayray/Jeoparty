@@ -15,6 +15,7 @@
 @interface NRFMainMenuViewController : UIViewController
 
 @property (strong, nonatomic) NSMutableArray *games;
+@property (strong, nonatomic) NRFJeopardyGamePlayable *currentGame;
 
 -(id)init;
 

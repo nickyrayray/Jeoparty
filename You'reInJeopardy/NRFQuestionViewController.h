@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NRFQuestion.h"
-#import "NRFScoreViewController.h"
+#import "NRFQuestionScoreViewController.h"
 
 @class NRFQuestionViewController;
 
@@ -19,7 +19,7 @@
 
 @end
 
-@interface NRFQuestionViewController : UIViewController<NRFScoreViewControllerDelegate>
+@interface NRFQuestionViewController : UIViewController
 
 @property (nonatomic) id<NRFQuestionViewControllerDelegate> delegate;
 
