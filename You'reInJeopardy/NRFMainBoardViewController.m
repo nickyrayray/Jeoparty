@@ -11,7 +11,6 @@
 @interface NRFMainBoardViewController () <NRFQuestionEditViewControllerDelegate, NRFCategoryEditViewControllerDelegate, NRFQuestionViewControllerDelegate>
 
 @property int mode;
-@property BOOL transitioningToDouble;
 
 @property (strong, nonatomic) NSMutableArray *questionPanels;
 @property (strong, nonatomic) NSMutableArray *categoryPanels;
@@ -29,7 +28,6 @@
     if(self){
         self.game = game;
         self.mode = mode;
-        self.transitioningToDouble = NO;
     }
     return self;
 }
@@ -40,7 +38,6 @@
     if(self){
         self.game = game;
         self.mode = mode;
-        self.transitioningToDouble = NO;
     }
     return self;
 }
@@ -51,7 +48,6 @@
     if(self){
         self.game = [NRFJeopardyGamePlayable makeCopyOfGame:game];
         self.mode = mode;
-        self.transitioningToDouble = NO;
     }
     return self;
 }
@@ -62,8 +58,8 @@
     [super loadView];
     
     UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    scrollView.contentSize = CGSizeMake(self.view.bounds.size.height, self.view.bounds.size.width + self.tabBarController.tabBar.frame.size.height);
-    scrollView.backgroundColor = [UIColor blueColor];
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.height, scrollView.frame.size.width + self.tabBarController.tabBar.frame.size.height);
+    scrollView.backgroundColor = [UIColor clearColor];
     self.view = scrollView;
     self.categoryPanels = [[NSMutableArray alloc]init];
     self.questionPanels = [[NSMutableArray alloc]init];
@@ -74,7 +70,7 @@
 {
     [super viewDidLoad];
     
-    CGRect frameSize = self.view.bounds;
+    CGRect frameSize = self.view.frame;
     float buttonWidth = (frameSize.size.width)/6 + (20/(TOTAL_QUESTION_PANELS/TOTAL_CATEGORY_PANELS + 1));
     float buttonHeight = (frameSize.size.height/6);
     UIButton *buttonToCreate;
@@ -139,6 +135,7 @@
     
     if([self wePlayin]){
         
+        [[UIApplication sharedApplication]setStatusBarHidden:YES];
         NSMutableArray *cats;
         UIButton *current;
         
@@ -179,6 +176,12 @@
     
 }
 
+-(void)saveButtonPressed:(id)sender
+{
+    NRFMainMenuViewController *mainMenuVC = self.navigationController.viewControllers[0];
+    NRFJeopardyGamePlayable *castedPG = (NRFJeopardyGamePlayable *)self.game;
+    [mainMenuVC mainBoardViewControllerDidFinishWithGame:castedPG];
+}
 
 -(void)editButtonPressed:(id)sender
 {
@@ -262,11 +265,15 @@
 {
     question.chosen = YES;
     NSUInteger index;
+    NRFJeopardyGamePlayable *castedPlayableGame = (NRFJeopardyGamePlayable *)self.game;
     
-    if(self.mode == REGULAR_JEOPARDY_PLAY)
+    if(self.mode == REGULAR_JEOPARDY_PLAY){
         index = [self.game.questions indexOfObject:question];
-    else
+        [castedPlayableGame incrementQuestionsAnswered];
+    }else{
         index = [self.game.doubleQuestions indexOfObject:question];
+        [castedPlayableGame incrementDoubleQuestionsAnswered];
+    }
     
     UIButton *buttonToDisable = self.questionPanels[index];
     [buttonToDisable setUserInteractionEnabled:NO];
@@ -274,14 +281,23 @@
     
     [self.navigationController popViewControllerAnimated:NO];
     
+    if([castedPlayableGame regularJeopartyIsCompletelyPlayed] && self.mode == REGULAR_JEOPARDY_PLAY){
+        NRFQuestionViewController *messageVC = [[NRFQuestionViewController alloc]initWithTransition:@"Ready for Double Jeoparty?/n/nTap Here to Play!"];
+        messageVC.delegate = self;
+        [self.navigationController pushViewController:messageVC animated:YES];
+    }
+        
+    
 }
 
 -(void)questionViewControllerDidFinishTransition{
-    
-    self.transitioningToDouble = YES;
-    [self.navigationController popViewControllerAnimated:NO];
-    [self.navigationController popViewControllerAnimated:NO];
-    
+    NRFJeopardyGamePlayable *game = (NRFJeopardyGamePlayable *)self.game;
+    NRFMainBoardViewController *mainBoardDoubleVC = [[NRFMainBoardViewController alloc]initWithPlayableGame:game inMode:DOUBLE_JEOPARDY_PLAY];
+    NSUInteger index = [self.navigationController.viewControllers indexOfObject:self];
+    NSMutableArray *mutableViewControllers = [self.navigationController.viewControllers mutableCopy];
+    [mutableViewControllers insertObject:mainBoardDoubleVC atIndex:index];
+    self.navigationController.viewControllers = mutableViewControllers;
+    [self.navigationController popToViewController:mainBoardDoubleVC animated:YES];
 }
 
 
@@ -358,10 +374,13 @@
         [self.navigationController pushViewController:catEditVC animated:YES];
         
     } else {
-        if([self.navigationController isNavigationBarHidden])
+        if([self.navigationController isNavigationBarHidden]){
             [self.navigationController setNavigationBarHidden:NO animated:YES];
-        else
+            [[UIApplication sharedApplication] setStatusBarHidden:NO];
+        }else{
             [self.navigationController setNavigationBarHidden:YES animated:YES];
+            [[UIApplication sharedApplication]setStatusBarHidden:YES];
+        }
     }
     
 }

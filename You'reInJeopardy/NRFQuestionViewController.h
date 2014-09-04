@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "NRFQuestion.h"
 #import "NRFQuestionScoreViewController.h"
+#import "NRFWagerForDailyDoubleScoreViewController.h"
+#import "NRFWagerRewardScoreViewController.h"
 
 @class NRFQuestionViewController;
 
 @protocol NRFQuestionViewControllerDelegate <NSObject>
 
+@optional
 -(void)questionViewController:(NRFQuestionViewController *)questionVC didFinishWithQuestion:(NRFQuestion *)question;
 -(void)questionViewControllerDidFinishTransition;
 

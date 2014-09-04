@@ -15,5 +15,6 @@
 @property (strong, nonatomic)UILabel *contestantThreeWagerLabel;
 
 -(id)initWithGame:(NRFJeopardyGamePlayable *)game;
+-(NSString *)createWagerStringFromValue:(int)value;
 
 @end

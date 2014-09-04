@@ -93,6 +93,7 @@
         [segmentedControl insertSegmentWithTitle:[NSString stringWithFormat:@"$%d", i] atIndex:j animated:NO];
         j++;
     }
+    segmentedControl.selectedSegmentIndex = 0;
     return segmentedControl;
 }
 

@@ -51,6 +51,17 @@
     [self.view addSubview:self.contestantThreePlus];
     [self.view addSubview:self.contestantThreeMinus];
     
+    [self.navigationController setNavigationBarHidden:NO];
+    self.navigationItem.title = @"Increase/Decrease Scores According to Previous Question Results";
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed:)];
+    
+}
+
+-(void)doneButtonPressed:(id)sender
+{
+    [self.navigationController setNavigationBarHidden:YES];
+    [self.delegate questionScoreViewControllerDidFinish];
 }
 
 - (void)contestantOnePlusButtonPressed:(id)sender {

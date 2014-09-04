@@ -11,6 +11,8 @@
 
 @interface NRFMainMenuViewController () <NRFTabBarViewControllerDelegate>
 
+@property (strong, nonatomic) UIButton *resumeGameButton;
+
 @end
 
 @implementation NRFMainMenuViewController
@@ -93,10 +95,12 @@
             [buttonToFormat setTitle:@"Edit Game" forState:UIControlStateNormal];
             [buttonToFormat addTarget:self action:@selector(editGame:) forControlEvents:UIControlEventTouchUpInside];
         } else {
+            self.resumeGameButton = buttonToFormat;
             if(self.currentGame){
                 [buttonToFormat setTitle:@"Resume Game" forState:UIControlStateNormal];
                 [buttonToFormat addTarget:self action:@selector(resumeGame:) forControlEvents:UIControlEventTouchUpInside];
-            }
+            } else
+                [buttonToFormat setEnabled:NO];
         }
     }
     
@@ -138,6 +142,17 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:YES];
+}
+
+-(void)mainBoardViewControllerDidFinishWithGame:(NRFJeopardyGamePlayable *)currentGame
+{
+    self.currentGame = currentGame;
+    UIButton *button = self.resumeGameButton;
+    [button setEnabled:YES];
+    [button setTitle:@"Resume Game" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(resumeGame:) forControlEvents:UIControlEventTouchUpInside];
+    [self.navigationController popToViewController:self animated:YES];
+
 }
 
 

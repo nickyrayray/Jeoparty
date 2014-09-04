@@ -19,5 +19,7 @@
 -(void)subtractThisAmountFromContestantScore:(int)amountToSubtract;
 -(void)increaseWagerBy:(int)amountToAdd;
 -(void)decreaseWagerBy:(int)amountToSubtract;
+-(void)increaseDailyDoubleWagerBy:(int)amountToAdd;
+-(void)decreaseDailyDoubleWagerBy:(int)amountToSubtract;
 
 @end

@@ -7,9 +7,8 @@
 //
 
 #import "NRFQuestionViewController.h"
-#import "NRFScoreViewController.h"
 
-@interface NRFQuestionViewController ()
+@interface NRFQuestionViewController () <NRFQuestionScoreViewControllerDelegate>
 
 @property (strong, nonatomic) NRFQuestion *question;
 @property (strong, nonatomic) NRFJeopardyGamePlayable *game;
@@ -65,21 +64,15 @@
         [questionButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [questionButton addTarget:self action:@selector(dailyDoublePressed:) forControlEvents:UIControlEventTouchUpInside];
         [questionButton setAdjustsImageWhenHighlighted:NO];
-        [self.view addSubview:questionButton];
     } else if(self.isTransition){
         questionButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 20, 984, 728)];
         [questionButton setTitle:self.transitionMessage forState:UIControlStateNormal];
+        [questionButton addTarget:self action:@selector(transitionAcknowledged:) forControlEvents:UIControlEventTouchUpInside];
     } else {
-        questionButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 20, 984, 728)];
-        questionButton.adjustsImageWhenHighlighted = NO;
-        questionButton.backgroundColor = [UIColor blueColor];
-        [questionButton.titleLabel setTextColor:[UIColor whiteColor]];
-        UIFont *customFont = [UIFont fontWithName:@"Hoefler Text" size:70];
-        questionButton.titleLabel.font = customFont;
-        [questionButton addTarget:self action:@selector(questionAnswered:) forControlEvents:UIControlEventTouchUpInside];
-        [questionButton setTitle:self.question.question forState:UIControlStateNormal];
-        [self.view addSubview:questionButton];
+        questionButton = [self createQuestionButton];
     }
+    
+    [self.view addSubview:questionButton];
     
     self.navigationItem.title = @"Selected Question";
     [self.navigationController setNavigationBarHidden:YES];
@@ -88,26 +81,51 @@
 
 - (void) dailyDoublePressed:(UIButton *)sender
 {
-    [self.navigationController popViewControllerAnimated:NO];
+    NRFWagerForDailyDoubleScoreViewController *wagerScoreVC = [[NRFWagerForDailyDoubleScoreViewController alloc]initWithGame:self.game];
+    [self.navigationController pushViewController:wagerScoreVC animated:NO];
+    [sender removeFromSuperview];
+    [self.view addSubview:[self createQuestionButton]];
 }
 
-- (void)questionAnswered:(id)sender {
+-(void)questionAnswered:(id)sender
+{
     
-    NRFScoreViewController *scoreVC = [[NRFQuestionScoreViewController alloc]initWithGame:self.game andQuestion:self.question];
-    [self.navigationController pushViewController:scoreVC animated:YES];
-    
-}
-
--(void) viewWillDisappear:(BOOL)animated {
     if(self.isDailyDouble){
-        NRFQuestionViewController *questionVC = [[NRFQuestionViewController alloc] initWithQuestion:self.question
-                                                                                            andGame:self.game
-                                                                                      isDailyDouble:NO];
-        questionVC.delegate = self.delegate;
-        [self.navigationController pushViewController:questionVC animated:NO];
-    } else {
-        [super viewWillDisappear:animated];
+        NRFWagerRewardScoreViewController *scoreVC = [[NRFWagerRewardScoreViewController alloc]initWithGame:self.game];
+        scoreVC.delegate = self;
+        [self.navigationController pushViewController:scoreVC animated:NO];
+    }else{
+        NRFQuestionScoreViewController *scoreVC = [[NRFQuestionScoreViewController alloc]initWithGame:self.game andQuestion:self.question];
+        scoreVC.delegate = self;
+        [self.navigationController pushViewController:scoreVC animated:NO];
     }
+    
+}
+
+-(void)transitionAcknowledged:(id)sender
+{
+    [self.delegate questionViewControllerDidFinishTransition];
+}
+
+-(void)questionScoreViewControllerDidFinish
+{
+    [self.navigationController popViewControllerAnimated:NO];
+    [self.delegate questionViewController:self didFinishWithQuestion:self.question];
+}
+
+
+
+-(UIButton *)createQuestionButton
+{
+    UIButton *questionButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 20, 984, 728)];
+    questionButton.adjustsImageWhenHighlighted = NO;
+    questionButton.backgroundColor = [UIColor blueColor];
+    [questionButton.titleLabel setTextColor:[UIColor whiteColor]];
+    UIFont *customFont = [UIFont fontWithName:@"Hoefler Text" size:70];
+    questionButton.titleLabel.font = customFont;
+    [questionButton addTarget:self action:@selector(questionAnswered:) forControlEvents:UIControlEventTouchUpInside];
+    [questionButton setTitle:self.question.question forState:UIControlStateNormal];
+    return questionButton;
 }
 
 

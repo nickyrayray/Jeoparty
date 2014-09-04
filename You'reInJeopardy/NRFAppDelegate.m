@@ -26,6 +26,7 @@
     naviVC.navigationBar.tintColor = [UIColor yellowColor];
     [naviVC.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor yellowColor],NSForegroundColorAttributeName, nil]];
     self.window.rootViewController = naviVC;
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     [self.window makeKeyAndVisible];
     return YES;
 }

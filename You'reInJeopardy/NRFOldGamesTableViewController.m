@@ -26,6 +26,8 @@
         if(self.games.count == 0){
             self.games = [NSMutableArray array];
             NRFJeopardyGamePlayable *test = [[NRFJeopardyGamePlayable alloc] init];
+            test.maxCategoryCount = 6;
+            test.maxQuestionCount = 30;
             test.gameTitle = @"Test Title";
             test.gameDescription = @"This is a test. Not a real game. It is only a test";
             NSMutableArray *mutableQuestions = [[NSMutableArray alloc] init];
@@ -33,7 +35,7 @@
             for(int i = 0; i < 30; i++){
                 NSString *question = [NSString stringWithFormat:@"%c", (i%6)+65];
                 NSString *answer = [NSString stringWithFormat:@"%d", i];
-                NRFQuestion *questionToAdd = [[NRFQuestion alloc] initQuestion:question withValue:i+1 andAnswer:answer];
+                NRFQuestion *questionToAdd = [[NRFQuestion alloc] initQuestion:question withValue:((i % 5) + 1)*200 andAnswer:answer];
                 [mutableQuestions addObject:questionToAdd];
             }
         
@@ -88,6 +90,8 @@
     [super viewDidLoad];
     
     [self.navigationController setNavigationBarHidden:NO];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
     if([self isInEditMode])
         self.navigationItem.title = @"Edit a Game";
     else

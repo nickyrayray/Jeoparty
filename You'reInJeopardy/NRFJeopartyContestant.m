@@ -65,4 +65,22 @@
         self.wager = 0;
 }
 
+-(void)increaseDailyDoubleWagerBy:(int)amountToAdd
+{
+    if(self.wager == -1)
+        self.wager = 0;
+    self.wager += amountToAdd;
+    if(self.score < 1000 && self.wager > 1000)
+        self.wager = 1000;
+    else if(self.wager > self.score && self.score >= 1000)
+        self.wager = self.score;
+}
+
+-(void)decreaseDailyDoubleWagerBy:(int)amountToSubtract
+{
+    self.wager -= amountToSubtract;
+    if(self.wager < 0)
+        self.wager = 0;
+}
+
 @end

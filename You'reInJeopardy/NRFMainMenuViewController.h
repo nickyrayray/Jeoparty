@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NRFTabBarViewController.h"
+#import "NRFMainBoardViewController.h"
 #import "NRFOldGamesTableViewController.h"
 #import "Constants.h"
 
@@ -18,5 +19,7 @@
 @property (strong, nonatomic) NRFJeopardyGamePlayable *currentGame;
 
 -(id)init;
+-(void)mainBoardViewControllerDidFinishWithGame:(NRFJeopardyGamePlayable *)currentGame;
+
 
 @end

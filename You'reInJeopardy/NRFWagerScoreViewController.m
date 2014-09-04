@@ -36,40 +36,45 @@
     [self.view addSubview:self.contestantThreeWagerLabel];
 }
 
+-(void)doneButtonPressed:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:NO];
+}
+
 - (void)contestantOnePlusButtonPressed:(id)sender {
     int valueToAdd = [self getIntValueFromLabel:[self.contestantOneIncrementValueSegment titleForSegmentAtIndex:self.contestantOneIncrementValueSegment.selectedSegmentIndex]];
     [self.game.contestantOne increaseWagerBy:valueToAdd];
-    self.contestantOneScore.text = [self createWagerStringFromValue:self.game.contestantOne.score];
+    self.contestantOneWagerLabel.text = [self createWagerStringFromValue:self.game.contestantOne.wager];
 }
 
 - (void)contestantOneMinusButtonPressed:(id)sender {
     int valueToSubtract = [self getIntValueFromLabel:[self.contestantOneIncrementValueSegment titleForSegmentAtIndex:self.contestantOneIncrementValueSegment.selectedSegmentIndex]];
     [self.game.contestantOne decreaseWagerBy:valueToSubtract];
-    self.contestantOneScore.text = [self createWagerStringFromValue:self.game.contestantOne.score];
+    self.contestantOneWagerLabel.text = [self createWagerStringFromValue:self.game.contestantOne.wager];
 }
 
 - (void)contestantTwoPlusButtonPressed:(id)sender {
     int valueToAdd = [self getIntValueFromLabel:[self.contestantTwoIncrementValueSegment titleForSegmentAtIndex:self.contestantTwoIncrementValueSegment.selectedSegmentIndex]];
     [self.game.contestantTwo increaseWagerBy:valueToAdd];
-    self.contestantTwoScore.text = [self createWagerStringFromValue:self.game.contestantTwo.score];
+    self.contestantTwoWagerLabel.text = [self createWagerStringFromValue:self.game.contestantTwo.wager];
 }
 
 - (void)contestantTwoMinusButtonPressed:(id)sender {
     int valueToSubtract = [self getIntValueFromLabel:[self.contestantTwoIncrementValueSegment titleForSegmentAtIndex:self.contestantTwoIncrementValueSegment.selectedSegmentIndex]];
     [self.game.contestantTwo decreaseWagerBy:valueToSubtract];
-    self.contestantTwoScore.text = [self createWagerStringFromValue:self.game.contestantTwo.score];
+    self.contestantTwoWagerLabel.text = [self createWagerStringFromValue:self.game.contestantTwo.wager];
 }
 
 - (void)contestantThreePlusButtonPressed:(id)sender {
     int valueToAdd = [self getIntValueFromLabel:[self.contestantThreeIncrementValueSegment titleForSegmentAtIndex:self.contestantThreeIncrementValueSegment.selectedSegmentIndex]];
     [self.game.contestantThree increaseWagerBy:valueToAdd];
-    self.contestantThreeScore.text = [self createWagerStringFromValue:self.game.contestantThree.score];
+    self.contestantThreeWagerLabel.text = [self createWagerStringFromValue:self.game.contestantThree.wager];
 }
 
 - (void)contestantThreeMinusButtonPressed:(id)sender {
     int valueToSubtract = [self getIntValueFromLabel:[self.contestantThreeIncrementValueSegment titleForSegmentAtIndex:self.contestantThreeIncrementValueSegment.selectedSegmentIndex]];
     [self.game.contestantThree decreaseWagerBy:valueToSubtract];
-    self.contestantThreeScore.text = [self createWagerStringFromValue:self.game.contestantThree.score];
+    self.contestantThreeWagerLabel.text = [self createWagerStringFromValue:self.game.contestantThree.wager];
 }
 
 
