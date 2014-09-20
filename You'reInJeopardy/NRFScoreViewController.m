@@ -120,7 +120,7 @@
 {
     CGRect screen = [[UIScreen mainScreen]applicationFrame];
     UIView *dividerOne = [[UIView alloc]initWithFrame:CGRectMake(screen.size.height/3, 0, 1, screen.size.width)];
-    UIView *dividerTwo = [[UIView alloc]initWithFrame:CGRectMake((screen.size.height * 2)/3, 0, 1, screen.size.width)];
+    UIView *dividerTwo = [[UIView alloc]initWithFrame:CGRectMake((screen.size.height * 2)/3 + 1, 0, 1, screen.size.width)];
     dividerOne.backgroundColor = [UIColor whiteColor];
     dividerTwo.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:dividerOne];

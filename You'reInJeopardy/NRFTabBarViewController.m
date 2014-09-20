@@ -104,7 +104,7 @@
 
 -(void)addOffsetToMainBoardViewController:(UIViewController *)viewController{
     UIScrollView *scrollView = (UIScrollView *)viewController.view;
-    [scrollView setContentInset:UIEdgeInsetsMake(64, 0, 44, 0)];
+    [scrollView setContentInset:UIEdgeInsetsMake(44, 0, 44, 0)];
 }
 
 -(void)addOffsetToFinalJeopartyViewController:(UIViewController *)viewController{

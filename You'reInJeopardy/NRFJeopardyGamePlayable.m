@@ -132,7 +132,7 @@
 
 +(NRFJeopardyGamePlayable *)makeCopyOfGame:(NRFJeopardyGameEditable *)gameToCopy
 {
-    NRFJeopardyGamePlayable *playableGame = [[NRFJeopardyGamePlayable alloc] init];
+    NRFJeopardyGamePlayable *playableGame = [[NRFJeopardyGamePlayable alloc] initWithEditableGame:gameToCopy];
     playableGame.categories = [[NSMutableArray alloc] initWithArray:gameToCopy.categories copyItems:YES];
     playableGame.doubleCategories = [[NSMutableArray alloc] initWithArray:gameToCopy.doubleCategories copyItems:YES];
     playableGame.questions = [[NSMutableArray alloc] initWithArray:gameToCopy.questions copyItems:YES];

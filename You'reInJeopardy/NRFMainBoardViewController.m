@@ -8,14 +8,9 @@
 
 #import "NRFMainBoardViewController.h"
 
-@interface NRFMainBoardViewController () <NRFQuestionEditViewControllerDelegate, NRFCategoryEditViewControllerDelegate, NRFQuestionViewControllerDelegate>
+@interface NRFMainBoardViewController () <NRFQuestionEditViewControllerDelegate, NRFQuestionViewControllerDelegate, NRFCategoryEditViewControllerDelegate>
 
 @property int mode;
-
-@property (strong, nonatomic) NSMutableArray *questionPanels;
-@property (strong, nonatomic) NSMutableArray *categoryPanels;
-
-
 
 @end
 
@@ -59,11 +54,10 @@
     
     UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.height, scrollView.frame.size.width + self.tabBarController.tabBar.frame.size.height);
-    scrollView.backgroundColor = [UIColor clearColor];
+    scrollView.backgroundColor = [UIColor blueColor];
     self.view = scrollView;
     self.categoryPanels = [[NSMutableArray alloc]init];
     self.questionPanels = [[NSMutableArray alloc]init];
-    
 }
 
 - (void)viewDidLoad
@@ -84,8 +78,8 @@
             if(i == 0){
                 buttonToCreate.titleLabel.font = [UIFont systemFontOfSize:18];
                 [buttonToCreate setTitle:@"Select Category" forState:UIControlStateNormal];
-                [buttonToCreate addTarget:self action:@selector(choseCategoryPanel:) forControlEvents:UIControlEventTouchUpInside];
                 buttonToCreate.titleLabel.numberOfLines = 2;
+                [buttonToCreate addTarget:self action:@selector(choseCategoryPanel:) forControlEvents:UIControlEventTouchUpInside];
                 [self.categoryPanels addObject:buttonToCreate];
                 [self.view addSubview:buttonToCreate];
             } else {
@@ -103,7 +97,7 @@
     
     UIButton *current;
     
-    if(self.mode == DOUBLE_JEOPARDY_SETUP || self.mode == DOUBLE_JEOPARDY_PLAY){
+    if(![self isBoardRegularType]){
         
         for(int i = 0; i < self.questionPanels.count; i++){ //Loop just doubles the titles on the buttons.
             current = self.questionPanels[i];
@@ -133,7 +127,7 @@
         
     }
     
-    if([self wePlayin]){
+    if([self isBoardInPlayMode]){
         
         [[UIApplication sharedApplication]setStatusBarHidden:YES];
         NSMutableArray *cats;
@@ -188,13 +182,6 @@
     NRFJeopardyGamePlayable *castedPlayableGame = (NRFJeopardyGamePlayable *)self.game;
     NRFEditScoreViewController *scoreVC = [[NRFEditScoreViewController alloc]initWithGame:castedPlayableGame];
     [self.navigationController pushViewController:scoreVC animated:YES];
-}
-
--(BOOL)wePlayin{
-    if(self.mode == REGULAR_JEOPARDY_PLAY || self.mode == DOUBLE_JEOPARDY_PLAY)
-        return YES;
-    else
-        return NO;
 }
 
 -(void) questionEditViewControllerDidFinishWithQuestion:(NRFQuestion *)question mightNeedIncrement:(BOOL)mightNeedIncrement
@@ -282,12 +269,14 @@
     [self.navigationController popViewControllerAnimated:NO];
     
     if([castedPlayableGame regularJeopartyIsCompletelyPlayed] && self.mode == REGULAR_JEOPARDY_PLAY){
-        NRFQuestionViewController *messageVC = [[NRFQuestionViewController alloc]initWithTransition:@"Ready for Double Jeoparty?/n/nTap Here to Play!"];
+        NRFQuestionViewController *messageVC = [[NRFQuestionViewController alloc]initWithTransition:@"Ready for Double Jeoparty?\n\nTap Here to Play!"];
+        messageVC.delegate = self;
+        [self.navigationController pushViewController:messageVC animated:YES];
+    } else if([castedPlayableGame doubleJeopartyIsCompletelyPlayed] && self.mode == DOUBLE_JEOPARDY_PLAY){
+        NRFQuestionViewController *messageVC = [[NRFQuestionViewController alloc]initWithTransition:@"Final Jeoparty"];
         messageVC.delegate = self;
         [self.navigationController pushViewController:messageVC animated:YES];
     }
-        
-    
 }
 
 -(void)questionViewControllerDidFinishTransition{
@@ -300,17 +289,16 @@
     [self.navigationController popToViewController:mainBoardDoubleVC animated:YES];
 }
 
+-(void)questionViewControllerDidFinishFinalJeopartyTransition
+{
+}
+
 
 - (void)choseQuestionPanel:(UIButton *)sender {
-        
-    NRFQuestion *question;
     
     int index = (int)[self.questionPanels indexOfObject:sender];
-        
-    if(self.mode == REGULAR_JEOPARDY_SETUP || self.mode == REGULAR_JEOPARDY_PLAY)
-        question = [self.game getQuestionAtIndex:index];
-    else
-        question  = [self.game getDoubleQuestionAtIndex:index];
+    
+    NRFQuestion *question = [self getQuestionForProperModeAtIndex:index];
     
     if(question.value == 0){
         NRFJeopardyGameEditable *castedEditGame = (NRFJeopardyGameEditable *)self.game;
@@ -324,7 +312,7 @@
             [castedEditGame addDoubleQuestion:question atIndex:index];
     }
     
-    if(![self wePlayin]){
+    if(![self isBoardInPlayMode]){
         
         NRFQuestionEditViewController *questionEditVC = [[NRFQuestionEditViewController alloc] initWithQuestion:question];
         questionEditVC.delegate = self;
@@ -356,17 +344,11 @@
 
 - (void)choseCategoryPanel:(UIButton *)sender {
     
-    if(![self wePlayin]){
-        
-        NSString *categoryToEdit;
+    if(![self isBoardInPlayMode]){
         
         int index = (int)[self.categoryPanels indexOfObject:sender];
         
-        if(self.mode == REGULAR_JEOPARDY_SETUP)
-            categoryToEdit = [self.game getCatAtIndex:index];
-        else
-            categoryToEdit = [self.game getDoubleCatAtIndex:index];
-        
+        NSString *categoryToEdit = [self getCategoryForProperModeAtIndex:index];
         
         NRFCategoryEditViewController *catEditVC = [[NRFCategoryEditViewController alloc] initWithCat:categoryToEdit atIndex:index];
         catEditVC.delegate = self;
@@ -424,5 +406,35 @@
     }
 }
 
+-(BOOL)isBoardInPlayMode{
+    if(self.mode == REGULAR_JEOPARDY_PLAY || self.mode == DOUBLE_JEOPARDY_PLAY)
+        return YES;
+    else
+        return NO;
+}
+
+-(BOOL)isBoardRegularType
+{
+    if(self.mode == REGULAR_JEOPARDY_PLAY || self.mode == REGULAR_JEOPARDY_SETUP)
+        return YES;
+    else
+        return NO;
+}
+
+-(NRFQuestion *)getQuestionForProperModeAtIndex:(int)index
+{
+    if([self isBoardRegularType])
+        return [self.game getQuestionAtIndex:index];
+    else
+        return [self.game getDoubleQuestionAtIndex:index];
+}
+
+-(NSString *)getCategoryForProperModeAtIndex:(int)index
+{
+    if([self isBoardRegularType])
+        return [self.game getCatAtIndex:index];
+    else
+        return [self.game getDoubleCatAtIndex:index];
+}
 
 @end

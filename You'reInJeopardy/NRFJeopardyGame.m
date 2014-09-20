@@ -77,7 +77,7 @@
 {
     NSMutableArray *questions = [[NSMutableArray alloc] initWithCapacity:size];
     NRFQuestion *questionToAdd;
-    
+    self.maxQuestionCount = size;
     for(int i = 0; i < size; i++){
         questionToAdd = [[NRFQuestion alloc] init];
         [questions addObject:questionToAdd];
@@ -90,7 +90,7 @@
 {
     NSMutableArray *questions = [[NSMutableArray alloc] initWithCapacity:size];
     NRFQuestion *questionToAdd;
-    
+    self.maxQuestionCount = size;
     for(int i = 0; i < size; i++){
         questionToAdd = [[NRFQuestion alloc] init];
         [questions addObject:questionToAdd];
@@ -103,7 +103,7 @@
 {
     NSMutableArray *cats = [[NSMutableArray alloc] initWithCapacity:size];
     NSString *catToAdd;
-    
+    self.maxCategoryCount = size;
     for(int i = 0; i < size; i++){
         catToAdd = @"";
         [cats addObject:catToAdd];
@@ -115,7 +115,7 @@
 {
     NSMutableArray *cats = [[NSMutableArray alloc] initWithCapacity:size];
     NSString *catToAdd;
-    
+    self.maxCategoryCount = size;
     for(int i = 0; i < size; i++){
         catToAdd = @"";
         [cats addObject:catToAdd];

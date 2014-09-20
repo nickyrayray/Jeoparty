@@ -24,6 +24,9 @@
 
 @property (strong, nonatomic)NRFJeopardyGame *game;
 
+@property (strong, nonatomic) NSMutableArray *questionPanels;
+@property (strong, nonatomic) NSMutableArray *categoryPanels;
+
 -(id)initWithPlayableGame:(NRFJeopardyGamePlayable *)game inMode:(int)mode;
 -(id)initWithEditableGame:(NRFJeopardyGameEditable *)game inMode:(int)mode;
 -(id)initWithPlayableGameFromEditableGame:(NRFJeopardyGameEditable *)game inMode:(int)mode;

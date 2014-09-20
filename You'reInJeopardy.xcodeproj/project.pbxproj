@@ -41,6 +41,7 @@
 		38944235198AF2A200265DCA /* NRFTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38944234198AF2A200265DCA /* NRFTabBarViewController.m */; };
 		389442381990040A00265DCA /* NRFJeopardyGamePlayable.m in Sources */ = {isa = PBXBuildFile; fileRef = 389442371990040A00265DCA /* NRFJeopardyGamePlayable.m */; };
 		3894423B1990066C00265DCA /* NRFJeopardyGameEditable.m in Sources */ = {isa = PBXBuildFile; fileRef = 3894423A1990066C00265DCA /* NRFJeopardyGameEditable.m */; };
+		38A24C6819CD1605005E46B1 /* NRFFinalJeopartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A24C6719CD1605005E46B1 /* NRFFinalJeopartyViewController.m */; };
 		38D2C4E5197F26CA00144155 /* NRFScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D2C4E3197F26CA00144155 /* NRFScoreViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +115,8 @@
 		389442371990040A00265DCA /* NRFJeopardyGamePlayable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFJeopardyGamePlayable.m; sourceTree = "<group>"; };
 		389442391990066C00265DCA /* NRFJeopardyGameEditable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFJeopardyGameEditable.h; sourceTree = "<group>"; };
 		3894423A1990066C00265DCA /* NRFJeopardyGameEditable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFJeopardyGameEditable.m; sourceTree = "<group>"; };
+		38A24C6619CD1605005E46B1 /* NRFFinalJeopartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFFinalJeopartyViewController.h; sourceTree = "<group>"; };
+		38A24C6719CD1605005E46B1 /* NRFFinalJeopartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFFinalJeopartyViewController.m; sourceTree = "<group>"; };
 		38D2C4E2197F26CA00144155 /* NRFScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFScoreViewController.h; sourceTree = "<group>"; };
 		38D2C4E3197F26CA00144155 /* NRFScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFScoreViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,8 +150,9 @@
 			isa = PBXGroup;
 			children = (
 				388357C619B5036F00D73781 /* ScoreViewControllers */,
-				388357D919B8E37200D73781 /* MainBoardViewControllers */,
 				388357DA19B8E38000D73781 /* DisplayViewControllers */,
+				3886A36D194788C4005E3362 /* NRFMainBoardViewController.h */,
+				3886A36E194788C4005E3362 /* NRFMainBoardViewController.m */,
 				3883577B19ACCFDA00D73781 /* NRFGameDescriptionViewController.h */,
 				3883577C19ACCFDA00D73781 /* NRFGameDescriptionViewController.m */,
 				3886A38D195B761E005E3362 /* NRFOldGamesTableViewController.h */,
@@ -206,20 +210,13 @@
 			name = ScoreViewControllers;
 			sourceTree = "<group>";
 		};
-		388357D919B8E37200D73781 /* MainBoardViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				3886A36D194788C4005E3362 /* NRFMainBoardViewController.h */,
-				3886A36E194788C4005E3362 /* NRFMainBoardViewController.m */,
-			);
-			name = MainBoardViewControllers;
-			sourceTree = "<group>";
-		};
 		388357DA19B8E38000D73781 /* DisplayViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				3886A385194B9EBB005E3362 /* NRFQuestionViewController.h */,
 				3886A386194B9EBB005E3362 /* NRFQuestionViewController.m */,
+				38A24C6619CD1605005E46B1 /* NRFFinalJeopartyViewController.h */,
+				38A24C6719CD1605005E46B1 /* NRFFinalJeopartyViewController.m */,
 			);
 			name = DisplayViewControllers;
 			sourceTree = "<group>";
@@ -418,6 +415,7 @@
 				3894423B1990066C00265DCA /* NRFJeopardyGameEditable.m in Sources */,
 				3886A38F195B761E005E3362 /* NRFOldGamesTableViewController.m in Sources */,
 				388357D219B61C5700D73781 /* NRFWagerScoreViewController.m in Sources */,
+				38A24C6819CD1605005E46B1 /* NRFFinalJeopartyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

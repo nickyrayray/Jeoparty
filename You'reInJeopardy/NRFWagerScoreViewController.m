@@ -38,7 +38,7 @@
 
 -(void)doneButtonPressed:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:NO];
+    [self.delegate questionScoreViewControllerDidFinish];
 }
 
 - (void)contestantOnePlusButtonPressed:(id)sender {

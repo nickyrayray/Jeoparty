@@ -41,6 +41,7 @@
     [self.view addSubview:self.secondContestantSelectionButton];
     [self.view addSubview:self.thirdContestantSelectionButton];
     self.navigationItem.title = @"Select Contestant Who Chose Daily Double";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed:)];
 }
 
 -(void)contestantSelected:(id)sender
@@ -59,6 +60,11 @@
     [self.firstContestantSelectionButton removeFromSuperview];
     [self.secondContestantSelectionButton removeFromSuperview];
     [self.thirdContestantSelectionButton removeFromSuperview];
+}
+
+-(void)doneButtonPressed:(id)sender
+{
+    
 }
 
 - (void)contestantOnePlusButtonPressed:(id)sender {

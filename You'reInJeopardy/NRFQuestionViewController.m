@@ -59,7 +59,8 @@
     UIButton *questionButton;
     
     if(self.isDailyDouble){
-        questionButton = [[UIButton alloc] initWithFrame:self.view.frame];
+        CGRect portraitScreen = [[UIScreen mainScreen]applicationFrame];
+        questionButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, portraitScreen.size.height, portraitScreen.size.width)];
         UIImage *buttonImage = [UIImage imageNamed:@"DailyDouble.png"];
         [questionButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [questionButton addTarget:self action:@selector(dailyDoublePressed:) forControlEvents:UIControlEventTouchUpInside];
