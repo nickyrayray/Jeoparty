@@ -8,7 +8,7 @@
 
 #import "NRFQuestionViewController.h"
 
-@interface NRFQuestionViewController () <NRFQuestionScoreViewControllerDelegate>
+@interface NRFQuestionViewController () <NRFQuestionScoreViewControllerDelegate, NRFWagerRewardScoreViewControllerDelegate>
 
 @property (strong, nonatomic) NRFQuestion *question;
 @property (strong, nonatomic) NRFJeopardyGamePlayable *game;
@@ -114,7 +114,10 @@
     [self.delegate questionViewController:self didFinishWithQuestion:self.question];
 }
 
-
+-(void)wagerRewardScoreViewControllerDelegateDidFinish
+{
+    [self.navigationController]
+}
 
 -(UIButton *)createQuestionButton
 {

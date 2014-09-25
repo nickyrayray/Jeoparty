@@ -9,9 +9,15 @@
 #import "NRFScoreViewController.h"
 #import "NRFQuestionScoreViewController.h"
 
+@protocol NRFWagerRewardScoreViewControllerDelegate <NSObject>
+
+-(void)wagerRewardScoreViewControllerDelegateDidFinish;
+
+@end
+
 @interface NRFWagerRewardScoreViewController : NRFScoreViewController
 
-@property (strong, nonatomic) id<NRFQuestionScoreViewControllerDelegate> delegate;
+@property (strong, nonatomic) id<NRFWagerRewardScoreViewControllerDelegate> delegate;
 @property (strong, nonatomic) UIButton *contestantOnePlus;
 @property (strong, nonatomic) UIButton *contestantOneMinus;
 @property (strong, nonatomic)UILabel *contestantOneWagerLabel;

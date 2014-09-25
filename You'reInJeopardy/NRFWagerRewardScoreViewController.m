@@ -69,7 +69,7 @@
 
 -(void)doneButtonPressed:(id)sender
 {
-    [self.delegate questionScoreViewControllerDidFinish];
+    [self.delegate wagerRewardScoreViewControllerDelegateDidFinish];
 }
 
 - (void)contestantOnePlusButtonPressed:(id)sender {
