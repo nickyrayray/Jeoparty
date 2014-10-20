@@ -8,8 +8,16 @@
 
 #import "NRFWagerScoreViewController.h"
 
+@protocol NRFWagerForDailyDoubleScoreViewControllerDelegate <NSObject>
+
+-(void)wagerForDailyDoubleScoreViewControllerDidFinish;
+
+@end
+
 
 @interface NRFWagerForDailyDoubleScoreViewController : NRFWagerScoreViewController
+
+@property (strong, nonatomic) id<NRFWagerForDailyDoubleScoreViewControllerDelegate> delegate;
 
 -(id)initWithGame:(NRFJeopardyGamePlayable *)game;
 

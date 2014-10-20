@@ -27,6 +27,5 @@
 @property (nonatomic) id<NRFQuestionViewControllerDelegate> delegate;
 
 -(id)initWithQuestion:(NRFQuestion *)question andGame:(NRFJeopardyGame *)game isDailyDouble:(BOOL)isDailyDouble;
--(id)initWithTransition:(NSString *)transitionMessage;
 
 @end

@@ -14,6 +14,8 @@
 #import "NRFQuestionViewController.h"
 #import "NRFMainMenuViewController.h"
 #import "NRFEditScoreViewController.h"
+#import "NRFTransitionDisplayViewController.h"
+#import "NRFFinalJeopartyViewController.h"
 #import "Constants.h"
 
 #define TOTAL_QUESTION_PANELS 30

@@ -10,6 +10,7 @@
 		380AD04F1995BD720034D824 /* NRFMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380AD04E1995BD720034D824 /* NRFMainMenuViewController.m */; };
 		380AD05519997BFD0034D824 /* NRFFinalJeopartyQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 380AD05419997BFD0034D824 /* NRFFinalJeopartyQuestion.m */; };
 		380AD058199995EA0034D824 /* NRFJeopartyContestant.m in Sources */ = {isa = PBXBuildFile; fileRef = 380AD057199995EA0034D824 /* NRFJeopartyContestant.m */; };
+		386064B519F4B43C003B2E78 /* NRFTransitionDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386064B419F4B43C003B2E78 /* NRFTransitionDisplayViewController.m */; };
 		3883577719A7A6F600D73781 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3883577619A7A6F600D73781 /* CoreData.framework */; };
 		3883577A19A7C2D300D73781 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3883577819A7C2D300D73781 /* Model.xcdatamodeld */; };
 		3883577D19ACCFDA00D73781 /* NRFGameDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3883577C19ACCFDA00D73781 /* NRFGameDescriptionViewController.m */; };
@@ -63,6 +64,8 @@
 		380AD05419997BFD0034D824 /* NRFFinalJeopartyQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFFinalJeopartyQuestion.m; sourceTree = "<group>"; };
 		380AD056199995EA0034D824 /* NRFJeopartyContestant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFJeopartyContestant.h; sourceTree = "<group>"; };
 		380AD057199995EA0034D824 /* NRFJeopartyContestant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFJeopartyContestant.m; sourceTree = "<group>"; };
+		386064B319F4B43C003B2E78 /* NRFTransitionDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFTransitionDisplayViewController.h; sourceTree = "<group>"; };
+		386064B419F4B43C003B2E78 /* NRFTransitionDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRFTransitionDisplayViewController.m; sourceTree = "<group>"; };
 		3883577619A7A6F600D73781 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3883577919A7C2D300D73781 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		3883577B19ACCFDA00D73781 /* NRFGameDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRFGameDescriptionViewController.h; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 			children = (
 				3886A385194B9EBB005E3362 /* NRFQuestionViewController.h */,
 				3886A386194B9EBB005E3362 /* NRFQuestionViewController.m */,
+				386064B319F4B43C003B2E78 /* NRFTransitionDisplayViewController.h */,
+				386064B419F4B43C003B2E78 /* NRFTransitionDisplayViewController.m */,
 				38A24C6619CD1605005E46B1 /* NRFFinalJeopartyViewController.h */,
 				38A24C6719CD1605005E46B1 /* NRFFinalJeopartyViewController.m */,
 			);
@@ -392,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				380AD05519997BFD0034D824 /* NRFFinalJeopartyQuestion.m in Sources */,
+				386064B519F4B43C003B2E78 /* NRFTransitionDisplayViewController.m in Sources */,
 				388357D519B7855E00D73781 /* NRFWagerForDailyDoubleScoreViewController.m in Sources */,
 				3886A370194788C4005E3362 /* NRFMainBoardViewController.m in Sources */,
 				380AD04F1995BD720034D824 /* NRFMainMenuViewController.m in Sources */,

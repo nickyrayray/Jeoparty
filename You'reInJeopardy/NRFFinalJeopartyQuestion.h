@@ -10,9 +10,11 @@
 
 @interface NRFFinalJeopartyQuestion : NRFQuestion
 
-@property (strong, nonatomic) NSString *category;
+@property (strong, nonatomic) NSString *category; //The FJ category shown before contestants place wagers
 
 -(id)init;
+
+//Method used in edit mode. Returns true if isFinished in the superclass returns true and category is not blank.
 -(BOOL)finalJeopartyQuestionIsFinished;
 
 @end

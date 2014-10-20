@@ -13,4 +13,6 @@
 
 @interface NRFFinalJeopartyViewController : UIViewController
 
+- (id)initWithFinalJeopartyQuestion:(NRFFinalJeopartyQuestion *)question andGame:(NRFJeopardyGamePlayable *)game;
+
 @end

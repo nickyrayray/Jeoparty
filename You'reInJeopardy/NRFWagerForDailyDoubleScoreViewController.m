@@ -64,7 +64,7 @@
 
 -(void)doneButtonPressed:(id)sender
 {
-    
+    [self.delegate wagerForDailyDoubleScoreViewControllerDidFinish];
 }
 
 - (void)contestantOnePlusButtonPressed:(id)sender {

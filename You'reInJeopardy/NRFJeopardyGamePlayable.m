@@ -93,6 +93,13 @@
     
 }
 
+-(void)resetWagers
+{
+    self.contestantOne.wager = -1;
+    self.contestantTwo.wager = -1;
+    self.contestantThree.wager = -1;
+}
+
 -(BOOL) dailyDoublesAreSet{
     if(self.regDailyDouble != -1 && self.doubleDailyDouble1 != -1 && self.doubleDailyDouble2 != -1)
         return YES;

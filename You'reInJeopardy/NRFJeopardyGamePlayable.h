@@ -20,6 +20,7 @@
 -(void)incrementQuestionsAnswered;
 -(void)incrementDoubleQuestionsAnswered;
 -(void)setDailyDoubles;
+-(void)resetWagers;
 -(BOOL)dailyDoublesAreSet;
 -(BOOL)questionIsDailyDouble:(int)questionIndex forMode:(int)mode;
 -(BOOL)regularJeopartyIsCompletelyPlayed;

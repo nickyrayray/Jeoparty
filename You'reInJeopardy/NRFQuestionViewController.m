@@ -8,12 +8,11 @@
 
 #import "NRFQuestionViewController.h"
 
-@interface NRFQuestionViewController () <NRFQuestionScoreViewControllerDelegate, NRFWagerRewardScoreViewControllerDelegate>
+@interface NRFQuestionViewController () <NRFQuestionScoreViewControllerDelegate, NRFWagerForDailyDoubleScoreViewControllerDelegate>
 
 @property (strong, nonatomic) NRFQuestion *question;
 @property (strong, nonatomic) NRFJeopardyGamePlayable *game;
 @property BOOL isDailyDouble;
-@property BOOL isTransition;
 @property (strong, nonatomic) NSString *transitionMessage;
 
 
@@ -29,20 +28,6 @@
         self.isDailyDouble = isDailyDouble;
         self.game = game;
     }
-    return self;
-}
-
--(id)initWithTransition:(NSString *)transitionMessage{
-    
-    self = [super init];
-    
-    if(self){
-        
-        self.isTransition = YES;
-        self.isDailyDouble = NO;
-        self.transitionMessage = transitionMessage;
-    }
-    
     return self;
 }
 
@@ -65,10 +50,6 @@
         [questionButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [questionButton addTarget:self action:@selector(dailyDoublePressed:) forControlEvents:UIControlEventTouchUpInside];
         [questionButton setAdjustsImageWhenHighlighted:NO];
-    } else if(self.isTransition){
-        questionButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 20, 984, 728)];
-        [questionButton setTitle:self.transitionMessage forState:UIControlStateNormal];
-        [questionButton addTarget:self action:@selector(transitionAcknowledged:) forControlEvents:UIControlEventTouchUpInside];
     } else {
         questionButton = [self createQuestionButton];
     }
@@ -83,6 +64,7 @@
 - (void) dailyDoublePressed:(UIButton *)sender
 {
     NRFWagerForDailyDoubleScoreViewController *wagerScoreVC = [[NRFWagerForDailyDoubleScoreViewController alloc]initWithGame:self.game];
+    wagerScoreVC.delegate = self;
     [self.navigationController pushViewController:wagerScoreVC animated:NO];
     [sender removeFromSuperview];
     [self.view addSubview:[self createQuestionButton]];
@@ -103,20 +85,20 @@
     
 }
 
--(void)transitionAcknowledged:(id)sender
-{
-    [self.delegate questionViewControllerDidFinishTransition];
-}
-
 -(void)questionScoreViewControllerDidFinish
 {
     [self.navigationController popViewControllerAnimated:NO];
     [self.delegate questionViewController:self didFinishWithQuestion:self.question];
 }
 
+-(void)wagerForDailyDoubleScoreViewControllerDidFinish{
+    [self.navigationController popViewControllerAnimated:NO];
+}
+
 -(void)wagerRewardScoreViewControllerDelegateDidFinish
 {
-    [self.navigationController]
+    [self.navigationController popViewControllerAnimated:NO];
+    [self.delegate questionViewController:self didFinishWithQuestion:self.question];
 }
 
 -(UIButton *)createQuestionButton

@@ -8,7 +8,7 @@
 
 #import "NRFMainBoardViewController.h"
 
-@interface NRFMainBoardViewController () <NRFQuestionEditViewControllerDelegate, NRFQuestionViewControllerDelegate, NRFCategoryEditViewControllerDelegate>
+@interface NRFMainBoardViewController () <NRFQuestionEditViewControllerDelegate, NRFQuestionViewControllerDelegate, NRFCategoryEditViewControllerDelegate, NRFTransitionDisplayViewControllerDelegate>
 
 @property int mode;
 
@@ -269,25 +269,34 @@
     [self.navigationController popViewControllerAnimated:NO];
     
     if([castedPlayableGame regularJeopartyIsCompletelyPlayed] && self.mode == REGULAR_JEOPARDY_PLAY){
-        NRFQuestionViewController *messageVC = [[NRFQuestionViewController alloc]initWithTransition:@"Ready for Double Jeoparty?\n\nTap Here to Play!"];
+        NRFTransitionDisplayViewController *messageVC = [[NRFTransitionDisplayViewController alloc]initWithTransitionType:DOUBLE_J_TRANSITION andMessage:@"Ready for Double Jeoparty?\n Tap to Play!"];
         messageVC.delegate = self;
         [self.navigationController pushViewController:messageVC animated:YES];
     } else if([castedPlayableGame doubleJeopartyIsCompletelyPlayed] && self.mode == DOUBLE_JEOPARDY_PLAY){
-        NRFQuestionViewController *messageVC = [[NRFQuestionViewController alloc]initWithTransition:@"Final Jeoparty"];
+        NRFTransitionDisplayViewController *messageVC = [[NRFTransitionDisplayViewController alloc]initWithTransitionType:FINAL_J_TRANSITION andMessage:@"Ready for Final Jeoparty?\n Tap to Play!"];
         messageVC.delegate = self;
         [self.navigationController pushViewController:messageVC animated:YES];
     }
 }
 
--(void)questionViewControllerDidFinishTransition{
+-(void)transitionDisplayViewControllerDidFinishDisplayingWithType:(int)transitionType{
     NRFJeopardyGamePlayable *game = (NRFJeopardyGamePlayable *)self.game;
-    NRFMainBoardViewController *mainBoardDoubleVC = [[NRFMainBoardViewController alloc]initWithPlayableGame:game inMode:DOUBLE_JEOPARDY_PLAY];
-    NSUInteger index = [self.navigationController.viewControllers indexOfObject:self];
-    NSMutableArray *mutableViewControllers = [self.navigationController.viewControllers mutableCopy];
-    [mutableViewControllers insertObject:mainBoardDoubleVC atIndex:index];
-    self.navigationController.viewControllers = mutableViewControllers;
-    [self.navigationController popToViewController:mainBoardDoubleVC animated:YES];
-}
+    if(transitionType == DOUBLE_J_TRANSITION){
+        NRFMainBoardViewController *mainBoardDoubleVC = [[NRFMainBoardViewController alloc]initWithPlayableGame:game inMode:DOUBLE_JEOPARDY_PLAY];
+        NSUInteger index = [self.navigationController.viewControllers indexOfObject:self];
+        NSMutableArray *mutableViewControllers = [self.navigationController.viewControllers mutableCopy];
+        [mutableViewControllers insertObject:mainBoardDoubleVC atIndex:index];
+        self.navigationController.viewControllers = mutableViewControllers;
+        [self.navigationController popToViewController:mainBoardDoubleVC animated:YES];
+    } else {
+        NRFFinalJeopartyViewController *finalJVC = [[NRFFinalJeopartyViewController alloc]initWithFinalJeopartyQuestion:game.finalJeopartyQuestion andGame:game];
+        NSUInteger index = [self.navigationController.viewControllers indexOfObject:self];
+        NSMutableArray *mutableViewControllers = [self.navigationController.viewControllers mutableCopy];
+        [mutableViewControllers insertObject:finalJVC atIndex:index];
+        self.navigationController.viewControllers = mutableViewControllers;
+        [self.navigationController popToViewController:finalJVC animated:YES];
+    }
+   }
 
 -(void)questionViewControllerDidFinishFinalJeopartyTransition
 {
