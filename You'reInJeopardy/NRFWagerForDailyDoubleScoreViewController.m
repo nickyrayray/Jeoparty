@@ -28,9 +28,9 @@
 {
     [super loadView];
     CGRect appScreen = [[UIScreen mainScreen]applicationFrame];
-    self.firstContestantSelectionButton = [self createSelectButtonWithFrame:CGRectMake(0, 0, appScreen.size.height/3, appScreen.size.width) forContestant:self.game.contestantOne];
-    self.secondContestantSelectionButton = [self createSelectButtonWithFrame:CGRectMake(appScreen.size.height/3 + 1, 0, appScreen.size.height/3, appScreen.size.width) forContestant:self.game.contestantTwo];
-    self.thirdContestantSelectionButton = [self createSelectButtonWithFrame:CGRectMake((appScreen.size.height/3) * 2 + 2, 0, appScreen.size.height/3, appScreen.size.width) forContestant:self.game.contestantThree];
+    self.firstContestantSelectionButton = [self createSelectButtonWithFrame:CGRectMake(0, 0, appScreen.size.width/3, appScreen.size.height) forContestant:self.game.contestantOne];
+    self.secondContestantSelectionButton = [self createSelectButtonWithFrame:CGRectMake(appScreen.size.width/3 + 1, 0, appScreen.size.width/3, appScreen.size.height) forContestant:self.game.contestantTwo];
+    self.thirdContestantSelectionButton = [self createSelectButtonWithFrame:CGRectMake((appScreen.size.width/3) * 2 + 2, 0, appScreen.size.width/3, appScreen.size.height) forContestant:self.game.contestantThree];
     
 }
 

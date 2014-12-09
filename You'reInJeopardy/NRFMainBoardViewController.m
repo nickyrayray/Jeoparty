@@ -53,7 +53,7 @@
     [super loadView];
     
     UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.height, scrollView.frame.size.width + self.tabBarController.tabBar.frame.size.height);
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, scrollView.frame.size.height + self.tabBarController.tabBar.frame.size.height);
     scrollView.backgroundColor = [UIColor blueColor];
     self.view = scrollView;
     self.categoryPanels = [[NSMutableArray alloc]init];
@@ -71,7 +71,7 @@
     
     for(int i = 0; i < TOTAL_CATEGORY_PANELS; i++){
         for(int j = 0; j < (TOTAL_QUESTION_PANELS / TOTAL_CATEGORY_PANELS) + 1; j++){
-            buttonToCreate = [[UIButton alloc] initWithFrame:CGRectMake(j*buttonHeight, i*buttonWidth, buttonHeight, buttonWidth)];
+            buttonToCreate = [[UIButton alloc] initWithFrame:CGRectMake(j*buttonWidth, i*buttonHeight, buttonWidth, buttonHeight)];
             [buttonToCreate setBackgroundImage:[UIImage imageNamed:@"Square.png"] forState:UIControlStateNormal];
             buttonToCreate.adjustsImageWhenDisabled = NO;
             buttonToCreate.adjustsImageWhenHighlighted = NO;

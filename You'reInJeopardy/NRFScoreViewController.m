@@ -119,8 +119,8 @@
 -(void)createContestantDividers
 {
     CGRect screen = [[UIScreen mainScreen]applicationFrame];
-    UIView *dividerOne = [[UIView alloc]initWithFrame:CGRectMake(screen.size.height/3, 0, 1, screen.size.width)];
-    UIView *dividerTwo = [[UIView alloc]initWithFrame:CGRectMake((screen.size.height * 2)/3 + 1, 0, 1, screen.size.width)];
+    UIView *dividerOne = [[UIView alloc]initWithFrame:CGRectMake(screen.size.width/3, 0, 1, screen.size.height)];
+    UIView *dividerTwo = [[UIView alloc]initWithFrame:CGRectMake((screen.size.width * 2)/3 + 1, 0, 1, screen.size.height)];
     dividerOne.backgroundColor = [UIColor whiteColor];
     dividerTwo.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:dividerOne];

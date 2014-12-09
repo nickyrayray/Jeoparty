@@ -31,12 +31,16 @@
             test.gameTitle = @"Test Title";
             test.gameDescription = @"This is a test. Not a real game. It is only a test";
             NSMutableArray *mutableQuestions = [[NSMutableArray alloc] init];
+            NSMutableArray *mutableDoubleQuestions = [[NSMutableArray alloc] init];
             NSMutableArray *mutableCategories = [[NSMutableArray alloc] init];
             for(int i = 0; i < 30; i++){
                 NSString *question = [NSString stringWithFormat:@"%c", (i%6)+65];
                 NSString *answer = [NSString stringWithFormat:@"%d", i];
-                NRFQuestion *questionToAdd = [[NRFQuestion alloc] initQuestion:question withValue:((i % 5) + 1)*200 andAnswer:answer];
+                int value = ((i/6) + 1) * 200;
+                NRFQuestion *questionToAdd = [[NRFQuestion alloc] initQuestion:question withValue:value andAnswer:answer];
+                NRFQuestion *doubleQuestionToAdd = [[NRFQuestion alloc] initQuestion:question withValue:2*value andAnswer:answer];
                 [mutableQuestions addObject:questionToAdd];
+                [mutableDoubleQuestions addObject:doubleQuestionToAdd];
             }
         
             for(int i = 0; i < 6; i++){
@@ -45,7 +49,7 @@
             }
         
             test.questions = mutableQuestions;
-            test.doubleQuestions = mutableQuestions;
+            test.doubleQuestions = mutableDoubleQuestions;
             test.categories = mutableCategories;
             test.doubleCategories = mutableCategories;
     

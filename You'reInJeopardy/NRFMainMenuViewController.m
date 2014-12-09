@@ -52,8 +52,8 @@
     [super viewDidLoad];
     
     CGRect frameSize = [[UIScreen mainScreen]applicationFrame];
-    float buttonWidth = (frameSize.size.width)/6 + (20/(TOTAL_QUESTION_PANELS/TOTAL_CATEGORY_PANELS + 1));
-    float buttonHeight = (frameSize.size.height/6);
+    float buttonWidth = (frameSize.size.height)/6 + (20/(TOTAL_QUESTION_PANELS/TOTAL_CATEGORY_PANELS + 1));
+    float buttonHeight = (frameSize.size.width/6);
     NSMutableArray *buttonArray = [[NSMutableArray alloc]init];
     UIButton *buttonToCreate;
     
