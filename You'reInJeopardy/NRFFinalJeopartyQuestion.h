@@ -13,6 +13,7 @@
 @property (strong, nonatomic) NSString *category; //The FJ category shown before contestants place wagers
 
 -(id)init;
+-(id)initWithQuestion:(NSString *)question andCategory:(NSString *)category andAnswer:(NSString *)answer;
 
 //Method used in edit mode. Returns true if isFinished in the superclass returns true and category is not blank.
 -(BOOL)finalJeopartyQuestionIsFinished;

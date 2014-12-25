@@ -16,6 +16,16 @@
     return self;
 }
 
+-(id)initWithQuestion:(NSString *)question andCategory:(NSString *)category andAnswer:(NSString *)answer{
+    self = [super init];
+    if(self){
+        self.question = question;
+        self.category = category;
+        self.answer = answer;
+    }
+    return self;
+}
+
 -(BOOL)finalJeopartyQuestionIsFinished
 {
     if([super isFinished] && self.category && ![self.category isEqualToString:@""])

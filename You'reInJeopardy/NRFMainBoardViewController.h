@@ -32,5 +32,6 @@
 -(id)initWithPlayableGame:(NRFJeopardyGamePlayable *)game inMode:(int)mode;
 -(id)initWithEditableGame:(NRFJeopardyGameEditable *)game inMode:(int)mode;
 -(id)initWithPlayableGameFromEditableGame:(NRFJeopardyGameEditable *)game inMode:(int)mode;
+-(id)initWithResumedPlayableGame:(NRFJeopardyGamePlayable *)game;
 
 @end

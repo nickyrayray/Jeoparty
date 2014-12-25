@@ -52,7 +52,7 @@
             test.doubleQuestions = mutableDoubleQuestions;
             test.categories = mutableCategories;
             test.doubleCategories = mutableCategories;
-    
+            test.finalJeopartyQuestion = [[NRFFinalJeopartyQuestion alloc] initWithQuestion:@"Test Question" andCategory:@"Test Category" andAnswer:@"Test Answer"];
             [self.games addObject:test];
         } else {
             if([self isInEditMode])

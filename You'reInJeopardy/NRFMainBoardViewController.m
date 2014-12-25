@@ -47,6 +47,18 @@
     return self;
 }
 
+-(id)initWithResumedPlayableGame:(NRFJeopardyGamePlayable *)game
+{
+    self = [super init];
+    if(self){
+        if([game regularJeopartyIsCompletelyPlayed])
+            self.mode = DOUBLE_JEOPARDY_PLAY;
+        else
+            self.mode = REGULAR_JEOPARDY_PLAY;
+        self.game = game;
+    }
+    return self;
+}
 
 -(void)loadView
 {
@@ -99,7 +111,7 @@
     
     if(![self isBoardRegularType]){
         
-        for(int i = 0; i < self.questionPanels.count; i++){ //Loop just doubles the titles on the buttons.
+        for(int i = 0; i < self.questionPanels.count; i++){ //Loop just doubles the values on the buttons.
             current = self.questionPanels[i];
             NSString *currentAmount = current.currentTitle;
             currentAmount = [currentAmount stringByReplacingOccurrencesOfString:@"$" withString:@""];
@@ -296,12 +308,7 @@
         self.navigationController.viewControllers = mutableViewControllers;
         [self.navigationController popToViewController:finalJVC animated:YES];
     }
-   }
-
--(void)questionViewControllerDidFinishFinalJeopartyTransition
-{
 }
-
 
 - (void)choseQuestionPanel:(UIButton *)sender {
     

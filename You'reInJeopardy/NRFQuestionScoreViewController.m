@@ -67,31 +67,43 @@
 - (void)contestantOnePlusButtonPressed:(id)sender {
     [self.game.contestantOne addThisAmountToContestantScore:self.questionValue];
     self.contestantOneScore.text = [self stringifyAndAddDollarSignToNumber:self.game.contestantOne.score];
+    [self.contestantOnePlus setHidden:YES];
+    [self.contestantOneMinus setHidden:YES];
 }
 
 - (void)contestantOneMinusButtonPressed:(id)sender {
     [self.game.contestantOne subtractThisAmountFromContestantScore:self.questionValue];
     self.contestantOneScore.text = [self stringifyAndAddDollarSignToNumber:self.game.contestantOne.score];
+    [self.contestantOneMinus setHidden:YES];
+    [self.contestantOnePlus setHidden:YES];
 }
 
 - (void)contestantTwoPlusButtonPressed:(id)sender {
     [self.game.contestantTwo addThisAmountToContestantScore:self.questionValue];
     self.contestantTwoScore.text = [self stringifyAndAddDollarSignToNumber:self.game.contestantTwo.score];
+    [self.contestantTwoPlus setHidden:YES];
+    [self.contestantTwoMinus setHidden:YES];
 }
 
 - (void)contestantTwoMinusButtonPressed:(id)sender {
     [self.game.contestantTwo subtractThisAmountFromContestantScore:self.questionValue];
     self.contestantTwoScore.text = [self stringifyAndAddDollarSignToNumber:self.game.contestantTwo.score];
+    [self.contestantTwoMinus setHidden:YES];
+    [self.contestantTwoPlus setHidden:YES];
 }
 
 - (void)contestantThreePlusButtonPressed:(id)sender {
     [self.game.contestantThree addThisAmountToContestantScore:self.questionValue];
     self.contestantThreeScore.text = [self stringifyAndAddDollarSignToNumber:self.game.contestantThree.score];
+    [self.contestantThreePlus setHidden:YES];
+    [self.contestantThreeMinus setHidden:YES];
 }
 
 - (void)contestantThreeMinusButtonPressed:(id)sender {
     [self.game.contestantThree subtractThisAmountFromContestantScore:self.questionValue];
     self.contestantThreeScore.text = [self stringifyAndAddDollarSignToNumber:self.game.contestantThree.score];
+    [self.contestantThreeMinus setHidden:YES];
+    [self.contestantThreePlus setHidden:YES];
 }
 
 
